@@ -1,0 +1,79 @@
+{
+    "$id": "layerize",
+    "type": "object",
+    "dynamicDefaults": {
+        "id": "uuid",
+        "ts_created": "datetime"
+    },
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "definableOnCreate": true,
+            "readOnly": true,
+            "unique": true,
+            "primaryKey": true
+        },
+        "sid": {
+            "type": "integer",
+            "serial": true,
+            "readOnly": true
+        },
+        "version": {
+            "type": "string",
+            "maxLength": 11
+        },
+        "schemas": {
+            "type": "object"
+        },
+        "hash": {
+            "type": "string",
+            "maxLength": 64
+        },
+        "ts_created": {
+            "type": "string",
+            "format": "date-time",
+            "default": "now()",
+            "readOnly": true,
+            "elasticSearch": { 
+                "type": "date"
+            }
+        },
+        "ts_started": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "elasticSearch": { 
+                "type": "date"
+            }
+        },
+        "ts_completed": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "elasticSearch": { 
+                "type": "date"
+            }
+        },
+        "ts_updated": {
+            "type": "string",
+            "format": "date-time",
+            "timestamp": true,
+            "readOnly": true,
+            "elasticSearch": { 
+                "type": "date"
+            }
+        },
+        "ts_rollback": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "elasticSearch": { 
+                "type": "date"
+            }
+        }
+    }
+}
