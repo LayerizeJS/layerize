@@ -4,7 +4,7 @@
   "description": "A framework to mange stacked data layers like postgresql, redis and elasticsearch.",
   "main": "lib/index.js",
   "scripts": {
-    "test-debug": "DEBUG=layerize mocha",
+    "test-debug": "DEBUG=layerize* mocha",
     "test": "mocha"
   },
   "config": {

@@ -1,5 +1,6 @@
 {
-    "$id": "layerize",
+    "$id": "schema",
+    "$root": true,
     "type": "object",
     "dynamicDefaults": {
         "id": "uuid",
@@ -23,57 +24,34 @@
             "type": "string",
             "maxLength": 11
         },
-        "schemas": {
-            "type": "object"
-        },
-        "hash": {
+        "name": {
             "type": "string",
-            "maxLength": 64
+            "maxLength": 30,
+            "minLength": 1
         },
         "ts_created": {
             "type": "string",
             "format": "date-time",
             "default": "now()",
-            "readOnly": true,
-            "elasticSearch": { 
-                "type": "date"
-            }
+            "readOnly": true
         },
         "ts_started": {
             "type": "string",
             "format": "date-time",
             "nullable": true,
-            "readOnly": true,
-            "elasticSearch": { 
-                "type": "date"
-            }
+            "readOnly": true
         },
         "ts_completed": {
             "type": "string",
             "format": "date-time",
             "nullable": true,
-            "readOnly": true,
-            "elasticSearch": { 
-                "type": "date"
-            }
+            "readOnly": true
         },
         "ts_updated": {
             "type": "string",
             "format": "date-time",
             "timestamp": true,
-            "readOnly": true,
-            "elasticSearch": { 
-                "type": "date"
-            }
-        },
-        "ts_rollback": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true,
-            "readOnly": true,
-            "elasticSearch": { 
-                "type": "date"
-            }
+            "readOnly": true
         }
     }
 }

@@ -7,7 +7,8 @@
         "ts_updated": "datetime"
     },
     "cache": {
-        "enabled": true
+        "enabled": true,
+        "expiresInSeconds": 604800 
     },
     "elasticSearch":{
         "enabled": true,
