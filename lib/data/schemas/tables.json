@@ -1,5 +1,5 @@
 {
-    "$id": "versions",
+    "$id": "tables",
     "$root": true,
     "type": "object",
     "dynamicDefaults": {
@@ -24,25 +24,28 @@
             "type": "string",
             "maxLength": 11
         },
+        "schema_name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 1
+        },
+        "name": {
+            "type": "string",
+            "maxLength": 30,
+            "minLength": 1
+        },
+        "schema": {
+            "type": "object"
+        },
         "hash": {
             "type": "string",
             "maxLength": 64
         },
         "ts_created": {
             "format": "date-time",
-            "readOnly": true,
             "database": {
                 "default": "now()"
-            }
-        },
-        "ts_started": {
-            "format": "date-time",
-            "nullable": true,
-            "readOnly": true
-        },
-        "ts_completed": {
-            "format": "date-time",
-            "nullable": true,
+            },
             "readOnly": true
         },
         "ts_updated": {
@@ -53,9 +56,5 @@
                 "default": "now()"
             }
         }
-    },
-    "required": [
-        "version",
-        "hash"
-    ]
+    }
 }
