@@ -1,7 +1,7 @@
 'use strict';
 
-let assert = require('assert');
-let Layerize = require('../lib/index.js');
+const assert = require('assert');
+const Layerize = require('../lib');
 
 describe('layerize', () => {
 
@@ -45,21 +45,18 @@ describe('layerize', () => {
 
         assert.equal(true, (typeof layerize.dbSchemas[layerizeSchemaName] !== 'undefined'));
 
-    }).slow(500);
+    }).slow(500).timeout(15000);
 
     describe(`schema creation '${testSchemaName}'`, () => {
 
         it('should create new schema', async () => {
 
             await layerize.install({ schemaName: testSchemaName });
-
             assert.equal(true, (typeof layerize.dbSchemas[testSchemaName] !== 'undefined'));
 
         });
 
         it('should have test table called \'users\'', async () => {
-
-            // await layerize.buildTables({ schemaName: testSchemaName });
 
             assert.equal(true, (typeof layerize.dbSchemas[testSchemaName] !== 'undefined'));
 
@@ -71,7 +68,7 @@ describe('layerize', () => {
 
         it('should create a layer', () => {
 
-            return layerize.layers({ schema: testSchemaName });
+            return layerize.layers({ schemaName: testSchemaName });
 
         });
 
@@ -79,14 +76,14 @@ describe('layerize', () => {
 
             it('should insert a single record', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
                 return await layers.insert('users', { id: 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'John', last_name: ' Doe ', username: 'johndoe10', password: 'Mypassword1', email: 'pickle@dsfsd.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } });
 
             });
 
             it('should insert multiple records', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
                 return await layers.insert('users', [
                     { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Mary', last_name: ' Doe ', username: 'marydoe', password: 'Mypassword1', email: 'mary@doe.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } },
                     { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Jane', last_name: ' Doe ', username: 'janedoe', password: 'Mypassword1', email: 'jane@doe.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } }
@@ -100,8 +97,8 @@ describe('layerize', () => {
 
             it('should search records', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
-                return await layers.search('users', { fields: 'id', sort: 'username', filter: ['archived:false', 'first_name:John3&&system_keys:![{"key":"2"}]'] });
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                return await layers.search('users', { fields: 'id', sort: 'username', filter: ['archived:false', 'first_name:John'] });
 
             });
 
@@ -109,7 +106,7 @@ describe('layerize', () => {
 
                 let fields = ['id', 'first_name'];
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
                 let records = await layers.search('users', { fields });
 
                 assert.equal(true, (Object.keys(records.items[0]).length === fields.length));
@@ -123,7 +120,7 @@ describe('layerize', () => {
 
                 before(async () => {
 
-                    layers = layerize.layers({ schema: testSchemaName });
+                    layers = layerize.layers({ schemaName: testSchemaName });
                     records = await layers.search('users');
 
                 });
@@ -171,7 +168,7 @@ describe('layerize', () => {
 
             it('should get record', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
                 let record = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
 
                 assert.equal(true, (Object.keys(record).length > 0));
@@ -182,7 +179,7 @@ describe('layerize', () => {
 
                 let fields = ['id', 'first_name'];
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
                 let record = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', { fields });
 
                 assert.equal(true, (Object.keys(record).length === fields.length));
@@ -195,7 +192,7 @@ describe('layerize', () => {
 
             it('should get record count', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
                 let count = await layers.count('users');
 
                 assert.equal(true, (count !== 0));
@@ -204,7 +201,7 @@ describe('layerize', () => {
 
             it('should be a valid numeric value', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
                 let count = await layers.count('users');
 
                 assert.equal(true, (Number.isInteger(count) && count % 1 === 0 && String(count).indexOf('.') === -1));
@@ -217,7 +214,7 @@ describe('layerize', () => {
 
             it('should patch a single record', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
 
                 let user = {
                     last_name: 'Patched'
@@ -235,7 +232,7 @@ describe('layerize', () => {
 
             it('should update a single record', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
 
                 let user = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
                 user.last_name = 'Updated';
@@ -250,15 +247,15 @@ describe('layerize', () => {
 
         describe('transactions', () => {
 
-            it('insert', async () => {
+            it('should insert a records', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
 
                 let beforeCount = await layers.count('users');
 
                 let transaction = layers.transaction();
                 await transaction.insert('users', [
-                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Santa', last_name: 'Clause', username: 'santa', password: 'Mypassword1', email: 'santa@email.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } },
+                    { id: 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Santa', last_name: 'Clause', username: 'santa', password: 'Mypassword1', email: 'santa@email.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } },
                     { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Saint', last_name: 'Nick', username: 'snick', password: 'Mypassword1', email: 'snick@email.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } }
                 ]);
                 await transaction.commit();
@@ -269,13 +266,55 @@ describe('layerize', () => {
 
             });
 
+            it('should get record', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let transaction = layers.transaction();
+                let record = await transaction.get('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd');
+
+                assert.equal(true, (Object.keys(record).length > 0));
+
+            });
+
+            it('should get and lock record for updating', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let transaction = layers.transaction();
+
+                let user = await transaction.get('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', { forUpdate: true });
+                user.first_name = 'Santa2';
+                await layers.update('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', user);
+
+                await transaction.commit();
+
+                assert.equal(true, (Object.keys(user).length > 0));
+
+            });
+
+            it('should delete record', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let beforeCount = await layers.count('users');
+
+                let transaction = layers.transaction();
+                await transaction.delete('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd');
+                await transaction.commit();
+
+                let afterCount = await layers.count('users');
+
+                assert.equal((beforeCount - 1), afterCount);
+
+            });
+
         });
 
         describe('deletes', () => {
 
             it('should delete record', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
 
                 let beforeCount = await layers.count('users');
 
@@ -289,7 +328,7 @@ describe('layerize', () => {
 
             it('should delete records by filter', async () => {
 
-                let layers = layerize.layers({ schema: testSchemaName });
+                let layers = layerize.layers({ schemaName: testSchemaName });
 
                 let beforeCount = await layers.count('users');
 
