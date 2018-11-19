@@ -1,0 +1,61 @@
+{
+    "$id": "versions",
+    "$root": true,
+    "type": "object",
+    "dynamicDefaults": {
+        "id": "uuid",
+        "ts_created": "datetime"
+    },
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "definableOnCreate": true,
+            "readOnly": true,
+            "unique": true,
+            "primaryKey": true
+        },
+        "sid": {
+            "type": "integer",
+            "serial": true,
+            "readOnly": true
+        },
+        "version": {
+            "type": "string",
+            "maxLength": 11
+        },
+        "hash": {
+            "type": "string",
+            "maxLength": 64
+        },
+        "ts_created": {
+            "format": "date-time",
+            "readOnly": true,
+            "database": {
+                "default": "now()"
+            }
+        },
+        "ts_started": {
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true
+        },
+        "ts_completed": {
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true
+        },
+        "ts_updated": {
+            "format": "date-time",
+            "timestamp": true,
+            "readOnly": true,
+            "database": {
+                "default": "now()"
+            }
+        }
+    },
+    "required": [
+        "version",
+        "hash"
+    ]
+}
