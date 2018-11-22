@@ -226,6 +226,20 @@ describe('layerize', () => {
 
             });
 
+            it('should update record timestamp property', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let user = {
+                    last_name: 'Patched2'
+                };
+
+                let updatedUser = await layers.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
+
+                assert.notEqual(user.ts_updated, updatedUser.ts_updated);
+
+            });
+
         });
 
         describe('updates', () => {
@@ -240,6 +254,19 @@ describe('layerize', () => {
                 let updatedUser = await layers.update('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
 
                 assert.equal(user.last_name, updatedUser.last_name);
+
+            });
+
+            it('should update record timestamp property', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let user = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
+                user.last_name = 'Updated2';
+
+                let updatedUser = await layers.update('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
+
+                assert.notEqual(user.ts_updated, updatedUser.ts_updated);
 
             });
 
