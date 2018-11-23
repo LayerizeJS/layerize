@@ -226,7 +226,7 @@ describe('layerize', () => {
 
             });
 
-            it('should update record timestamp property', async () => {
+            it('should patch record timestamp property', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
 
@@ -237,6 +237,34 @@ describe('layerize', () => {
                 let updatedUser = await layers.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
 
                 assert.notEqual(user.ts_updated, updatedUser.ts_updated);
+
+            });
+
+            it('should not patch read-only property', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let user = {
+                    account_owner: true
+                };
+
+                let updatedUser = await layers.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
+
+                assert.notEqual(user.account_owner, updatedUser.account_owner);
+
+            });
+
+            it('should patch read-only property when ignoreReadOnly set', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let user = {
+                    account_owner: true
+                };
+
+                let updatedUser = await layers.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true, ignoreReadOnly: [ 'account_owner' ] });
+
+                assert.equal(user.account_owner, updatedUser.account_owner);
 
             });
 
@@ -267,6 +295,32 @@ describe('layerize', () => {
                 let updatedUser = await layers.update('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
 
                 assert.notEqual(user.ts_updated, updatedUser.ts_updated);
+
+            });
+
+            it('should not update read-only property', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let user = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
+                user.account_owner = !user.account_owner;
+
+                let updatedUser = await layers.update('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
+
+                assert.notEqual(user.account_owner, updatedUser.account_owner);
+
+            });
+
+            it('should update read-only property when ignoreReadOnly set', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let user = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
+                user.account_owner = !user.account_owner;
+
+                let updatedUser = await layers.update('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true, ignoreReadOnly: [ 'account_owner' ] });
+
+                assert.equal(user.account_owner, updatedUser.account_owner);
 
             });
 
@@ -317,7 +371,7 @@ describe('layerize', () => {
 
                 assert.equal(true, (Object.keys(user).length > 0));
 
-            });
+            }).slow(500).timeout(5000);
 
             it('should delete record', async () => {
 
