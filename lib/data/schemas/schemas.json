@@ -6,59 +6,38 @@
         "id": "uuid",
         "ts_created": "datetime"
     },
-    "properties": {
-        "id": {
-            "type": "string",
-            "format": "uuid",
-            "definableOnCreate": true,
-            "readOnly": true,
-            "unique": true,
-            "primaryKey": true
+    "allOf": [
+        {
+            "$ref": "core"
         },
-        "sid": {
-            "type": "integer",
-            "serial": true,
-            "readOnly": true
-        },
-        "version": {
-            "type": "string",
-            "maxLength": 11
-        },
-        "name": {
-            "type": "string",
-            "maxLength": 30,
-            "minLength": 1
-        },
-        "hash": {
-            "type": "string",
-            "maxLength": 64
-        },
-        "ts_created": {
-            "format": "date-time",
-            "database": {
-                "default": "now()"
-            },
-            "readOnly": true
-        },
-        "ts_started": {
-            "format": "date-time",
-            "nullable": true,
-            "readOnly": true
-        },
-        "ts_completed": {
-            "format": "date-time",
-            "nullable": true,
-            "readOnly": true
-        },
-        "ts_updated": {
-            "format": "date-time",
-            "timestamp": true,
-            "readOnly": true,
-            "database": {
-                "default": "now()"
+        {
+            "properties": {
+                "version": {
+                    "type": "string",
+                    "maxLength": 11
+                },
+                "name": {
+                    "type": "string",
+                    "maxLength": 30,
+                    "minLength": 1
+                },
+                "hash": {
+                    "type": "string",
+                    "maxLength": 64
+                },
+                "ts_started": {
+                    "format": "date-time",
+                    "nullable": true,
+                    "readOnly": true
+                },
+                "ts_completed": {
+                    "format": "date-time",
+                    "nullable": true,
+                    "readOnly": true
+                }
             }
         }
-    },
+    ],
     "required": [
         "name",
         "version",
