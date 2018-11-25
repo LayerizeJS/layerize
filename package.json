@@ -4,8 +4,9 @@
   "description": "A framework to mange stacked data layers like postgresql, redis and elasticsearch.",
   "main": "lib/index.js",
   "scripts": {
-    "test-debug": "DEBUG=layerize* mocha",
-    "test": "mocha"
+    "test": "mocha",
+    "test-coverage": "nyc mocha",
+    "test-debug": "DEBUG=layerize* mocha"
   },
   "config": {
     "commitizen": {
@@ -43,6 +44,7 @@
     "lodash": "^4.17.11",
     "nested-property": "0.0.7",
     "node-object-hash": "^1.4.1",
+    "nyc": "^13.1.0",
     "object-sizeof": "^1.2.0",
     "pg": "^7.5.0",
     "redis-eventemitter": "^2.0.1",
