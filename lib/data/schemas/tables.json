@@ -14,15 +14,18 @@
             "properties": {
                 "version": {
                     "type": "string",
+                    "nullable": false,
                     "maxLength": 11
                 },
                 "schema_name": {
                     "type": "string",
+                    "nullable": false,
                     "maxLength": 30,
                     "minLength": 1
                 },
                 "name": {
                     "type": "string",
+                    "nullable": false,
                     "maxLength": 30,
                     "minLength": 1
                 },
@@ -30,6 +33,10 @@
                     "type": "boolean",
                     "nullable": false,
                     "default": true
+                },
+                "es_index_name": {
+                    "type": "string",
+                    "maxLength": 100
                 },
                 "es_enabled": {
                     "type": "boolean",
@@ -42,7 +49,8 @@
                     "default": false
                 },
                 "schema": {
-                    "type": "object"
+                    "type": "object",
+                    "nullable": false
                 },
                 "hash": {
                     "type": "string",
@@ -50,5 +58,14 @@
                 }
             }
         }
+    ],
+    "required": [
+        "name",
+        "version",
+        "hash",
+        "schema_name",
+        "schema",
+        "es_enabled",
+        "cache_enabled"
     ]
 }

@@ -67,7 +67,8 @@
                     "maxLength": 50
                 },
                 "contact_methods": {
-                    "type": "array"
+                    "type": "array",
+                    "nullable": false
                 },
                 "addresses": {
                     "$ref": "addresses"

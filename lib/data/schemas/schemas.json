@@ -14,25 +14,26 @@
             "properties": {
                 "version": {
                     "type": "string",
+                    "nullable": false,
                     "maxLength": 11
                 },
                 "name": {
                     "type": "string",
+                    "nullable": false,
                     "maxLength": 30,
                     "minLength": 1
                 },
                 "hash": {
                     "type": "string",
+                    "nullable": false,
                     "maxLength": 64
                 },
                 "ts_started": {
                     "format": "date-time",
-                    "nullable": true,
                     "readOnly": true
                 },
                 "ts_completed": {
                     "format": "date-time",
-                    "nullable": true,
                     "readOnly": true
                 }
             }
