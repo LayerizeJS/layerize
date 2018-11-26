@@ -35,7 +35,8 @@
                     "default": true
                 },
                 "es_index_name": {
-                    "type": "string",
+                    "type": ["string","null"],
+                    "nullable": true,
                     "maxLength": 100
                 },
                 "es_enabled": {

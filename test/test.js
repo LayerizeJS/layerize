@@ -77,7 +77,7 @@ describe('layerize', () => {
             it('should insert a single record', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                return await layers.insert('users', { id: 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'John', last_name: ' Doe ', username: 'johndoe10', password: 'Mypassword1', email: 'pickle@dsfsd.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } });
+                return await layers.insert('users', { id: 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'John', last_name: ' Doe ', username: 'johndoe10', password: 'Mypassword1', email: 'pickle@dsfsd.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } });
 
             });
 
@@ -85,8 +85,8 @@ describe('layerize', () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
                 return await layers.insert('users', [
-                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Mary', last_name: ' Doe ', username: 'marydoe', password: 'Mypassword1', email: 'mary@doe.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } },
-                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Jane', last_name: ' Doe ', username: 'janedoe', password: 'Mypassword1', email: 'jane@doe.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } }
+                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Mary', last_name: ' Doe ', username: 'marydoe', password: 'Mypassword1', email: 'mary@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } },
+                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Jane', last_name: ' Doe ', username: 'janedoe', password: 'Mypassword1', email: 'jane@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } }
                 ]);
 
             });
@@ -336,8 +336,8 @@ describe('layerize', () => {
 
                 let transaction = layers.transaction();
                 await transaction.insert('users', [
-                    { id: 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Santa', last_name: 'Clause', username: 'santa', password: 'Mypassword1', email: 'santa@email.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } },
-                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Saint', last_name: 'Nick', username: 'snick', password: 'Mypassword1', email: 'snick@email.com', system_keys: [ { key: '1', value: 2 } ], custom_fields: { pickle: true } }
+                    { id: 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Santa', last_name: 'Clause', username: 'santa', password: 'Mypassword1', email: 'santa@email.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } },
+                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Saint', last_name: 'Nick', username: 'snick', password: 'Mypassword1', email: 'snick@email.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } }
                 ]);
                 await transaction.commit();
 
