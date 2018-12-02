@@ -84,8 +84,8 @@ describe('layerize', () => {
             it('should insert multiple records', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                return await layers.insert('users', [
-                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Mary', last_name: ' Doe ', username: 'marydoe', password: 'Mypassword1', email: 'mary@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } },
+                return await layers.insertMany('users', [
+                    { id: 'b99f0cea-c3df-4619-b023-8c71fee3a9dc', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Mary', last_name: ' Doe ', username: 'marydoe', password: 'Mypassword1', email: 'mary@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } },
                     { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Jane', last_name: ' Doe ', username: 'janedoe', password: 'Mypassword1', email: 'jane@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } }
                 ]);
 
@@ -109,7 +109,15 @@ describe('layerize', () => {
                 let layers = layerize.layers({ schemaName: testSchemaName });
                 let records = await layers.search('users', { fields });
 
-                assert.equal(true, (Object.keys(records.items[0]).length === fields.length));
+                if (records.items.length > 0) {
+
+                    assert.equal(true, (Object.keys(records.items[0]).length === fields.length));
+
+                } else {
+
+                    assert.equal(true, false);
+
+                }
 
             });
 
@@ -226,6 +234,28 @@ describe('layerize', () => {
 
             });
 
+            it('should patch a many records', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let users = [
+                    {
+                        id: 'a99f0cea-c3df-4619-b023-8c71fee3a9cd',
+                        last_name: 'PatchedMany'
+                    },
+                    {
+                        id: 'b99f0cea-c3df-4619-b023-8c71fee3a9dc',
+                        first_name: 'MaryMany'
+                    }
+                ];
+
+                let updatedUsers = await layers.patchMany('users', users, { returnRecords: true });
+
+                assert.equal(users[0].last_name, updatedUsers[0].last_name);
+                assert.equal(users[1].first_name, updatedUsers[1].first_name);
+
+            });
+
             it('should patch record timestamp property', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
@@ -285,6 +315,21 @@ describe('layerize', () => {
 
             });
 
+            it('should update a many record', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let users = await layers.getMany('users', ['a99f0cea-c3df-4619-b023-8c71fee3a9cd', 'b99f0cea-c3df-4619-b023-8c71fee3a9dc']);
+                users[0].last_name = 'UpdatedMany';
+                users[1].last_name = 'UpdatedManyAgain';
+
+                let updatedUsers = await layers.updateMany('users', users, { returnRecords: true });
+
+                assert.equal(users[0].last_name, updatedUsers[0].last_name);
+                assert.equal(users[1].last_name, updatedUsers[1].last_name);
+
+            });
+
             it('should update record timestamp property', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
@@ -337,7 +382,7 @@ describe('layerize', () => {
                 let transaction = layers.transaction();
                 await transaction.insert('users', [
                     { id: 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Santa', last_name: 'Clause', username: 'santa', password: 'Mypassword1', email: 'santa@email.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } },
-                    { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Saint', last_name: 'Nick', username: 'snick', password: 'Mypassword1', email: 'snick@email.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } }
+                    { id: 'd44f0cea-c3df-4619-b023-8c71fee3a9dc', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Saint', last_name: 'Nick', username: 'snick', password: 'Mypassword1', email: 'snick@email.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } }
                 ]);
                 await transaction.commit();
 
@@ -372,6 +417,51 @@ describe('layerize', () => {
                 assert.equal(true, (Object.keys(user).length > 0));
 
             }).slow(500).timeout(5000);
+
+            it('should patch a many records', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let transaction = layers.transaction();
+
+                let users = [
+                    {
+                        id: 'b55f0cea-c3df-4619-b023-8c71fee3a9cd',
+                        first_name: 'Santa2Many'
+                    },
+                    {
+                        id: 'd44f0cea-c3df-4619-b023-8c71fee3a9dc',
+                        last_name: 'NickMany'
+                    }
+                ];
+
+                await transaction.patchMany('users', users);
+                await transaction.commit();
+
+                let updatedUsers = await layers.getMany('users', ['b55f0cea-c3df-4619-b023-8c71fee3a9cd', 'd44f0cea-c3df-4619-b023-8c71fee3a9dc']);
+
+                assert.equal(users[0].first_name, updatedUsers[0].first_name);
+                assert.equal(users[1].last_name, updatedUsers[1].last_name);
+
+            });
+
+            it('should update a many record', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let transaction = layers.transaction();
+
+                let users = await transaction.getMany('users', ['b55f0cea-c3df-4619-b023-8c71fee3a9cd', 'd44f0cea-c3df-4619-b023-8c71fee3a9dc'], { forUpdate: true });
+                users[0].last_name = 'Santa2UpdatedMany';
+                users[1].last_name = 'NickUpdatedMany';
+
+                await transaction.updateMany('users', users);
+                await transaction.commit();
+
+                let updatedUsers = await transaction.getMany('users', ['b55f0cea-c3df-4619-b023-8c71fee3a9cd', 'd44f0cea-c3df-4619-b023-8c71fee3a9dc']);
+
+                assert.equal(users[0].last_name, updatedUsers[0].last_name);
+                assert.equal(users[1].last_name, updatedUsers[1].last_name);
+
+            });
 
             it('should delete record', async () => {
 
@@ -425,22 +515,22 @@ describe('layerize', () => {
 
     });
 
-    describe('test cleanup', () => {
+    // describe('test cleanup', () => {
 
-        it(`should delete '${testSchemaName}' database schema`, async () => {
+    //     it(`should delete '${testSchemaName}' database schema`, async () => {
 
-            await layerize.uninstall({ schemaName: testSchemaName });
-            assert.equal(true, (typeof layerize.dbSchemas[testSchemaName] === 'undefined'));
+    //         await layerize.uninstall({ schemaName: testSchemaName });
+    //         assert.equal(true, (typeof layerize.dbSchemas[testSchemaName] === 'undefined'));
 
-        });
+    //     });
 
-        it(`should delete '${layerizeSchemaName}' database schema`, async () => {
+    //     it(`should delete '${layerizeSchemaName}' database schema`, async () => {
 
-            await layerize.uninstall({ layerizeCore: true });
-            assert.equal(true, (typeof layerize.dbSchemas[layerizeSchemaName] === 'undefined'));
+    //         await layerize.uninstall({ layerizeCore: true });
+    //         assert.equal(true, (typeof layerize.dbSchemas[layerizeSchemaName] === 'undefined'));
 
-        });
+    //     });
 
-    });
+    // });
 
 });
