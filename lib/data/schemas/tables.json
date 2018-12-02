@@ -6,55 +6,67 @@
         "id": "uuid",
         "ts_created": "datetime"
     },
-    "properties": {
-        "id": {
-            "type": "string",
-            "format": "uuid",
-            "definableOnCreate": true,
-            "readOnly": true,
-            "unique": true,
-            "primaryKey": true
+    "allOf": [
+        {
+            "$ref": "core"
         },
-        "sid": {
-            "type": "integer",
-            "serial": true,
-            "readOnly": true
-        },
-        "version": {
-            "type": "string",
-            "maxLength": 11
-        },
-        "schema_name": {
-            "type": "string",
-            "maxLength": 30,
-            "minLength": 1
-        },
-        "name": {
-            "type": "string",
-            "maxLength": 30,
-            "minLength": 1
-        },
-        "schema": {
-            "type": "object"
-        },
-        "hash": {
-            "type": "string",
-            "maxLength": 64
-        },
-        "ts_created": {
-            "format": "date-time",
-            "database": {
-                "default": "now()"
-            },
-            "readOnly": true
-        },
-        "ts_updated": {
-            "format": "date-time",
-            "timestamp": true,
-            "readOnly": true,
-            "database": {
-                "default": "now()"
+        {
+            "properties": {
+                "version": {
+                    "type": "string",
+                    "nullable": false,
+                    "maxLength": 11
+                },
+                "schema_name": {
+                    "type": "string",
+                    "nullable": false,
+                    "maxLength": 30,
+                    "minLength": 1
+                },
+                "name": {
+                    "type": "string",
+                    "nullable": false,
+                    "maxLength": 30,
+                    "minLength": 1
+                },
+                "db_enabled": {
+                    "type": "boolean",
+                    "nullable": false,
+                    "default": true
+                },
+                "es_index_name": {
+                    "type": ["string","null"],
+                    "nullable": true,
+                    "maxLength": 100
+                },
+                "es_enabled": {
+                    "type": "boolean",
+                    "nullable": false,
+                    "default": false
+                },
+                "cache_enabled": {
+                    "type": "boolean",
+                    "nullable": false,
+                    "default": false
+                },
+                "schema": {
+                    "type": "object",
+                    "nullable": false
+                },
+                "hash": {
+                    "type": "string",
+                    "maxLength": 64
+                }
             }
         }
-    }
+    ],
+    "required": [
+        "name",
+        "version",
+        "hash",
+        "schema_name",
+        "schema",
+        "es_enabled",
+        "cache_enabled"
+    ]
 }

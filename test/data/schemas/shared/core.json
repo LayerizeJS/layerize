@@ -11,7 +11,7 @@
         "expiresInSeconds": 604800 
     },
     "elasticSearch":{
-        "enabled": true,
+        "enabled": false,
         "numeric_detection": true,
         "date_detection": true
     },
