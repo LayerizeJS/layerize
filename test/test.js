@@ -77,18 +77,29 @@ describe('layerize', () => {
             it('should insert a single record', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
+                let beforeCount = await layers.count('users');
+
                 await layers.insert('user_role', { id: 'a8988288-988a-412a-9127-e51a284e2b46', name: 'Admin', permissions: {} });
-                return await layers.insert('users', { id: 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'John', last_name: ' Doe ', username: 'johndoe10', password: 'Mypassword1', email: 'pickle@dsfsd.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } });
+                await layers.insert('users', { id: 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'John', last_name: ' Doe ', username: 'johndoe10', password: 'Mypassword1', email: 'pickle@dsfsd.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } });
+
+                let afterCount = await layers.count('users');
+
+                assert.equal(true, (afterCount === beforeCount + 1));
 
             }).slow(500).timeout(15000);
 
             it('should insert multiple records', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                return await layers.insertMany('users', [
+                let beforeCount = await layers.count('users');
+
+                await layers.insertMany('users', [
                     { id: 'b99f0cea-c3df-4619-b023-8c71fee3a9dc', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Mary', last_name: ' Doe ', username: 'marydoe', password: 'Mypassword1', email: 'mary@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } },
                     { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Jane', last_name: ' Doe ', username: 'janedoe', password: 'Mypassword1', email: 'jane@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } }
                 ]);
+                let afterCount = await layers.count('users');
+
+                assert.equal(true, (afterCount === beforeCount + 2));
 
             }).slow(500).timeout(15000);
 
@@ -99,7 +110,9 @@ describe('layerize', () => {
             it('should search records', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                return await layers.search('users', { fields: 'id', sort: 'username', filter: ['archived:false', 'first_name:John'], includes: 'user_role' });
+                let results = await layers.search('users', { fields: 'id', sort: 'username', filter: ['archived:false', 'first_name:John'], includes: 'user_role' });
+
+                assert.equal(true, (results.items.length > 0));
 
             }).slow(500).timeout(15000);
 
@@ -119,6 +132,24 @@ describe('layerize', () => {
                     assert.equal(true, false);
 
                 }
+
+            }).slow(500).timeout(15000);
+
+            it('should search records with native db filter', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let results = await layers.search('users', { fields: 'id', sort: 'username', filter: { native: true, where: 'archived = \'false\' AND first_name = \'John\'' }, type: 'db', includes: 'user_role' });
+
+                assert.equal(true, (results.items.length > 0));
+
+            }).slow(500).timeout(15000);
+
+            it('should search records with native es filter', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let results = await layers.search('users', { fields: 'id', sort: 'username', filter: { native: true, query: { term: { first_name: 'John' } } }, includes: 'user_role' });
+
+                assert.equal(true, (results.items.length > 0));
 
             }).slow(500).timeout(15000);
 
@@ -192,6 +223,14 @@ describe('layerize', () => {
                 let record = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', { fields, includes: 'user_role' });
 
                 assert.equal(true, (Object.keys(record).length === fields.length));
+
+            }).slow(500).timeout(15000);
+
+            it('should get record with reference includes', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let record = await layers.get('user_role', 'a8988288-988a-412a-9127-e51a284e2b46', { includes: 'users' });
+                assert.equal(true, (record.users.length > 0));
 
             }).slow(500).timeout(15000);
 

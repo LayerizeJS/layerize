@@ -37,6 +37,9 @@
                     "format": "uuid",
                     "nullable": false,
                     "foreign": {
+                        "source": {
+                            "includeId": "users"
+                        },
                         "reference": {
                             "table": "user_role",
                             "column": "id",
@@ -60,14 +63,20 @@
                     "type": "string",
                     "nullable": false,
                     "transform": ["trim"],
-                    "maxLength": 50
+                    "maxLength": 50,
+                    "elasticSearch":{
+                        "normalizer": "case_insensitive_normalizer"
+                    }
                 },
 
                 "last_name": {
                     "type": "string",
                     "nullable": false,
                     "transform": ["trim"],
-                    "maxLength": 50
+                    "maxLength": 50,
+                    "elasticSearch":{
+                        "normalizer": "case_insensitive_normalizer"
+                    }
                 },
                 "contact_methods": {
                     "type": "array",
@@ -81,7 +90,10 @@
                     "unique": true,
                     "nullable": false,
                     "transform": ["trim"],
-                    "maxLength": 30
+                    "maxLength": 30,
+                    "elasticSearch":{
+                        "normalizer": "case_insensitive_normalizer"
+                    }
                 },
                 "password": {
                     "type": "string",
