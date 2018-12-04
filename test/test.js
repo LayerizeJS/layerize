@@ -195,6 +195,14 @@ describe('layerize', () => {
 
             }).slow(500).timeout(15000);
 
+            it('should get record with reference includes', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let record = await layers.get('user_role', 'a8988288-988a-412a-9127-e51a284e2b46', { includes: 'users' });
+                assert.equal(true, (record.users.length > 0));
+
+            }).slow(500).timeout(15000);
+
         });
 
         describe('count', () => {

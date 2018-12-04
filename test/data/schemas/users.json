@@ -37,6 +37,9 @@
                     "format": "uuid",
                     "nullable": false,
                     "foreign": {
+                        "source": {
+                            "includeId": "users"
+                        },
                         "reference": {
                             "table": "user_role",
                             "column": "id",
