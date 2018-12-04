@@ -1,0 +1,58 @@
+{
+    "$id": "user_role",
+    "$root": true,
+    "indexes": [],
+    "type": "object",
+    "elasticSearch": {
+        "enabled": true
+    },
+    "allOf": [
+        {
+            "$ref": "core"
+        },
+        {
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "nullable": false,
+                    "enum": [
+                        "open",
+                        "closed"
+                    ],
+                    "default": "open",
+                    "readOnly": true
+                },
+                "state": {
+                    "type": "string",
+                    "nullable": false,
+                    "enum": [
+                        "active",
+                        "cancelled"
+                    ],
+                    "default": "active",
+                    "readOnly": true
+                },
+                "name": {
+                    "type": "string",
+                    "nullable": false,
+                    "transform": ["trim"],
+                    "maxLength": 50
+                },
+                "permissions": {
+                    "type": "object",
+                    "nullable": false
+                },
+                "super_user": {
+                    "type": "boolean",
+                    "nullable": false,
+                    "default": false,
+                    "readOnly": true
+                }
+            },
+            "required": [
+                "name",
+                "permissions"
+            ]
+        }
+    ]
+}

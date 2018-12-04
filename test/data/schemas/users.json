@@ -37,9 +37,11 @@
                     "format": "uuid",
                     "nullable": false,
                     "foreign": {
-                        "references": {
+                        "reference": {
                             "table": "user_role",
-                            "column": "id"
+                            "column": "id",
+                            "relationship": "many-to-one",
+                            "includeId": "user_role"
                         }
                     }
                 },
@@ -60,6 +62,7 @@
                     "transform": ["trim"],
                     "maxLength": 50
                 },
+
                 "last_name": {
                     "type": "string",
                     "nullable": false,
@@ -95,13 +98,7 @@
                 },
                 "supplier_id": {
                     "format": "uuid",
-                    "nullable": true,
-                    "foreign": {
-                        "references": {
-                            "table": "supplier",
-                            "column": "id"
-                        }
-                    }
+                    "nullable": true
                 },
                 "account_owner": {
                     "type": "boolean",
