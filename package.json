@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "test-coverage": "nyc mocha",
-    "test-debug": "DEBUG=layerize* mocha"
+    "test-debug": "DEBUG=layerize* mocha",
+    "commit": "npx git-cz"
   },
   "config": {
     "commitizen": {
@@ -46,6 +47,7 @@
     "node-object-hash": "^1.4.1",
     "nyc": "^13.1.0",
     "object-sizeof": "^1.2.0",
+    "papaparse": "^4.6.2",
     "pg": "^7.5.0",
     "redis-eventemitter": "^2.0.1",
     "redis-lock": "^0.1.4",
