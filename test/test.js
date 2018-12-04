@@ -54,13 +54,13 @@ describe('layerize', () => {
             await layerize.install({ schemaName: testSchemaName });
             assert.equal(true, (typeof layerize.dbSchemas[testSchemaName] !== 'undefined'));
 
-        });
+        }).slow(500).timeout(15000);
 
         it('should have test table called \'users\'', async () => {
 
             assert.equal(true, (typeof layerize.dbSchemas[testSchemaName] !== 'undefined'));
 
-        });
+        }).slow(500).timeout(15000);
 
     });
 
@@ -77,9 +77,10 @@ describe('layerize', () => {
             it('should insert a single record', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
+                await layers.insert('user_role', { id: 'a8988288-988a-412a-9127-e51a284e2b46', name: 'Admin', permissions: {} });
                 return await layers.insert('users', { id: 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'John', last_name: ' Doe ', username: 'johndoe10', password: 'Mypassword1', email: 'pickle@dsfsd.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } });
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should insert multiple records', async () => {
 
@@ -89,7 +90,7 @@ describe('layerize', () => {
                     { user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', first_name: 'Jane', last_name: ' Doe ', username: 'janedoe', password: 'Mypassword1', email: 'jane@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } }
                 ]);
 
-            });
+            }).slow(500).timeout(15000);
 
         });
 
@@ -98,16 +99,16 @@ describe('layerize', () => {
             it('should search records', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                return await layers.search('users', { fields: 'id', sort: 'username', filter: ['archived:false', 'first_name:John'] });
+                return await layers.search('users', { fields: 'id', sort: 'username', filter: ['archived:false', 'first_name:John'], includes: 'user_role' });
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should search and return only request fields', async () => {
 
-                let fields = ['id', 'first_name'];
+                let fields = ['id', 'first_name', 'user_role.permissions'];
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                let records = await layers.search('users', { fields });
+                let records = await layers.search('users', { fields, includes: 'user_role' });
 
                 if (records.items.length > 0) {
 
@@ -119,7 +120,7 @@ describe('layerize', () => {
 
                 }
 
-            });
+            }).slow(500).timeout(15000);
 
             describe('response', () => {
 
@@ -138,35 +139,35 @@ describe('layerize', () => {
                     // check if total exists and returns a whole number
                     assert.equal(true, (typeof records.total !== 'undefined' && Number.isInteger(records.total) && records.total % 1 === 0 && String(records.total).indexOf('.') === -1));
 
-                });
+                }).slow(500).timeout(15000);
 
                 it('should have a valid items property', () => {
 
                     // check if items exists and is an array of objects
                     assert.equal(true, (typeof records.items !== 'undefined' && Array.isArray(records.items) && (!Array.isArray(records.items[0]) && typeof records.items[0] === 'object')));
 
-                });
+                }).slow(500).timeout(15000);
 
                 it('should have a valid sort property', () => {
 
                     // check if sort exists and is a string that is not blank
                     assert.equal(true, (typeof records.sort !== 'undefined') && records.sort !== '' && typeof records.sort === 'string');
 
-                });
+                }).slow(500).timeout(15000);
 
                 it('should have a valid offset property', () => {
 
                     // check if offset exists and returns a whole number
                     assert.equal(true, (typeof records.offset !== 'undefined' && Number.isInteger(records.offset) && records.offset % 1 === 0 && String(records.offset).indexOf('.') === -1));
 
-                });
+                }).slow(500).timeout(15000);
 
                 it('should have a valid limit property', () => {
 
                     // check if limit exists, returns a whole number and is not zero
                     assert.equal(true, (typeof records.limit !== 'undefined' && Number.isInteger(records.limit) && records.limit % 1 === 0 && String(records.limit).indexOf('.') === -1) && records.limit > 0);
 
-                });
+                }).slow(500).timeout(15000);
 
             });
 
@@ -177,22 +178,22 @@ describe('layerize', () => {
             it('should get record', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                let record = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
+                let record = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', { includes: 'user_role' });
 
                 assert.equal(true, (Object.keys(record).length > 0));
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should get record with only request fields', async () => {
 
-                let fields = ['id', 'first_name'];
+                let fields = ['id', 'first_name', 'user_role.permissions'];
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                let record = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', { fields });
+                let record = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', { fields, includes: 'user_role' });
 
                 assert.equal(true, (Object.keys(record).length === fields.length));
 
-            });
+            }).slow(500).timeout(15000);
 
         });
 
@@ -205,7 +206,7 @@ describe('layerize', () => {
 
                 assert.equal(true, (count !== 0));
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should be a valid numeric value', async () => {
 
@@ -214,7 +215,7 @@ describe('layerize', () => {
 
                 assert.equal(true, (Number.isInteger(count) && count % 1 === 0 && String(count).indexOf('.') === -1));
 
-            });
+            }).slow(500).timeout(15000);
 
         });
 
@@ -232,7 +233,7 @@ describe('layerize', () => {
 
                 assert.equal(user.last_name, updatedUser.last_name);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should patch a many records', async () => {
 
@@ -254,7 +255,7 @@ describe('layerize', () => {
                 assert.equal(users[0].last_name, updatedUsers[0].last_name);
                 assert.equal(users[1].first_name, updatedUsers[1].first_name);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should patch record timestamp property', async () => {
 
@@ -268,7 +269,7 @@ describe('layerize', () => {
 
                 assert.notEqual(user.ts_updated, updatedUser.ts_updated);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should not patch read-only property', async () => {
 
@@ -282,7 +283,7 @@ describe('layerize', () => {
 
                 assert.notEqual(user.account_owner, updatedUser.account_owner);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should patch read-only property when ignoreReadOnly set', async () => {
 
@@ -296,7 +297,7 @@ describe('layerize', () => {
 
                 assert.equal(user.account_owner, updatedUser.account_owner);
 
-            });
+            }).slow(500).timeout(15000);
 
         });
 
@@ -313,7 +314,7 @@ describe('layerize', () => {
 
                 assert.equal(user.last_name, updatedUser.last_name);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should update a many record', async () => {
 
@@ -328,7 +329,7 @@ describe('layerize', () => {
                 assert.equal(users[0].last_name, updatedUsers[0].last_name);
                 assert.equal(users[1].last_name, updatedUsers[1].last_name);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should update record timestamp property', async () => {
 
@@ -341,7 +342,7 @@ describe('layerize', () => {
 
                 assert.notEqual(user.ts_updated, updatedUser.ts_updated);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should not update read-only property', async () => {
 
@@ -354,7 +355,7 @@ describe('layerize', () => {
 
                 assert.notEqual(user.account_owner, updatedUser.account_owner);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should update read-only property when ignoreReadOnly set', async () => {
 
@@ -367,7 +368,7 @@ describe('layerize', () => {
 
                 assert.equal(user.account_owner, updatedUser.account_owner);
 
-            });
+            }).slow(500).timeout(15000);
 
         });
 
@@ -390,7 +391,7 @@ describe('layerize', () => {
 
                 assert.equal((beforeCount + 2), afterCount);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should get record', async () => {
 
@@ -401,18 +402,28 @@ describe('layerize', () => {
 
                 assert.equal(true, (Object.keys(record).length > 0));
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should get and lock record for updating', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
                 let transaction = layers.transaction();
 
-                let user = await transaction.get('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', { forUpdate: true });
-                user.first_name = 'Santa2';
-                await layers.update('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', user);
+                let user = {};
+                try {
 
-                await transaction.commit();
+                    user = await transaction.get('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', { forUpdate: true });
+                    user.first_name = 'Santa2';
+                    await layers.update('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', user);
+
+                    await transaction.commit();
+
+                } catch (e) {
+
+                    await transaction.rollback();
+                    throw e;
+
+                }
 
                 assert.equal(true, (Object.keys(user).length > 0));
 
@@ -442,26 +453,36 @@ describe('layerize', () => {
                 assert.equal(users[0].first_name, updatedUsers[0].first_name);
                 assert.equal(users[1].last_name, updatedUsers[1].last_name);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should update a many record', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
                 let transaction = layers.transaction();
 
-                let users = await transaction.getMany('users', ['b55f0cea-c3df-4619-b023-8c71fee3a9cd', 'd44f0cea-c3df-4619-b023-8c71fee3a9dc'], { forUpdate: true });
-                users[0].last_name = 'Santa2UpdatedMany';
-                users[1].last_name = 'NickUpdatedMany';
+                let users = [];
+                try {
 
-                await transaction.updateMany('users', users);
-                await transaction.commit();
+                    users = await transaction.getMany('users', ['b55f0cea-c3df-4619-b023-8c71fee3a9cd', 'd44f0cea-c3df-4619-b023-8c71fee3a9dc'], { forUpdate: true });
+                    users[0].last_name = 'Santa2UpdatedMany';
+                    users[1].last_name = 'NickUpdatedMany';
+
+                    await transaction.updateMany('users', users);
+                    await transaction.commit();
+
+                } catch (e) {
+
+                    await transaction.rollback();
+                    throw e;
+
+                }
 
                 let updatedUsers = await transaction.getMany('users', ['b55f0cea-c3df-4619-b023-8c71fee3a9cd', 'd44f0cea-c3df-4619-b023-8c71fee3a9dc']);
 
                 assert.equal(users[0].last_name, updatedUsers[0].last_name);
                 assert.equal(users[1].last_name, updatedUsers[1].last_name);
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should delete record', async () => {
 
@@ -477,7 +498,7 @@ describe('layerize', () => {
 
                 assert.equal((beforeCount - 1), afterCount);
 
-            });
+            }).slow(500).timeout(15000);
 
         });
 
@@ -495,7 +516,7 @@ describe('layerize', () => {
 
                 assert.equal(true, (beforeCount !== afterCount));
 
-            });
+            }).slow(500).timeout(15000);
 
             it('should delete records by filter', async () => {
 
@@ -509,28 +530,42 @@ describe('layerize', () => {
 
                 assert.equal(true, (beforeCount !== afterCount));
 
-            });
+            }).slow(500).timeout(15000);
+
+            it('should delete others records', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+
+                let beforeCount = await layers.count('user_role');
+
+                await layers.delete('user_role', 'a8988288-988a-412a-9127-e51a284e2b46');
+
+                let afterCount = await layers.count('user_role');
+
+                assert.equal(true, (beforeCount !== afterCount));
+
+            }).slow(500).timeout(15000);
 
         });
 
     });
 
-    // describe('test cleanup', () => {
+    describe('test cleanup', () => {
 
-    //     it(`should delete '${testSchemaName}' database schema`, async () => {
+        it(`should delete '${testSchemaName}' database schema`, async () => {
 
-    //         await layerize.uninstall({ schemaName: testSchemaName });
-    //         assert.equal(true, (typeof layerize.dbSchemas[testSchemaName] === 'undefined'));
+            await layerize.uninstall({ schemaName: testSchemaName });
+            assert.equal(true, (typeof layerize.dbSchemas[testSchemaName] === 'undefined'));
 
-    //     });
+        }).slow(500).timeout(15000);
 
-    //     it(`should delete '${layerizeSchemaName}' database schema`, async () => {
+        it(`should delete '${layerizeSchemaName}' database schema`, async () => {
 
-    //         await layerize.uninstall({ layerizeCore: true });
-    //         assert.equal(true, (typeof layerize.dbSchemas[layerizeSchemaName] === 'undefined'));
+            await layerize.uninstall({ layerizeCore: true });
+            assert.equal(true, (typeof layerize.dbSchemas[layerizeSchemaName] === 'undefined'));
 
-    //     });
+        }).slow(500).timeout(15000);
 
-    // });
+    });
 
 });
