@@ -21,7 +21,6 @@
             "format": "uuid",
             "definableOnCreate": true,
             "readOnly": true,
-            "unique": true,
             "primaryKey": true,
             "elasticSearch": { 
                 "type": "keyword"
