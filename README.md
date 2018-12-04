@@ -4,9 +4,9 @@ A framework to mange stacked data layers like postgresql, redis and elasticsearc
 | BRANCH  |  BUILDS |  COVERAGE |
 |---|---|---|
 | master | [![Build Status](https://travis-ci.org/LayerizeJS/layerize.svg?branch=develop)](https://travis-ci.org/LayerizeJS/layerize) | [![Coverage Status](https://coveralls.io/repos/github/LayerizeJS/layerize/badge.svg?branch=master)](https://coveralls.io/github/LayerizeJS/layerize?branch=master) |
-| develop |  [![Build Status](https://travis-ci.org/LayerizeJS/layerize.svg?branch=develop)](https://travis-ci.org/LayerizeJS/layerize) | [![Coverage Status](https://coveralls.io/repos/github/LayerizeJS/layerize/badge.svg?branch=develop)](https://coveralls.io/github/LayerizeJS/layerize?branch=master) |
+| develop |  [![Build Status](https://travis-ci.org/LayerizeJS/layerize.svg?branch=develop)](https://travis-ci.org/LayerizeJS/layerize) | [![Coverage Status](https://coveralls.io/repos/github/LayerizeJS/layerize/badge.svg?branch=develop)](https://coveralls.io/github/LayerizeJS/layerize?branch=develop) |
 
-# TODO
+# TODO - Initial Build
 
 - [x] <del>Auto build and update DB tables</del>
 - [x] <del>Auto build and update ES indexes</del>
@@ -18,6 +18,8 @@ A framework to mange stacked data layers like postgresql, redis and elasticsearc
 - [x] <del>Mass delete (by key)</del>
 - [x] <del>Join-like support (called 'includes')</del>
 - [x] <del>Allow native DB & ES filters to be used as well</del>
+- [x] <del>Setup Travis CI</del>
+- [x] <del>Setup Coveralls CI (code coverage)</del>
 - [ ] Export data
 - [ ] Import data
 - [ ] Migrating environment scripts 
@@ -27,8 +29,8 @@ A framework to mange stacked data layers like postgresql, redis and elasticsearc
 - [ ] Support Read Replica DBs
 - [ ] Traditional transactions
 - [ ] Archive support
-- [x] <del>Setup Travis CI</del>
 - [ ] Setup Commitizens
+- [ ] Auto publish releases
 - [ ] Generate Release Notes / Change Logs
 - [ ] i18n (i18next & locize.com)
 - [x] <del>Testing</del>
