@@ -9,3 +9,5 @@ addons:
   postgresql: 9.6
 before_script:
   - sleep 10
+script:
+  - npm run test-coverage

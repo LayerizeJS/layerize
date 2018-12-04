@@ -4,8 +4,8 @@
   "description": "A framework to mange stacked data layers like postgresql, redis and elasticsearch.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha",
-    "test-coverage": "nyc mocha",
+    "test": "mocha --exit",
+    "test-coverage": "nyc mocha --exit",
     "test-debug": "DEBUG=layerize* mocha",
     "commit": "npx git-cz"
   },
