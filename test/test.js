@@ -138,7 +138,16 @@ describe('layerize', () => {
             it('should search records with native db filter', async () => {
 
                 let layers = layerize.layers({ schemaName: testSchemaName });
-                let results = await layers.search('users', { fields: 'id', sort: 'username', filter: { native: true, where: 'archived = \'false\' AND first_name = \'John\'' }, includes: 'user_role' });
+                let results = await layers.search('users', { fields: 'id', sort: 'username', filter: { native: true, where: 'archived = \'false\' AND first_name = \'John\'' }, type: 'db', includes: 'user_role' });
+
+                assert.equal(true, (results.items.length > 0));
+
+            }).slow(500).timeout(15000);
+
+            it('should search records with native es filter', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let results = await layers.search('users', { fields: 'id', sort: 'username', filter: { native: true, query: { term: { first_name: 'John' } } }, includes: 'user_role' });
 
                 assert.equal(true, (results.items.length > 0));
 
