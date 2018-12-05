@@ -20,6 +20,8 @@ A framework to mange stacked data layers like postgresql, redis and elasticsearc
 - [x] <del>Allow native DB & ES filters to be used as well</del>
 - [x] <del>Setup Travis CI</del>
 - [x] <del>Setup Coveralls CI (code coverage)</del>
+- [x] <del>Setup Commitizens</del>
+- [X] <del>Generate Release Notes / Change Logs</del>
 - [ ] Export data
 - [ ] Import data
 - [ ] Migrating environment scripts 
@@ -29,9 +31,7 @@ A framework to mange stacked data layers like postgresql, redis and elasticsearc
 - [ ] Support Read Replica DBs
 - [ ] Traditional transactions
 - [ ] Archive support
-- [ ] Setup Commitizens
 - [ ] Auto publish releases
-- [ ] Generate Release Notes / Change Logs
 - [ ] i18n (i18next & locize.com)
 - [x] <del>Testing</del>
 - [ ] 100% Code Coverage
