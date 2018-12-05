@@ -21,7 +21,8 @@ A framework to mange stacked data layers like postgresql, redis and elasticsearc
 - [x] <del>Setup Travis CI</del>
 - [x] <del>Setup Coveralls CI (code coverage)</del>
 - [x] <del>Setup Commitizens</del>
-- [X] <del>Generate Release Notes / Change Logs</del>
+- [x] <del>Generate Release Notes / Change Logs</del>
+- [x] <del>Enforce eslint before commit</del>
 - [ ] Export data
 - [ ] Import data
 - [ ] Migrating environment scripts 
