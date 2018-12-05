@@ -1,12 +1,12 @@
 # layerizeJS
 A framework to mange stacked data layers like postgresql, redis and elasticsearch.
 
-| BRANCH  |  BUILDS |  COVERAGE |
-|---|---|---|
-| master | [![Build Status](https://travis-ci.org/LayerizeJS/layerize.svg?branch=develop)](https://travis-ci.org/LayerizeJS/layerize) | [![Coverage Status](https://coveralls.io/repos/github/LayerizeJS/layerize/badge.svg?branch=master)](https://coveralls.io/github/LayerizeJS/layerize?branch=master) |
-| develop |  [![Build Status](https://travis-ci.org/LayerizeJS/layerize.svg?branch=develop)](https://travis-ci.org/LayerizeJS/layerize) | [![Coverage Status](https://coveralls.io/repos/github/LayerizeJS/layerize/badge.svg?branch=develop)](https://coveralls.io/github/LayerizeJS/layerize?branch=master) |
+| BRANCH  |  BUILDS |  COVERAGE | COMMITIZEN |
+|---|---|---|---|
+| master | [![Build Status](https://travis-ci.org/LayerizeJS/layerize.svg?branch=develop)](https://travis-ci.org/LayerizeJS/layerize) | [![Coverage Status](https://coveralls.io/repos/github/LayerizeJS/layerize/badge.svg?branch=master)](https://coveralls.io/github/LayerizeJS/layerize?branch=master) | [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) |
+| develop |  [![Build Status](https://travis-ci.org/LayerizeJS/layerize.svg?branch=develop)](https://travis-ci.org/LayerizeJS/layerize) | [![Coverage Status](https://coveralls.io/repos/github/LayerizeJS/layerize/badge.svg?branch=develop)](https://coveralls.io/github/LayerizeJS/layerize?branch=develop) | [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) |
 
-# TODO
+# TODO - Initial Build
 
 - [x] <del>Auto build and update DB tables</del>
 - [x] <del>Auto build and update ES indexes</del>
@@ -18,6 +18,10 @@ A framework to mange stacked data layers like postgresql, redis and elasticsearc
 - [x] <del>Mass delete (by key)</del>
 - [x] <del>Join-like support (called 'includes')</del>
 - [x] <del>Allow native DB & ES filters to be used as well</del>
+- [x] <del>Setup Travis CI</del>
+- [x] <del>Setup Coveralls CI (code coverage)</del>
+- [x] <del>Setup Commitizens</del>
+- [X] <del>Generate Release Notes / Change Logs</del>
 - [ ] Export data
 - [ ] Import data
 - [ ] Migrating environment scripts 
@@ -27,9 +31,7 @@ A framework to mange stacked data layers like postgresql, redis and elasticsearc
 - [ ] Support Read Replica DBs
 - [ ] Traditional transactions
 - [ ] Archive support
-- [x] <del>Setup Travis CI</del>
-- [ ] Setup Commitizens
-- [ ] Generate Release Notes / Change Logs
+- [ ] Auto publish releases
 - [ ] i18n (i18next & locize.com)
 - [x] <del>Testing</del>
 - [ ] 100% Code Coverage
