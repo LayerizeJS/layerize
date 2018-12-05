@@ -10,7 +10,8 @@
     "test-debug": "DEBUG=layerize* mocha",
     "commit": "git cz",
     "commitmsg": "validate-commit-msg",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "lint": "eslint \"./**/*.js\""
   },
   "config": {
     "commitizen": {
@@ -18,11 +19,11 @@
     }
   },
   "husky": {
-      "hooks": {  
-         "pre-commit": "lint-staged"
-       }
-     },
-     "lint-staged": {
+    "hooks": {  
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
      "*.js": ["eslint --fix", "git add"]
   },
   "repository": {
