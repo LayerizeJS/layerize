@@ -116,6 +116,15 @@ describe('layerize', () => {
 
             }).slow(500).timeout(15000);
 
+            it('should search records with joins defined', async () => {
+
+                let layers = layerize.layers({ schemaName: testSchemaName });
+                let results = await layers.search('users', { fields: 'users.id, user_role.name', sort: 'users.username', filter: ['users.archived:false', 'users.first_name:John'], joins: [ 'LEFT JOIN layerize_test_schema.user_role ON user_role.id = users.user_role_id' ] });
+
+                assert.equal(true, (results.items.length > 0));
+
+            }).slow(500).timeout(15000);
+
             it('should search and return only request fields', async () => {
 
                 let fields = ['id', 'first_name', 'user_role.permissions'];
