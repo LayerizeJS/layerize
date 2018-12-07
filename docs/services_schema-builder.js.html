@@ -1,4 +1,47 @@
-'use strict';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>services/schema-builder.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Base.html">Base</a></li><li><a href="Crud.html">Crud</a><ul class='methods'><li data-type='method'><a href="Crud.html#_delete">_delete</a></li><li data-type='method'><a href="Crud.html#_get">_get</a></li><li data-type='method'><a href="Crud.html#_insert">_insert</a></li><li data-type='method'><a href="Crud.html#_search">_search</a></li><li data-type='method'><a href="Crud.html#_update">_update</a></li><li data-type='method'><a href="Crud.html#delete">delete</a></li><li data-type='method'><a href="Crud.html#get">get</a></li><li data-type='method'><a href="Crud.html#insert">insert</a></li><li data-type='method'><a href="Crud.html#search">search</a></li><li data-type='method'><a href="Crud.html#update">update</a></li></ul></li><li><a href="Export.html">Export</a></li><li><a href="JsonValidator.html">JsonValidator</a></li><li><a href="Layerize.html">Layerize</a><ul class='methods'><li data-type='method'><a href="Layerize.html#.Base">Base</a></li><li data-type='method'><a href="Layerize.html#.Crud">Crud</a></li><li data-type='method'><a href="Layerize.html#.Layers">Layers</a></li><li data-type='method'><a href="Layerize.html#.Schemas">Schemas</a></li><li data-type='method'><a href="Layerize.html#.Tables">Tables</a></li><li data-type='method'><a href="Layerize.html#_buildTables">_buildTables</a></li><li data-type='method'><a href="Layerize.html#_initiateCore">_initiateCore</a></li><li data-type='method'><a href="Layerize.html#initiate">initiate</a></li><li data-type='method'><a href="Layerize.html#install">install</a></li><li data-type='method'><a href="Layerize.html#layers">layers</a></li><li data-type='method'><a href="Layerize.html#loadControlledSchemas">loadControlledSchemas</a></li><li data-type='method'><a href="Layerize.html#loadSchemaListFromDB">loadSchemaListFromDB</a></li><li data-type='method'><a href="Layerize.html#uninstall">uninstall</a></li><li data-type='method'><a href="Layerize.html#updateAll">updateAll</a></li><li data-type='method'><a href="Layerize.html#validateSchemaVersions">validateSchemaVersions</a></li></ul></li><li><a href="Layers.html">Layers</a><ul class='methods'><li data-type='method'><a href="Layers.html#_applyFilters">_applyFilters</a></li><li data-type='method'><a href="Layers.html#_attachListToObject">_attachListToObject</a></li><li data-type='method'><a href="Layers.html#_attachToObject">_attachToObject</a></li><li data-type='method'><a href="Layers.html#_createTransaction">_createTransaction</a></li><li data-type='method'><a href="Layers.html#_dbFilter">_dbFilter</a></li><li data-type='method'><a href="Layers.html#_esFilter">_esFilter</a></li><li data-type='method'><a href="Layers.html#_includes">_includes</a></li><li data-type='method'><a href="Layers.html#_narrowedSchema">_narrowedSchema</a></li><li data-type='method'><a href="Layers.html#_stringToObjectFilters">_stringToObjectFilters</a></li><li data-type='method'><a href="Layers.html#_validate">_validate</a></li><li data-type='method'><a href="Layers.html#_validateFilter">_validateFilter</a></li><li data-type='method'><a href="Layers.html#clearAllTablesCache">clearAllTablesCache</a></li><li data-type='method'><a href="Layers.html#clearRecordCache">clearRecordCache</a></li><li data-type='method'><a href="Layers.html#clearTableCache">clearTableCache</a></li><li data-type='method'><a href="Layers.html#combine">combine</a></li><li data-type='method'><a href="Layers.html#commit">commit</a></li><li data-type='method'><a href="Layers.html#count">count</a></li><li data-type='method'><a href="Layers.html#delete">delete</a></li><li data-type='method'><a href="Layers.html#deleteByFilter">deleteByFilter</a></li><li data-type='method'><a href="Layers.html#deleteMany">deleteMany</a></li><li data-type='method'><a href="Layers.html#get">get</a></li><li data-type='method'><a href="Layers.html#getMany">getMany</a></li><li data-type='method'><a href="Layers.html#insert">insert</a></li><li data-type='method'><a href="Layers.html#insertMany">insertMany</a></li><li data-type='method'><a href="Layers.html#patch">patch</a></li><li data-type='method'><a href="Layers.html#patchByFilter">patchByFilter</a></li><li data-type='method'><a href="Layers.html#patchMany">patchMany</a></li><li data-type='method'><a href="Layers.html#rawCache">rawCache</a></li><li data-type='method'><a href="Layers.html#rawDatabase">rawDatabase</a></li><li data-type='method'><a href="Layers.html#rawSearch">rawSearch</a></li><li data-type='method'><a href="Layers.html#reindexSearch">reindexSearch</a></li><li data-type='method'><a href="Layers.html#rollback">rollback</a></li><li data-type='method'><a href="Layers.html#search">search</a></li><li data-type='method'><a href="Layers.html#transaction">transaction</a></li><li data-type='method'><a href="Layers.html#update">update</a></li><li data-type='method'><a href="Layers.html#updateMany">updateMany</a></li></ul></li><li><a href="SchemaBuilder.html">SchemaBuilder</a><ul class='methods'><li data-type='method'><a href="SchemaBuilder.html#layerize">layerize</a></li><li data-type='method'><a href="SchemaBuilder.html#load">load</a></li></ul></li><li><a href="Schemas.html">Schemas</a><ul class='methods'><li data-type='method'><a href="Schemas.html#_delete">_delete</a></li><li data-type='method'><a href="Schemas.html#_get">_get</a></li><li data-type='method'><a href="Schemas.html#_insert">_insert</a></li><li data-type='method'><a href="Schemas.html#_search">_search</a></li><li data-type='method'><a href="Schemas.html#_update">_update</a></li><li data-type='method'><a href="Schemas.html#delete">delete</a></li><li data-type='method'><a href="Schemas.html#get">get</a></li><li data-type='method'><a href="Schemas.html#insert">insert</a></li><li data-type='method'><a href="Schemas.html#search">search</a></li><li data-type='method'><a href="Schemas.html#update">update</a></li></ul></li><li><a href="Tables.html">Tables</a><ul class='methods'><li data-type='method'><a href="Tables.html#_delete">_delete</a></li><li data-type='method'><a href="Tables.html#_get">_get</a></li><li data-type='method'><a href="Tables.html#_insert">_insert</a></li><li data-type='method'><a href="Tables.html#_search">_search</a></li><li data-type='method'><a href="Tables.html#_update">_update</a></li><li data-type='method'><a href="Tables.html#delete">delete</a></li><li data-type='method'><a href="Tables.html#get">get</a></li><li data-type='method'><a href="Tables.html#insert">insert</a></li><li data-type='method'><a href="Tables.html#search">search</a></li><li data-type='method'><a href="Tables.html#update">update</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">services/schema-builder.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
 const debug = require('debug')('layerize:schemas');
 const glob = require('glob');
@@ -29,7 +72,7 @@ class SchemaBuilder {
     /**
      * loads provided json schema files into Layerize format.
      * @param {string} schemaPattern - a file pattern to schema locations
-     * @returns {Promise<object>} elasticsearch body object
+     * @returns {Promise&lt;object>} elasticsearch body object
      */
     async load (schemaPattern = '') {
 
@@ -49,7 +92,7 @@ class SchemaBuilder {
 
             this.debug(` -- Found ${schemaFiles.length} schema files.`);
 
-            for (let i = 0; i < schemaFiles.length; i++) {
+            for (let i = 0; i &lt; schemaFiles.length; i++) {
 
                 let schema = JSON.parse(fs.readFileSync(schemaFiles[i], 'utf8'));
                 if (schemaFiles[i].indexOf('_layerize.json') > -1) {
@@ -83,7 +126,7 @@ class SchemaBuilder {
                 this.validator.addSchema(arySchemas);
                 this.debug(` -- Loaded ${arySchemas.length} schema files.`);
 
-                for (let i = 0; i < arySchemas.length; i++) {
+                for (let i = 0; i &lt; arySchemas.length; i++) {
 
                     let objSchema = arySchemas[i];
 
@@ -113,7 +156,7 @@ class SchemaBuilder {
     /**
      * loads provided json schema files into Layerize format.
      * @param {object} layerize - a file pattern to schema locations
-     * @returns {Promise<object>} elasticsearch body object
+     * @returns {Promise&lt;object>} elasticsearch body object
      */
     async layerize ({ schemas = {} } = {}) {
 
@@ -129,7 +172,7 @@ class SchemaBuilder {
              */
             let recursive = (schema, { properties = {}, dynamicDefaults = {}, required = [], elasticSearch } = {}) => {
 
-                if (typeof schema.allOf !== 'undefined' && typeof schema.properties !== 'undefined') {
+                if (typeof schema.allOf !== 'undefined' &amp;&amp; typeof schema.properties !== 'undefined') {
 
                     throw new Error('Property name \'properties\' must reside within property \'allOf\' when being used together.');
 
@@ -137,7 +180,7 @@ class SchemaBuilder {
 
                 if (typeof schema.allOf !== 'undefined') {
 
-                    for (let x = 0; x < schema.allOf.length; x++) {
+                    for (let x = 0; x &lt; schema.allOf.length; x++) {
 
                         ({ properties, dynamicDefaults, required, elasticSearch } = recursive(schema.allOf[x], { properties, dynamicDefaults, required, elasticSearch }));
 
@@ -151,7 +194,7 @@ class SchemaBuilder {
 
                     }
 
-                    if (typeof schema.required !== 'undefined' && schema.required.length > 0) {
+                    if (typeof schema.required !== 'undefined' &amp;&amp; schema.required.length > 0) {
 
                         required = required.concat(schema.required);
 
@@ -164,7 +207,7 @@ class SchemaBuilder {
                     }
 
                     let props = Object.keys(schema.properties || {});
-                    for (let x = 0; x < props.length; x++) {
+                    for (let x = 0; x &lt; props.length; x++) {
 
                         properties[props[x]] = schema.properties[props[x]];
 
@@ -193,7 +236,7 @@ class SchemaBuilder {
             };
 
             schemas.raw.sort(objects.sortBy({ name: '$id' }));
-            for (let i = 0; i < schemas.raw.length; i++) {
+            for (let i = 0; i &lt; schemas.raw.length; i++) {
 
                 let schema = schemas.raw[i];
                 let properties = {};
@@ -232,7 +275,7 @@ class SchemaBuilder {
                 }
 
                 let propertyNames = Object.keys(properties);
-                for (let x = 0; x < propertyNames.length; x++) {
+                for (let x = 0; x &lt; propertyNames.length; x++) {
 
                     let propertyName = propertyNames[x];
                     let property = properties[propertyName];
@@ -246,7 +289,7 @@ class SchemaBuilder {
                     };
                     let esType = 'keyword';
 
-                    if (table.primaryKey === '' && column.primary) {
+                    if (table.primaryKey === '' &amp;&amp; column.primary) {
 
                         table.primaryKey = column.name;
 
@@ -284,7 +327,7 @@ class SchemaBuilder {
 
                     }
 
-                    if (typeof property.database !== 'undefined' && typeof property.database.default !== 'undefined') {
+                    if (typeof property.database !== 'undefined' &amp;&amp; typeof property.database.default !== 'undefined') {
 
                         column.default = property.database.default;
 
@@ -319,14 +362,14 @@ class SchemaBuilder {
                         }
 
                         let includeId = property.foreign.reference.table;
-                        if (typeof property.foreign.reference.includeId !== 'undefined' && property.foreign.reference.includeId !== '') {
+                        if (typeof property.foreign.reference.includeId !== 'undefined' &amp;&amp; property.foreign.reference.includeId !== '') {
 
                             includeId = property.foreign.reference.includeId;
 
                         }
 
                         let sourceIncludeId = table.name;
-                        if (typeof property.foreign.source !== 'undefined' && typeof property.foreign.source.includeId !== 'undefined' && property.foreign.source.includeId !== '') {
+                        if (typeof property.foreign.source !== 'undefined' &amp;&amp; typeof property.foreign.source.includeId !== 'undefined' &amp;&amp; property.foreign.source.includeId !== '') {
 
                             sourceIncludeId = property.foreign.source.includeId;
 
@@ -492,7 +535,7 @@ class SchemaBuilder {
                         /**
                          * only add proeprty if elasticsearch is enabled, which 'undefined' equal to enabled:true
                          */
-                        if (typeof property.elasticSearch === 'undefined' || (typeof property.elasticSearch !== 'undefined' && (typeof property.elasticSearch.enabled === 'undefined' || property.elasticSearch.enabled === true))) {
+                        if (typeof property.elasticSearch === 'undefined' || (typeof property.elasticSearch !== 'undefined' &amp;&amp; (typeof property.elasticSearch.enabled === 'undefined' || property.elasticSearch.enabled === true))) {
 
                             table.esEnabled = true;
 
@@ -542,7 +585,7 @@ class SchemaBuilder {
                 }
 
                 // validate required
-                for (let x = 0; x < table.required.length; x++) {
+                for (let x = 0; x &lt; table.required.length; x++) {
 
                     if (typeof table.columns[table.required[x]] === 'undefined') {
 
@@ -579,3 +622,26 @@ class SchemaBuilder {
 }
 
 module.exports = SchemaBuilder;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Dec 07 2018 15:14:50 GMT-0500 (EST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>

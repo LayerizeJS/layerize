@@ -1,4 +1,47 @@
-'use strict';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>layers.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Base.html">Base</a></li><li><a href="Crud.html">Crud</a><ul class='methods'><li data-type='method'><a href="Crud.html#_delete">_delete</a></li><li data-type='method'><a href="Crud.html#_get">_get</a></li><li data-type='method'><a href="Crud.html#_insert">_insert</a></li><li data-type='method'><a href="Crud.html#_search">_search</a></li><li data-type='method'><a href="Crud.html#_update">_update</a></li><li data-type='method'><a href="Crud.html#delete">delete</a></li><li data-type='method'><a href="Crud.html#get">get</a></li><li data-type='method'><a href="Crud.html#insert">insert</a></li><li data-type='method'><a href="Crud.html#search">search</a></li><li data-type='method'><a href="Crud.html#update">update</a></li></ul></li><li><a href="Export.html">Export</a></li><li><a href="Layers.html">Layers</a><ul class='methods'><li data-type='method'><a href="Layers.html#_applyFilters">_applyFilters</a></li><li data-type='method'><a href="Layers.html#_attachListToObject">_attachListToObject</a></li><li data-type='method'><a href="Layers.html#_attachToObject">_attachToObject</a></li><li data-type='method'><a href="Layers.html#_createTransaction">_createTransaction</a></li><li data-type='method'><a href="Layers.html#_dbFilter">_dbFilter</a></li><li data-type='method'><a href="Layers.html#_esFilter">_esFilter</a></li><li data-type='method'><a href="Layers.html#_includes">_includes</a></li><li data-type='method'><a href="Layers.html#_narrowedSchema">_narrowedSchema</a></li><li data-type='method'><a href="Layers.html#_stringToObjectFilters">_stringToObjectFilters</a></li><li data-type='method'><a href="Layers.html#_validate">_validate</a></li><li data-type='method'><a href="Layers.html#_validateFilter">_validateFilter</a></li><li data-type='method'><a href="Layers.html#clearAllTablesCache">clearAllTablesCache</a></li><li data-type='method'><a href="Layers.html#clearRecordCache">clearRecordCache</a></li><li data-type='method'><a href="Layers.html#clearTableCache">clearTableCache</a></li><li data-type='method'><a href="Layers.html#combine">combine</a></li><li data-type='method'><a href="Layers.html#commit">commit</a></li><li data-type='method'><a href="Layers.html#count">count</a></li><li data-type='method'><a href="Layers.html#delete">delete</a></li><li data-type='method'><a href="Layers.html#deleteByFilter">deleteByFilter</a></li><li data-type='method'><a href="Layers.html#deleteMany">deleteMany</a></li><li data-type='method'><a href="Layers.html#get">get</a></li><li data-type='method'><a href="Layers.html#getMany">getMany</a></li><li data-type='method'><a href="Layers.html#insert">insert</a></li><li data-type='method'><a href="Layers.html#insertMany">insertMany</a></li><li data-type='method'><a href="Layers.html#patch">patch</a></li><li data-type='method'><a href="Layers.html#patchByFilter">patchByFilter</a></li><li data-type='method'><a href="Layers.html#patchMany">patchMany</a></li><li data-type='method'><a href="Layers.html#rawCache">rawCache</a></li><li data-type='method'><a href="Layers.html#rawDatabase">rawDatabase</a></li><li data-type='method'><a href="Layers.html#rawSearch">rawSearch</a></li><li data-type='method'><a href="Layers.html#reindexSearch">reindexSearch</a></li><li data-type='method'><a href="Layers.html#rollback">rollback</a></li><li data-type='method'><a href="Layers.html#search">search</a></li><li data-type='method'><a href="Layers.html#transaction">transaction</a></li><li data-type='method'><a href="Layers.html#update">update</a></li><li data-type='method'><a href="Layers.html#updateMany">updateMany</a></li></ul></li><li><a href="Schemas.html">Schemas</a><ul class='methods'><li data-type='method'><a href="Schemas.html#_delete">_delete</a></li><li data-type='method'><a href="Schemas.html#_get">_get</a></li><li data-type='method'><a href="Schemas.html#_insert">_insert</a></li><li data-type='method'><a href="Schemas.html#_search">_search</a></li><li data-type='method'><a href="Schemas.html#_update">_update</a></li><li data-type='method'><a href="Schemas.html#delete">delete</a></li><li data-type='method'><a href="Schemas.html#get">get</a></li><li data-type='method'><a href="Schemas.html#insert">insert</a></li><li data-type='method'><a href="Schemas.html#search">search</a></li><li data-type='method'><a href="Schemas.html#update">update</a></li></ul></li><li><a href="Tables.html">Tables</a><ul class='methods'><li data-type='method'><a href="Tables.html#_delete">_delete</a></li><li data-type='method'><a href="Tables.html#_get">_get</a></li><li data-type='method'><a href="Tables.html#_insert">_insert</a></li><li data-type='method'><a href="Tables.html#_search">_search</a></li><li data-type='method'><a href="Tables.html#_update">_update</a></li><li data-type='method'><a href="Tables.html#delete">delete</a></li><li data-type='method'><a href="Tables.html#get">get</a></li><li data-type='method'><a href="Tables.html#insert">insert</a></li><li data-type='method'><a href="Tables.html#search">search</a></li><li data-type='method'><a href="Tables.html#update">update</a></li></ul></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">layers.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
 
 const debug = require('debug')('layerize:layers');
 const extend = require('extend');
@@ -178,7 +221,7 @@ class Layers {
      * Clears all tables caches
      * @example
      * let response = await layer.clearAllTablesCache();
-     * @returns {Promise<success>} { success: true }
+     * @returns {Promise&lt;success>} { success: true }
      * @throws {Error} "clearAllTablesCache() can not be called inside a transaction"
      */
     async clearAllTablesCache () {
@@ -209,7 +252,7 @@ class Layers {
      * @param {string} key - primary key of the record
      * @example
      * let response = await layer.clearRecordCache('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
-     * @returns {Promise<success>} { success: true }
+     * @returns {Promise&lt;success>} { success: true }
      * @throws {Error} "clearRecordCache() can not be called inside a transaction"
      */
     async clearRecordCache (table = '', key = '') {
@@ -253,7 +296,7 @@ class Layers {
      * @param {string} table - name of the table
      * @example
      * let transactions = await layer.clearTableCache('users');
-     * @returns {Promise<success>} { success: true }
+     * @returns {Promise&lt;success>} { success: true }
      * @throws {Error} "clearTableCache() can not be called inside a transaction"
      */
     async clearTableCache (table = '') {
@@ -333,7 +376,7 @@ class Layers {
      * @param {object=} options - available options
      * @param {object=} [options.transactions=[]] - array of transactions to be combined in
      * @param {boolean=} [options.autoRollback=true] - auto rollback if commit fails
-     * @returns {Promise<success>} { success: true }
+     * @returns {Promise&lt;success>} { success: true }
      * @example
      * let response = await layer.commit();
      * @throws {Error} "commit() can only be called inside a transaction"
@@ -363,7 +406,7 @@ class Layers {
                 let populateToCache = [];
                 let removeFromES = [];
 
-                for (let i = 0; i < this.transactions.length; i++) {
+                for (let i = 0; i &lt; this.transactions.length; i++) {
 
                     let statement = this.transactions[i];
 
@@ -417,7 +460,7 @@ class Layers {
 
                     if (statement.removeFromCache) {
 
-                        for (let x = 0; x < result.rows.length; x++) {
+                        for (let x = 0; x &lt; result.rows.length; x++) {
 
                             let key = result.row[statement.primaryKey];
                             statement.cache.push(this.cache.key(this.cacheKey, statement.table, key));
@@ -426,7 +469,7 @@ class Layers {
 
                     }
 
-                    if (typeof statement !== 'undefined' && Array.isArray(statement.cache) && statement.cache.length > 0) {
+                    if (typeof statement !== 'undefined' &amp;&amp; Array.isArray(statement.cache) &amp;&amp; statement.cache.length > 0) {
 
                         cacheToDelete = cacheToDelete.concat(statement.cache);
 
@@ -446,11 +489,11 @@ class Layers {
 
                     if (removeFromES.length > 0) {
 
-                        for (let i = 0; i < removeFromES.length; i++) {
+                        for (let i = 0; i &lt; removeFromES.length; i++) {
 
                             let obj = removeFromES[i];
 
-                            for (let x = 0; x < obj.keys.length; x++) {
+                            for (let x = 0; x &lt; obj.keys.length; x++) {
 
                                 let key = obj.keys[x];
                                 this.esTransaction.push({ delete: { _index: `${this.schemaName}~${obj.table}`, _type: 'index', _id: key } });
@@ -463,7 +506,7 @@ class Layers {
 
                     if (populateToES.length > 0) {
 
-                        for (let i = 0; i < populateToES.length; i++) {
+                        for (let i = 0; i &lt; populateToES.length; i++) {
 
                             let obj = populateToES[i];
 
@@ -473,7 +516,7 @@ class Layers {
 
                             }
 
-                            for (let x = 0; x < obj.items.length; x++) {
+                            for (let x = 0; x &lt; obj.items.length; x++) {
 
                                 let result = obj.items[x];
                                 this.esTransaction.push({ index: { _index: `${this.schemaName}~${obj.table}`, _type: 'index', _id: result[obj.primaryKey] } });
@@ -488,11 +531,11 @@ class Layers {
                     if (populateToCache.length > 0) {
 
                         let cachebulk = [];
-                        for (let i = 0; i < populateToCache.length; i++) {
+                        for (let i = 0; i &lt; populateToCache.length; i++) {
 
                             let obj = populateToCache[i];
 
-                            for (let x = 0; x < obj.items.length; x++) {
+                            for (let x = 0; x &lt; obj.items.length; x++) {
 
                                 let result = obj.items[x];
 
@@ -560,7 +603,7 @@ class Layers {
      * @param {boolean=} [options.estimated=false] - when false it uses reltuples::bigint
      * @example
      * let totalCount = await layer.count('users');
-     * @returns {Promise<number>} A number representing the count. Example: 25
+     * @returns {Promise&lt;number>} A number representing the count. Example: 25
      */
     async count (table = '', { fields = '*', filter = '', estimated = false } = {}) {
 
@@ -607,8 +650,8 @@ class Layers {
      * Deletes a single records from the data layer
      * @param {string} table - name of the table
      * @param {string} key - primary key of the record
-     * @returns {Promise<objSQL>} If the instance of the layer IS a transaction, then it will return objSQL.
-     * @returns {Promise<success>} If the instance of the layer IS NOT a transaction, then it will return a success object.
+     * @returns {Promise&lt;objSQL>} If the instance of the layer IS a transaction, then it will return objSQL.
+     * @returns {Promise&lt;success>} If the instance of the layer IS NOT a transaction, then it will return a success object.
      */
     async delete (table = '', key = '') {
 
@@ -629,8 +672,8 @@ class Layers {
      * Deletes a single or mulitple records from the data layer that is meets the filter restraint
      * @param {string} table - name of the table
      * @param {string|array|object} filter - layerize filter syntax
-     * @returns {Promise<objSQL>} If the instance of the layer IS a transaction, then it will return objSQL.
-     * @returns {Promise<success>} If the instance of the layer IS NOT a transaction, then it will return a success object.
+     * @returns {Promise&lt;objSQL>} If the instance of the layer IS a transaction, then it will return objSQL.
+     * @returns {Promise&lt;success>} If the instance of the layer IS NOT a transaction, then it will return a success object.
      */
     async deleteByFilter (table = '', filter = '') {
 
@@ -661,7 +704,7 @@ class Layers {
                 let esTransaction = [];
                 let cacheKeys = [];
 
-                for (let i = 0; i < keys.length; i++) {
+                for (let i = 0; i &lt; keys.length; i++) {
 
                     let key = keys[i];
 
@@ -707,8 +750,8 @@ class Layers {
      * Deletes a many records by key from the data layer
      * @param {string} table - name of the table
      * @param {array} keys - primary key of the record
-     * @returns {Promise<objSQL>} If the instance of the layer IS a transaction, then it will return objSQL.
-     * @returns {Promise<success>} If the instance of the layer IS NOT a transaction, then it will return a success object.
+     * @returns {Promise&lt;objSQL>} If the instance of the layer IS a transaction, then it will return objSQL.
+     * @returns {Promise&lt;success>} If the instance of the layer IS NOT a transaction, then it will return a success object.
      */
     async deleteMany (table = '', keys = []) {
 
@@ -722,7 +765,7 @@ class Layers {
             let cacheKeys = [];
             let esTransaction = [];
 
-            for (let i = 0; i < keys.length; i++) {
+            for (let i = 0; i &lt; keys.length; i++) {
 
                 let key = keys[i];
                 cacheKeys.push(this.cache.key(this.cacheKey, table, key));
@@ -777,7 +820,7 @@ class Layers {
      * @param {string|array} [options.fields=*] - fields to be returned
      * @param {string|array} [options.includes=''] - adds other records into return object
      * @param {boolean} [options.forUpdate=false] - will lock record for updating
-     * @returns {Promise<object>} return the record object
+     * @returns {Promise&lt;object>} return the record object
      */
     async get (table = '', key = '', { fields = '', includes = '', forUpdate = false } = {}) {
 
@@ -811,7 +854,7 @@ class Layers {
      * @param {string|array} [options.fields=*] - fields to be returned
      * @param {string|array} [options.includes=''] - adds other records into return object
      * @param {boolean} [options.forUpdate=false] - will lock record for updating
-     * @returns {Promise<array>} return an array of record objects
+     * @returns {Promise&lt;array>} return an array of record objects
      */
     async getMany (table = '', keys = [], { fields = '', includes = '', forUpdate = false } = {}) {
 
@@ -829,7 +872,7 @@ class Layers {
 
                 }
 
-                for (let i = 0; i < keys.length; i++) {
+                for (let i = 0; i &lt; keys.length; i++) {
 
                     let key = keys[i];
                     activeLocks.push(await setLock(this.cache.key(this.lockKey, key), this.lockTimeoutMilliseconds));
@@ -839,7 +882,7 @@ class Layers {
             }
 
             let cacheKeys = [];
-            for (let i = 0; i < keys.length; i++) {
+            for (let i = 0; i &lt; keys.length; i++) {
 
                 let key = keys[i];
                 cacheKeys.push(this.cache.key(this.cacheKey, table, key));
@@ -851,7 +894,7 @@ class Layers {
             let notFoundInCache = [];
             let notFoundMap = {};
 
-            for (let i = 0; i < results.length; i++) {
+            for (let i = 0; i &lt; results.length; i++) {
 
                 let result = results[i];
                 if (result === null) {
@@ -882,7 +925,7 @@ class Layers {
                 } else {
 
                     let cachebulk = [];
-                    for (let i = 0; i < dbResults.length; i++) {
+                    for (let i = 0; i &lt; dbResults.length; i++) {
 
                         let item = dbResults[i];
 
@@ -900,7 +943,7 @@ class Layers {
                 }
 
                 let stillNotFound = [];
-                for (let i = 0; i < results.length; i++) {
+                for (let i = 0; i &lt; results.length; i++) {
 
                     let result = results[i];
                     if (result === null) {
@@ -944,9 +987,9 @@ class Layers {
      * @param {string|array} [options.fields=*] - fields to be returned
      * @param {array} [options.ignoreReadOnly=[]] - will ignore the readOnly restricting on those fields
      * @param {boolean} [options.returnRecord=false] - will return records after inserting
-     * @returns {Promise<objSQL>} If the instance of the layer IS a transaction, then it will return objSQL.
-     * @returns {Promise<object>} If the instance of the layer IS NOT a transaction and returnRecord is 'true', then it will return the record object.
-     * @returns {Promise<success>} If the instance of the layer IS NOT a transaction and returnRecord is 'false', then it will return a success object.
+     * @returns {Promise&lt;objSQL>} If the instance of the layer IS a transaction, then it will return objSQL.
+     * @returns {Promise&lt;object>} If the instance of the layer IS NOT a transaction and returnRecord is 'true', then it will return the record object.
+     * @returns {Promise&lt;success>} If the instance of the layer IS NOT a transaction and returnRecord is 'false', then it will return a success object.
      * @throws {Error} The 'table' parameter is required when doing an insert() or insertMany().
      * @throws {Error} The 'data' parameter is required when doing an insert() or insertMany().
      */
@@ -989,9 +1032,9 @@ class Layers {
      * @param {string|array} [options.fields=*] - fields to be returned
      * @param {array} [options.ignoreReadOnly=[]] - will ignore the readOnly restricting on those fields
      * @param {boolean} [options.returnRecords=false] - will return new record, if not a transaction
-     * @returns {Promise<objSQL>} If layer IS a transaction, then it will return objSQL
-     * @returns {Promise<object>} If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
-     * @returns {Promise<success>} If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
+     * @returns {Promise&lt;objSQL>} If layer IS a transaction, then it will return objSQL
+     * @returns {Promise&lt;object>} If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
+     * @returns {Promise&lt;success>} If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
      * @throws {Error} The 'table' parameter is required when doing an insert() or insertMany().
      * @throws {Error} The 'data' parameter is required when doing an insert() or insertMany().
      */
@@ -1014,7 +1057,7 @@ class Layers {
 
             const schema = this.schemas.layerize[table];
 
-            for (let i = 0; i < data.length; i++) {
+            for (let i = 0; i &lt; data.length; i++) {
 
                 ({ data: data[i] } = await this._validate({ table, data: data[i], ignoreReadOnly }));
 
@@ -1071,9 +1114,9 @@ class Layers {
      * @param {array} [options.ignoreReadOnly=[]] - will ignore the readOnly restricting on those fields
      * @param {boolean} [options.returnRecords=false] - will return new record, if not a transaction
      * @param {string|array} [options.includes=''] - adds other records into return object
-     * @returns {Promise<objSQL>} If layer IS a transaction, then it will return objSQL
-     * @returns {Promise<object>} If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
-     * @returns {Promise<success>} If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
+     * @returns {Promise&lt;objSQL>} If layer IS a transaction, then it will return objSQL
+     * @returns {Promise&lt;object>} If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
+     * @returns {Promise&lt;success>} If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
      * @throws {Error} The 'table' parameter is required when doing an patch().
      * @throws {Error} The 'key' parameter is required when doing an patch().
      * @throws {Error} The 'data' parameter is required when doing an patch().
@@ -1107,7 +1150,7 @@ class Layers {
 
             ({ data } = await this._validate({ table, data, ignoreReadOnly, schema: narrowedSchema }));
 
-            for (let i = 0; i < schema.timestamps.length; i++) {
+            for (let i = 0; i &lt; schema.timestamps.length; i++) {
 
                 let column = schema.timestamps[i];
                 data[column.name] = 'now()';
@@ -1164,8 +1207,8 @@ class Layers {
      * @param {object} data - the data being patched
      * @param {object=} options - available options
      * @param {array} [options.ignoreReadOnly=[]] - will ignore the readOnly restricting on those fields
-     * @returns {Promise<objSQL>} If layer IS a transaction, then it will return objSQL
-     * @returns {Promise<success>} If layer IS NOT a transaction, then it will return a success object
+     * @returns {Promise&lt;objSQL>} If layer IS a transaction, then it will return objSQL
+     * @returns {Promise&lt;success>} If layer IS NOT a transaction, then it will return a success object
      */
     async patchByFilter (table = '', filter = '', data = {}, { ignoreReadOnly = [] } = {}) {
 
@@ -1207,7 +1250,7 @@ class Layers {
 
                     let esTransaction = [];
 
-                    for (let x = 0; x < items.length; x++) {
+                    for (let x = 0; x &lt; items.length; x++) {
 
                         let item = items[x];
                         esTransaction.push({ index: { _index: `${this.schemaName}~${table}`, _type: 'index', _id: item[schema.primaryKey] } });
@@ -1234,7 +1277,7 @@ class Layers {
 
                 } else {
 
-                    for (let x = 0; x < items.length; x++) {
+                    for (let x = 0; x &lt; items.length; x++) {
 
                         let item = items[x];
                         cachebulk.push({
@@ -1273,9 +1316,9 @@ class Layers {
      * @param {array} [options.ignoreReadOnly=[]] - will ignore the readOnly restricting on those fields
      * @param {boolean} [options.returnRecords=false] - will return new record, if not a transaction
      * @param {string|array} [options.includes=''] - adds other records into return object
-     * @returns {Promise<objSQL>} If layer IS a transaction, then it will return objSQL
-     * @returns {Promise<array>} If layer IS NOT a transaction and returnRecords is 'true', then it will return an array of reocrd objects
-     * @returns {Promise<success>} If layer IS NOT a transaction and returnRecords is 'false', then it will return a success object
+     * @returns {Promise&lt;objSQL>} If layer IS a transaction, then it will return objSQL
+     * @returns {Promise&lt;array>} If layer IS NOT a transaction and returnRecords is 'true', then it will return an array of reocrd objects
+     * @returns {Promise&lt;success>} If layer IS NOT a transaction and returnRecords is 'false', then it will return a success object
      */
     async patchMany (table = '', data = [], { returnRecords = false, ignoreReadOnly = [], fields = '', includes = '' } = {}) {
 
@@ -1301,7 +1344,7 @@ class Layers {
             let keys = [];
             let statements = [];
             let schemaMap = {};
-            for (let i = 0; i < data.length; i++) {
+            for (let i = 0; i &lt; data.length; i++) {
 
                 let item = data[i];
 
@@ -1332,7 +1375,7 @@ class Layers {
                 ({ data: item } = await this._validate({ table, data: item, ignoreReadOnly, schema: schemaMap[hash] }));
 
                 // update timestamps
-                for (let i = 0; i < schema.timestamps.length; i++) {
+                for (let i = 0; i &lt; schema.timestamps.length; i++) {
 
                     let column = schema.timestamps[i];
                     item[column.name] = 'now()';
@@ -1400,8 +1443,8 @@ class Layers {
     /**
      * Access to the underlining database service
      * @param {string} sqlString - raw sql string
-     * @returns {Promise<objSQL>} If layer IS a transaction, then it will return objSQL
-     * @returns {Promise<sqlResults>} If layer IS NOT a transaction and returnRecords is 'false', then it will return sql results object
+     * @returns {Promise&lt;objSQL>} If layer IS a transaction, then it will return objSQL
+     * @returns {Promise&lt;sqlResults>} If layer IS NOT a transaction and returnRecords is 'false', then it will return sql results object
      */
     async rawDatabase (sqlString = '') {
 
@@ -1413,7 +1456,7 @@ class Layers {
             /**
              * if it is a transaction and also not a SELECT statement then return the SQL string statement
              */
-            if (this.isTransaction && sqlString.trim().toUpperCase().indexOf('SELECT') !== 0) {
+            if (this.isTransaction &amp;&amp; sqlString.trim().toUpperCase().indexOf('SELECT') !== 0) {
 
                 let objSQL = statement.toSQL();
                 this.transactions.push(objSQL);
@@ -1494,7 +1537,7 @@ class Layers {
 
     /**
      * Rollbacks the current transaction
-     * @returns {Promise<success>} return a success object
+     * @returns {Promise&lt;success>} return a success object
      * @throws {Error} rollback() can not be called inside a transaction
      */
     async rollback () {
@@ -1538,7 +1581,7 @@ class Layers {
      * @param {number} [options.offset=0] - the offset of cursor
      * @param {boolean} [options.type=auto] - which datasource to use ['db','es','auto']
      * @param {string|array} [options.includes=''] - adds other records into return object
-     * @returns {Promise<results>} returns standard results object
+     * @returns {Promise&lt;results>} returns standard results object
      */
     async search (table = '', {
         filter = '',
@@ -1565,9 +1608,9 @@ class Layers {
             // clean arg data
             sort = (!sort) ? schema.primaryKey : sort;
             offset = (!offset) ? 0 : Math.floor(Math.abs(offset));
-            limit = (!limit && limit !== 0) ? 50 : Math.floor(Math.abs(limit));
+            limit = (!limit &amp;&amp; limit !== 0) ? 50 : Math.floor(Math.abs(limit));
 
-            if (typeof joins === 'string' && joins !== '') {
+            if (typeof joins === 'string' &amp;&amp; joins !== '') {
 
                 joins = [ joins ];
 
@@ -1577,13 +1620,13 @@ class Layers {
 
             }
 
-            if (joins.length > 0 && type === 'es') {
+            if (joins.length > 0 &amp;&amp; type === 'es') {
 
                 throw new Error('joins can not be used when type=\'es\'.');
 
             }
 
-            if (schema.esEnabled && (type === 'auto' || type === 'es') && joins.length === 0) {
+            if (schema.esEnabled &amp;&amp; (type === 'auto' || type === 'es') &amp;&amp; joins.length === 0) {
 
                 let es = {
                     index: `${this.schemaName}~${table}`,
@@ -1605,7 +1648,7 @@ class Layers {
                 total = esResponse.hits.total;
 
                 let lngHits = esResponse.hits.hits.length;
-                for (let i = 0;i < lngHits;i++) {
+                for (let i = 0;i &lt; lngHits;i++) {
 
                     results.push(esResponse.hits.hits[i]._source);
 
@@ -1622,7 +1665,7 @@ class Layers {
                 // statement = this._applyFilters(statement, { table, filter });
 
                 // added joins if provided
-                for (let i = 0; i < joins.length; i++) {
+                for (let i = 0; i &lt; joins.length; i++) {
 
                     statement.joinRaw(joins[i]);
 
@@ -1733,9 +1776,9 @@ class Layers {
      * @param {array} [options.ignoreReadOnly=[]] - will ignore the readOnly restricting on those fields
      * @param {boolean} [options.returnRecord=false] - will lock records for updating
      * @param {string|array} [options.includes=''] - adds other records into return object
-     * @returns {Promise<objSQL>} If layer IS a transaction, then it will return objSQL
-     * @returns {Promise<object>} If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
-     * @returns {Promise<success>} If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
+     * @returns {Promise&lt;objSQL>} If layer IS a transaction, then it will return objSQL
+     * @returns {Promise&lt;object>} If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
+     * @returns {Promise&lt;success>} If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
      */
     async update (table = '', key = '', data = {}, { returnRecord = false, ignoreReadOnly = [], fields = '', includes = '' } = {}) {
 
@@ -1746,7 +1789,7 @@ class Layers {
 
             ({ data } = await this._validate({ table, data, ignoreReadOnly }));
 
-            for (let i = 0; i < schema.timestamps.length; i++) {
+            for (let i = 0; i &lt; schema.timestamps.length; i++) {
 
                 let column = schema.timestamps[i];
                 data[column.name] = 'now()';
@@ -1805,9 +1848,9 @@ class Layers {
      * @param {array} [options.ignoreReadOnly=[]] - will ignore the readOnly restricting on those fields
      * @param {boolean} [options.returnRecords=false] - will return new record, if not a transaction
      * @param {string|array} [options.includes=''] - adds other records into return object
-     * @returns {Promise<objSQL>} If layer IS a transaction, then it will return objSQL
-     * @returns {Promise<array>} If layer IS NOT a transaction and returnRecord is 'true', then it will return the array of reocrd objects
-     * @returns {Promise<success>} If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
+     * @returns {Promise&lt;objSQL>} If layer IS a transaction, then it will return objSQL
+     * @returns {Promise&lt;array>} If layer IS NOT a transaction and returnRecord is 'true', then it will return the array of reocrd objects
+     * @returns {Promise&lt;success>} If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
      */
     async updateMany (table = '', data = [], { returnRecords = false, ignoreReadOnly = [], fields = '', includes = '' } = {}) {
 
@@ -1829,7 +1872,7 @@ class Layers {
 
             let keys = [];
             let statements = [];
-            for (let i = 0; i < data.length; i++) {
+            for (let i = 0; i &lt; data.length; i++) {
 
                 let item = data[i];
 
@@ -1849,7 +1892,7 @@ class Layers {
                 ({ data: item } = await this._validate({ table, data: item, ignoreReadOnly }));
 
                 // update timestamps
-                for (let i = 0; i < schema.timestamps.length; i++) {
+                for (let i = 0; i &lt; schema.timestamps.length; i++) {
 
                     let column = schema.timestamps[i];
                     item[column.name] = 'now()';
@@ -1908,7 +1951,7 @@ class Layers {
      * @param {string} [options.table=''] - name of the table
      * @param {string} [options.includeId=''] - name of the table
      * @param {array} [options.results=[]] - an array of data that is requesting to be extended
-     * @returns {Promise<array>} The extended passed in results
+     * @returns {Promise&lt;array>} The extended passed in results
      * @throws {Error} Unable to find include relationship between '{table}' and '{includeId}'.
      */
     async _attachListToObject ({ table = '', includeId = '', results = [] } = {}) {
@@ -1932,7 +1975,7 @@ class Layers {
                 let attachKey = reference.column;
                 let filter = [];
 
-                for (let i = 0; i < results.length; i++) {
+                for (let i = 0; i &lt; results.length; i++) {
 
                     let result = results[i];
 
@@ -1958,12 +2001,12 @@ class Layers {
 
                 let list = await this.search(propertyTable, { filter, limit: 0 });
 
-                for (let x = 0; x < list.items.length; x++) {
+                for (let x = 0; x &lt; list.items.length; x++) {
 
                     let item = list.items[x];
 
                     let locations = objDataMap[item[property]];
-                    for (let j = 0; j < locations.length; j++) {
+                    for (let j = 0; j &lt; locations.length; j++) {
 
                         let location = locations[j];
                         results[location][includeId].push(item);
@@ -1992,7 +2035,7 @@ class Layers {
      * @param {string} [options.table=''] - name of the table
      * @param {string} [options.includeId=''] - name of the table
      * @param {array} [options.results=[]] - an array of data that is requesting to be extended
-     * @returns {Promise<array>} The extended passed in results
+     * @returns {Promise&lt;array>} The extended passed in results
      * @throws {Error} Unable to find include relationship between '{table}' and '{includeId}'.
      */
     async _attachToObject ({ table = '', includeId = '', results = [] } = {}) {
@@ -2015,7 +2058,7 @@ class Layers {
                 let attachTable = schema.includes[includeId].table;
                 let attachKey = schema.includes[includeId].column;
 
-                for (let i = 0; i < results.length; i++) {
+                for (let i = 0; i &lt; results.length; i++) {
 
                     let result = results[i];
 
@@ -2041,12 +2084,12 @@ class Layers {
                 let keys = Object.keys(objDataMap);
                 let items = await this.getMany(attachTable, keys);
 
-                for (let x = 0; x < items.length; x++) {
+                for (let x = 0; x &lt; items.length; x++) {
 
                     let item = items[x];
 
                     let locations = objDataMap[item[attachKey]];
-                    for (let j = 0; j < locations.length; j++) {
+                    for (let j = 0; j &lt; locations.length; j++) {
 
                         let location = locations[j];
                         results[location][includeId] = item;
@@ -2084,7 +2127,7 @@ class Layers {
         try {
 
             let isEsStatement = false;
-            if (typeof statement.index !== 'undefined' && typeof statement.type !== 'undefined' && typeof statement.body !== 'undefined') {
+            if (typeof statement.index !== 'undefined' &amp;&amp; typeof statement.type !== 'undefined' &amp;&amp; typeof statement.body !== 'undefined') {
 
                 isEsStatement = true;
 
@@ -2211,7 +2254,7 @@ class Layers {
             if (lngFilters > 0) {
 
                 let cntArg = 0;
-                for (let i = 0; i < lngFilters; i++) {
+                for (let i = 0; i &lt; lngFilters; i++) {
 
                     let filter = objFilter.structure[i];
 
@@ -2278,13 +2321,13 @@ class Layers {
                                 objArgName = objArg.name;
 
                         }
-                        if (objArg.caseInsensitive && !bolIsJsonbSearch) {
+                        if (objArg.caseInsensitive &amp;&amp; !bolIsJsonbSearch) {
 
                             objArgName = `lower(${objArgName})`;
                             objArgValue = objArgValue.toLowerCase();
 
                         }
-                        if (objArg.blankToNull && (objArg.value === '' || (objArg.value).toLowerCase() === 'null') && !bolIsJsonbSearch) {
+                        if (objArg.blankToNull &amp;&amp; (objArg.value === '' || (objArg.value).toLowerCase() === 'null') &amp;&amp; !bolIsJsonbSearch) {
 
                             switch (objArg.sep) {
 
@@ -2309,14 +2352,14 @@ class Layers {
                             case '>>':
                                 strArg = `${objArgName} > '${objArgValue}'`;
                                 break;
-                            case '<<':
-                                strArg = `${objArgName} < '${objArgValue}'` ;
+                            case '&lt;&lt;':
+                                strArg = `${objArgName} &lt; '${objArgValue}'` ;
                                 break;
                             case '>=':
                                 strArg = `${objArgName} >= '${objArgValue}'`;
                                 break;
-                            case '<=':
-                                strArg = `${objArgName} <= '${objArgValue}'`;
+                            case '&lt;=':
+                                strArg = `${objArgName} &lt;= '${objArgValue}'`;
                                 break;
                             case '==':
                                 strArg = `${objArgName} = '${objArgValue}'`;
@@ -2355,7 +2398,7 @@ class Layers {
                         let strOp = '';
                         switch (filter) {
 
-                            case '&&':
+                            case '&amp;&amp;':
                                 strOp = ' AND ';
                                 break;
                             case '||':
@@ -2407,7 +2450,7 @@ class Layers {
                 let structure = [];
                 let lngAry = ary.length;
                 let x = 0;
-                for (x = 0;x < lngAry;x++) {
+                for (x = 0;x &lt; lngAry;x++) {
 
                     let item = ary[x];
                     if (item === ')') {
@@ -2449,7 +2492,7 @@ class Layers {
 
                 let aryFilter = [];
                 let lngAry = ary.length;
-                for (let i = 0;i < lngAry;i++) {
+                for (let i = 0;i &lt; lngAry;i++) {
 
                     let filter = ary[i];
                     if (Array.isArray(filter)) {
@@ -2508,7 +2551,7 @@ class Layers {
                                     }
                                     aryFilter.push(objArgument);
                                     break;
-                                case '<<':
+                                case '&lt;&lt;':
                                     if (aryArgValue.length > 1) {
 
                                         objArgument = { bool: { must: [] } };
@@ -2556,7 +2599,7 @@ class Layers {
                                     }
                                     aryFilter.push(objArgument);
                                     break;
-                                case '<=':
+                                case '&lt;=':
                                     if (aryArgValue.length > 1) {
 
                                         objArgument = { bool: { must: [] } };
@@ -2704,7 +2747,7 @@ class Layers {
 
                     switch (ary[1]) {
 
-                        case '&&':
+                        case '&amp;&amp;':
                             obj.bool.must = aryFilter;
                             break;
                         case '||':
@@ -2746,7 +2789,7 @@ class Layers {
      * @param {string} options.table - name of the table
      * @param {array} [options.results=[]] - an array of data that is requesting to be extended
      * @param {string|array} [options.includes=''] - an array or comma seperate string of includes
-     * @returns {Promise<array>} the array of results
+     * @returns {Promise&lt;array>} the array of results
      * @throws {Error} Unable to find include relationship between '{table}' and '{includeId}'.
      */
     async _includes ({ table = '', results = [], includes = '' } = {}) {
@@ -2768,11 +2811,11 @@ class Layers {
 
             }
 
-            for (let i = 0; i < includes.length; i++) {
+            for (let i = 0; i &lt; includes.length; i++) {
 
                 let includeId = includes[i];
 
-                if (typeof this.schemas.includes[table].source[includeId] === 'undefined' && typeof this.schemas.includes[table].referenced[includeId] === 'undefined') {
+                if (typeof this.schemas.includes[table].source[includeId] === 'undefined' &amp;&amp; typeof this.schemas.includes[table].referenced[includeId] === 'undefined') {
 
                     throw new Error(`Unable to find include relationship between '${table}' and '${includeId}'.`);
 
@@ -2823,7 +2866,7 @@ class Layers {
                 required: []
             };
 
-            for (let i = 0; i < properties.length; i++) {
+            for (let i = 0; i &lt; properties.length; i++) {
 
                 let property = properties[i];
                 narrowedSchema.properties[property] = schema.properties[property];
@@ -2879,9 +2922,9 @@ class Layers {
             }
         };
 
-        if (typeof filter === 'object' && !Array.isArray(filter)) {
+        if (typeof filter === 'object' &amp;&amp; !Array.isArray(filter)) {
 
-            if (typeof filter.native === 'boolean' && filter.native === true && (typeof filter.where === 'string' || typeof filter.query === 'object')) {
+            if (typeof filter.native === 'boolean' &amp;&amp; filter.native === true &amp;&amp; (typeof filter.where === 'string' || typeof filter.query === 'object')) {
 
                 objFilter.native.active = true;
 
@@ -2909,11 +2952,11 @@ class Layers {
 
                 let strFilter = '';
                 filter = filter.filter(obj => obj !== '');
-                for (let i = 0; i < filter.length; i++) {
+                for (let i = 0; i &lt; filter.length; i++) {
 
                     if (strFilter !== '') {
 
-                        strFilter += '&&';
+                        strFilter += '&amp;&amp;';
 
                     }
 
@@ -2958,7 +3001,7 @@ class Layers {
      * @param {schema=} [options.schema] - JSON schema defintion, if not passed it uses table default schema
      * @param {string|array|object} [options.filter=''] - layerize filter syntax
      * @param {array} [options.ignoreReadOnly=[]] - will ignore the readOnly restricting on those fields
-     * @returns {Promise<object>} returns an object containing the passed in data parameter
+     * @returns {Promise&lt;object>} returns an object containing the passed in data parameter
      */
     async _validate ({ type = 'update', table = '', data = {}, schema = {}, ignoreReadOnly = [] } = {}) {
 
@@ -3001,7 +3044,7 @@ class Layers {
 
                 let column = objTable.columns[property];
 
-                if (typeof column === 'undefined' || (column.readOnly === true && ignoreReadOnly.indexOf(property) === -1 && (type !== 'insert' && column.definableOnCreate !== true))) {
+                if (typeof column === 'undefined' || (column.readOnly === true &amp;&amp; ignoreReadOnly.indexOf(property) === -1 &amp;&amp; (type !== 'insert' &amp;&amp; column.definableOnCreate !== true))) {
 
                     delete data[property];
 
@@ -3045,12 +3088,12 @@ class Layers {
         let nextOps = '';
         let lngOps = aryOps.length;
         let strTest = '';
-        for (let i = 0;i < lngOps;i++) {
+        for (let i = 0;i &lt; lngOps;i++) {
 
             let operator = aryOps[i];
             switch (operator) {
 
-                case '&&':
+                case '&amp;&amp;':
                 case '||':
                     //can not be end
                     if (lngOps === i + 1) {
@@ -3134,7 +3177,7 @@ class Layers {
                     strTest += ')';
                     break;
                 default:
-                    //if not end then must be followed by &&,||,)
+                    //if not end then must be followed by &amp;&amp;,||,)
                     if (lngOps > i + 1) {
 
                         nextOps = aryOps[i + 1];
@@ -3184,12 +3227,12 @@ class Layers {
 
             objFilter.raw = this.__toArray(filter, 2);
             let lngFilters = objFilter.raw.length;
-            for (let i = 0;i < lngFilters;i++) {
+            for (let i = 0;i &lt; lngFilters;i++) {
 
                 let filtr = objFilter.raw[i];
                 switch (filtr) {
 
-                    case '&&':
+                    case '&amp;&amp;':
                     case '||':
                     case '(':
                     case ')':
@@ -3222,16 +3265,16 @@ class Layers {
                                 let lval = value.substring(value.length - 1);
                                 switch (fval) {
 
-                                    case '<':
+                                    case '&lt;':
                                         if (sval === '=') {
 
                                             objArg.value = value.substring(2);
-                                            objArg.sep = '<=';
+                                            objArg.sep = '&lt;=';
 
                                         } else {
 
                                             objArg.value = value.substring(1);
-                                            objArg.sep = '<<';
+                                            objArg.sep = '&lt;&lt;';
 
                                         }
                                         break;
@@ -3278,7 +3321,7 @@ class Layers {
                                         objArg.value = value.substring(1);
                                         break;
                                     case '%':
-                                        if (lval === '%' && value.length > 1) {
+                                        if (lval === '%' &amp;&amp; value.length > 1) {
 
                                             objArg.sep = '%%';
                                             objArg.value = value.substring(1, value.length - 1);
@@ -3291,7 +3334,7 @@ class Layers {
                                         }
                                         break;
                                     default:
-                                        if (lval === '%' && value.length > 1) {
+                                        if (lval === '%' &amp;&amp; value.length > 1) {
 
                                             objArg.sep = 'a%';
                                             objArg.value = value.substring(0, value.length - 1);
@@ -3356,8 +3399,8 @@ class Layers {
      * @param {string|array} [options.fields=*] - fields to be returned
      * @param {boolean} [options.returnRecords=false] - will return new record, if not a transaction
      * @param {string|array} [options.includes=''] - adds other records into return object
-     * @returns {Promise<array>} If returnRecord is 'true', then it will return the array of reocrd objects
-     * @returns {Promise<success>} If returnRecord is 'false', then it will return a success object
+     * @returns {Promise&lt;array>} If returnRecord is 'true', then it will return the array of reocrd objects
+     * @returns {Promise&lt;success>} If returnRecord is 'false', then it will return a success object
      */
     async __nonTransactionESCacheProcessing ({ type = 'insert', table, keys = [], schema, statement, returnRecords = false, fields = '', includes = '' } = {}) {
 
@@ -3366,7 +3409,7 @@ class Layers {
 
             let results = {};
 
-            if (schema.esEnabled || returnRecords || (type === 'update' && keys.length === 0)) {
+            if (schema.esEnabled || returnRecords || (type === 'update' &amp;&amp; keys.length === 0)) {
 
                 let items = [];
                 let disableCacheResave = false;
@@ -3382,7 +3425,7 @@ class Layers {
                     await transaction.commit({ transactions: statement });
 
                     let cacheKeys = [];
-                    for (let i = 0; i < keys.length; i++) {
+                    for (let i = 0; i &lt; keys.length; i++) {
 
                         let key = keys[i];
                         cacheKeys.push(this.cache.key(this.cacheKey, table, key));
@@ -3399,7 +3442,7 @@ class Layers {
 
                 let esTransaction = [];
                 let cachebulk = [];
-                for (let x = 0; x < items.length; x++) {
+                for (let x = 0; x &lt; items.length; x++) {
 
                     let item = items[x];
 
@@ -3421,7 +3464,7 @@ class Layers {
 
                 }
 
-                if (cachebulk.length > 0 && !disableCacheResave) {
+                if (cachebulk.length > 0 &amp;&amp; !disableCacheResave) {
 
                     await this.cache.mset(cachebulk, this.cacheExpireSeconds);
 
@@ -3476,7 +3519,7 @@ class Layers {
                 if (type === 'update') {
 
                     let cacheKeys = [];
-                    for (let i = 0; i < keys.length; i++) {
+                    for (let i = 0; i &lt; keys.length; i++) {
 
                         let key = keys[i];
                         cacheKeys.push(this.cache.key(this.cacheKey, table, key));
@@ -3526,7 +3569,7 @@ class Layers {
      * A private internal method for turning strings in to arrays based on type.
      * @access private
      * @param {string} str - text needing escaping
-     * @param {number} type - (0) split by |<br> (1) split by :<br> (2) split by () && ||<br> (3) split by space<br> (4) split by comma
+     * @param {number} type - (0) split by |&lt;br> (1) split by :&lt;br> (2) split by () &amp;&amp; ||&lt;br> (3) split by space&lt;br> (4) split by comma
      * @returns {array} returns array from split string
      */
     __toArray (str, type) { //string into array
@@ -3543,8 +3586,8 @@ class Layers {
             case 1: // :
                 // return str.split(/(?:[^[:]]|:)+/g);
                 return str.split(/:/g);
-            case 2: // () && ||
-                return str.split(/([()]|&&|\|\|)/).filter((x) => x);
+            case 2: // () &amp;&amp; ||
+                return str.split(/([()]|&amp;&amp;|\|\|)/).filter((x) => x);
             case 3: //space
                 str = this.__removeMultipleSpaces(str);
                 return str.split(' ');
@@ -3561,3 +3604,26 @@ class Layers {
 }
 
 module.exports = Layers;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Dec 07 2018 12:19:14 GMT-0500 (EST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>
