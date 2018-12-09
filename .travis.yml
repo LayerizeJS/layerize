@@ -15,20 +15,22 @@ script:
 - npm run lint
 - npm run test-travis
 deploy:
-  - provider: npm
-    tag: alpha
-    on:
-      if: tag =~ /alpha/
-      tags: true
-  - provider: npm
-    tag: beta
-    on:
-      if: tag =~ /beta/
-      tags: true
-  - provider: npm
-    on:
-      if: tag !~ /alpha|beta/
-      tags: true
+- provider: npm
+  tag: alpha
+  if: tag =~ /alpha/
+  on:
+
+    tags: true
+- provider: npm
+  tag: beta
+  if: tag =~ /beta/
+  on:
+    tags: true
+- provider: npm
+  if: tag !~ /alpha|beta/
+  on:
+   
+    tags: true
   api_key:
     secure: MRZ94BYLLycJe1sOS6VZtR8EFA8XNhduIgxpVnsryMdlvCZc6fk3bOWe506mifT4EWFicNt2H5wRKiFAIVGHVVTftAsg8XZXx52PwnNfKwS5YcgU36oDCgAVSMLvReHIPiyp9ElBq/evZFMjIkIZsLZgw5g2zPlOGi9d+mHwrJCH/DDnBBRlq1f+7kUBEO6hFOLFIw5LAQ0hSIgdh0ikd+5Am2G3P3U8Gni8vFISaHqzuy1xqCRrpvPXIomruRGFN6B+Fau04XqROPGNa+6d/QJWVpEaAcyWmdY8xssnJuSyyPSEsESbzwmvdaZAGXi7nzVdY6LjTFS8li5rVyFasXXZJBBKdvXqY3e01pwoEx7+33NdhCAlNL+sYXuWcXAxZbnHeaG0EWuPW5PRj7jtwtCQkT3E0VgiBvSPHqqzyYwLF9LaxCaqAJMa9BbUEV8Mt9j0p5H5SW6XUWT5LNJ2DTMtN7GxK4FFDKjrmewoXDuwYFPFhnKgPVFNXp4ZqHMy7icVP28SBgGs6fEzsjNRns/nX0SmET//LjOQmy1/utKZWxZy+d3Vc/da6Gy/mzm1rnKbIs81UfkEGFHgxZlHyOqNeNFfU17WajXsG1XKjgDJPdgxsK6udn2r1rOHzKWE8MVNU43oN1l+7aZvD2njBId5bRPTBGuosBiqzsuPNHk=
   email:
