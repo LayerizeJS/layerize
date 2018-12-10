@@ -14,9 +14,28 @@ before_script:
 script:
 - npm run lint
 - npm run test-travis
+before_install:
+  - |
+    if [ "$TRAVIS_TAG" != "" ];
+    then
+      npm version $TRAVIS_TAG
+      $NPM_TAG_NAME = ""
+    fi
+    if [ "$TRAVIS_TAG" =~ "alpha" ];
+    then
+      $NPM_TAG_NAME = "alpha"
+    fi
+    if [ "$TRAVIS_TAG" =~ "beta" ];
+    then
+      $NPM_TAG_NAME = "beta"
+    fi
+    if [ "$TRAVIS_TAG" =~ "rc" ];
+    then
+      $NPM_TAG_NAME = "rc"
+    fi
 deploy:
 - provider: npm
-  tag: alpha
+  tag: $NPM_TAG_NAME
   api_key:
     secure: MRZ94BYLLycJe1sOS6VZtR8EFA8XNhduIgxpVnsryMdlvCZc6fk3bOWe506mifT4EWFicNt2H5wRKiFAIVGHVVTftAsg8XZXx52PwnNfKwS5YcgU36oDCgAVSMLvReHIPiyp9ElBq/evZFMjIkIZsLZgw5g2zPlOGi9d+mHwrJCH/DDnBBRlq1f+7kUBEO6hFOLFIw5LAQ0hSIgdh0ikd+5Am2G3P3U8Gni8vFISaHqzuy1xqCRrpvPXIomruRGFN6B+Fau04XqROPGNa+6d/QJWVpEaAcyWmdY8xssnJuSyyPSEsESbzwmvdaZAGXi7nzVdY6LjTFS8li5rVyFasXXZJBBKdvXqY3e01pwoEx7+33NdhCAlNL+sYXuWcXAxZbnHeaG0EWuPW5PRj7jtwtCQkT3E0VgiBvSPHqqzyYwLF9LaxCaqAJMa9BbUEV8Mt9j0p5H5SW6XUWT5LNJ2DTMtN7GxK4FFDKjrmewoXDuwYFPFhnKgPVFNXp4ZqHMy7icVP28SBgGs6fEzsjNRns/nX0SmET//LjOQmy1/utKZWxZy+d3Vc/da6Gy/mzm1rnKbIs81UfkEGFHgxZlHyOqNeNFfU17WajXsG1XKjgDJPdgxsK6udn2r1rOHzKWE8MVNU43oN1l+7aZvD2njBId5bRPTBGuosBiqzsuPNHk=
   email:
