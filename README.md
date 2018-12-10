@@ -32,6 +32,10 @@ Check out LayerizeJS's quick [**Get Started**][getting_started] guide and the [o
 
 Check out LayerizeJS's [**video tutorials**][getting_started]!!
 
+## Documentation
+
+All our code is well documented, thanks to JSDocs! Feel free to dig in and check out our [code documentation][documentation]!
+
 ## Changelog
 
 [Learn about the latest improvements][changelog]. 
@@ -44,3 +48,4 @@ Want to file a bug, contribute some code, or improve documentation? Excellent!
 [getting_started]: https://layerize.js.org/get-started/
 [video_tutorials]: https://layerize.js.org/tutorials/
 [guides]: https://layerize.js.org/guides/
+[documentation]: https://layerizejs.github.io/layerize/
