@@ -47,7 +47,7 @@
         Layers
         </h2>
         
-            <div class="class-description">The Layers class handles all the data searching, inserting, updating, patching, deleting, replicating and more. It manages each data source (sql based database, elasticsearch and redis caching) to keep data in sync and decides when to pull data from which data source. It is highly optimized to use best practices and focuses on scalibilty and speed.</div>
+            <div class="class-description"><p>The <strong>Layers class</strong> handles all the data searching, inserting, updating, patching, deleting, replicating and more. It manages each data source (sql based database, elasticsearch and redis caching) to keep data in sync and decides when to pull data from which data source. It is highly optimized to use best practices and focuses on scalibilty and speed.</p></div>
         
     
 </header>
@@ -114,7 +114,7 @@
 
 
 <div class="description">
-    Create a layer.
+    <p>Create a layer.</p>
 </div>
 
 
@@ -168,7 +168,7 @@
 
             
 
-            <td class="description last">schema name of the database.</td>
+            <td class="description last"><p>schema name of the database.</p></td>
         </tr>
 
     
@@ -260,7 +260,7 @@
 
 
 <div class="description">
-    Holds the active locks that get release when transaction is committed or rolled back
+    <p>Holds the active locks that get release when transaction is committed or rolled back</p>
 </div>
 
 
@@ -333,7 +333,7 @@
 
 
 <div class="description">
-    The cache utility to use
+    <p>The cache utility to use</p>
 </div>
 
 
@@ -406,7 +406,7 @@
 
 
 <div class="description">
-    The number of seconds the cache expires in
+    <p>The number of seconds the cache expires in</p>
 </div>
 
 
@@ -479,7 +479,7 @@
 
 
 <div class="description">
-    The prepend name of the cache key
+    <p>The prepend name of the cache key</p>
 </div>
 
 
@@ -552,7 +552,7 @@
 
 
 <div class="description">
-    The initialized knex instance to use
+    <p>The initialized knex instance to use</p>
 </div>
 
 
@@ -625,7 +625,7 @@
 
 
 <div class="description">
-    A instance of the 'database' member that has been initiated with the schemaName
+    <p>A instance of the 'database' member that has been initiated with the schemaName</p>
 </div>
 
 
@@ -698,7 +698,7 @@
 
 
 <div class="description">
-    The initialized debug instance
+    <p>The initialized debug instance</p>
 </div>
 
 
@@ -771,7 +771,7 @@
 
 
 <div class="description">
-    The error utility
+    <p>The error utility</p>
 </div>
 
 
@@ -844,7 +844,7 @@
 
 
 <div class="description">
-    The initialized elasticsearch instance to use
+    <p>The initialized elasticsearch instance to use</p>
 </div>
 
 
@@ -917,7 +917,7 @@
 
 
 <div class="description">
-    Holds the bulk elasticsearch array that gets processed on commit
+    <p>Holds the bulk elasticsearch array that gets processed on commit</p>
 </div>
 
 
@@ -990,7 +990,7 @@
 
 
 <div class="description">
-    A flag for knowing if another layer's transaction was combined in
+    <p>A flag for knowing if another layer's transaction was combined in</p>
 </div>
 
 
@@ -1063,7 +1063,7 @@
 
 
 <div class="description">
-    Sets the layer to a transaction mode
+    <p>Sets the layer to a transaction mode</p>
 </div>
 
 
@@ -1136,7 +1136,7 @@
 
 
 <div class="description">
-    The prepend name of the lock key
+    <p>The prepend name of the lock key</p>
 </div>
 
 
@@ -1209,7 +1209,7 @@
 
 
 <div class="description">
-    The number of milliseconds the lock expires in
+    <p>The number of milliseconds the lock expires in</p>
 </div>
 
 
@@ -1282,7 +1282,7 @@
 
 
 <div class="description">
-    If it is in transaction mode is it using layerize transaction or traditional sql
+    <p>If it is in transaction mode is it using layerize transaction or traditional sql</p>
 </div>
 
 
@@ -1355,7 +1355,7 @@
 
 
 <div class="description">
-    Name of the schema being used within the layer
+    <p>Name of the schema being used within the layer</p>
 </div>
 
 
@@ -1428,7 +1428,7 @@
 
 
 <div class="description">
-    The schemas object to use
+    <p>The schemas object to use</p>
 </div>
 
 
@@ -1501,7 +1501,7 @@
 
 
 <div class="description">
-    Holds the statements that will be executed as a transaction
+    <p>Holds the statements that will be executed as a transaction</p>
 </div>
 
 
@@ -1574,7 +1574,7 @@
 
 
 <div class="description">
-    The initialized ajv instance to use
+    <p>The initialized ajv instance to use</p>
 </div>
 
 
@@ -1657,7 +1657,7 @@
 
 
 <div class="description">
-    A protected internal method for applying the search criteria 'filter' to a db or es statement.
+    <p>A protected internal method for applying the search criteria 'filter' to a db or es statement.</p>
 </div>
 
 
@@ -1724,7 +1724,7 @@
 
             
 
-            <td class="description last">the db or es statement</td>
+            <td class="description last"><p>the db or es statement</p></td>
         </tr>
 
     
@@ -1757,7 +1757,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -1819,7 +1819,7 @@
                 </td>
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -1864,7 +1864,7 @@
                 </td>
             
 
-            <td class="description last">layerize filter syntax</td>
+            <td class="description last"><p>layerize filter syntax</p></td>
         </tr>
 
     
@@ -1896,7 +1896,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        A native DB filter can not be used within an ES query.
+        <p>A native DB filter can not be used within an ES query.</p>
         </div>
     </dt>
     <dd></dd>
@@ -1923,7 +1923,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        A native ES filter can not be used within a DB query.
+        <p>A native ES filter can not be used within a DB query.</p>
         </div>
     </dt>
     <dd></dd>
@@ -1951,7 +1951,7 @@
 
         
 <div class="param-desc">
-    The extended passed in statement
+    <p>The extended passed in statement</p>
 </div>
 
 
@@ -2031,7 +2031,7 @@
 
 
 <div class="description">
-    A protected internal method for attaching a list from another table to current object.
+    <p>A protected internal method for attaching a list from another table to current object.</p>
 </div>
 
 
@@ -2095,7 +2095,7 @@
 
             
 
-            <td class="description last">the full data of the records being updated</td>
+            <td class="description last"><p>the full data of the records being updated</p></td>
         </tr>
 
     
@@ -2128,7 +2128,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -2190,7 +2190,7 @@
                 </td>
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -2229,7 +2229,7 @@
                 </td>
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -2268,7 +2268,7 @@
                 </td>
             
 
-            <td class="description last">an array of data that is requesting to be extended</td>
+            <td class="description last"><p>an array of data that is requesting to be extended</p></td>
         </tr>
 
     
@@ -2300,7 +2300,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        Unable to find include relationship between '{table}' and '{includeId}'.
+        <p>Unable to find include relationship between '{table}' and '{includeId}'.</p>
         </div>
     </dt>
     <dd></dd>
@@ -2328,7 +2328,7 @@
 
         
 <div class="param-desc">
-    The extended passed in results
+    <p>The extended passed in results</p>
 </div>
 
 
@@ -2405,7 +2405,7 @@
 
 
 <div class="description">
-    A protected internal method for attaching a record from another table to current object.
+    <p>A protected internal method for attaching a record from another table to current object.</p>
 </div>
 
 
@@ -2469,7 +2469,7 @@
 
             
 
-            <td class="description last">the full data of the records being updated</td>
+            <td class="description last"><p>the full data of the records being updated</p></td>
         </tr>
 
     
@@ -2502,7 +2502,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -2564,7 +2564,7 @@
                 </td>
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -2603,7 +2603,7 @@
                 </td>
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -2642,7 +2642,7 @@
                 </td>
             
 
-            <td class="description last">an array of data that is requesting to be extended</td>
+            <td class="description last"><p>an array of data that is requesting to be extended</p></td>
         </tr>
 
     
@@ -2674,7 +2674,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        Unable to find include relationship between '{table}' and '{includeId}'.
+        <p>Unable to find include relationship between '{table}' and '{includeId}'.</p>
         </div>
     </dt>
     <dd></dd>
@@ -2702,7 +2702,7 @@
 
         
 <div class="param-desc">
-    The extended passed in results
+    <p>The extended passed in results</p>
 </div>
 
 
@@ -2779,7 +2779,7 @@
 
 
 <div class="description">
-    A protected internal method for starting a tradition sql transaction.
+    <p>A protected internal method for starting a tradition sql transaction.</p>
 </div>
 
 
@@ -2808,7 +2808,7 @@
 
         
 <div class="param-desc">
-    A KnexJS transaction
+    <p>A KnexJS transaction</p>
 </div>
 
 
@@ -2885,7 +2885,7 @@
 
 
 <div class="description">
-    A protected internal method for generating the db where statement.
+    <p>A protected internal method for generating the db where statement.</p>
 </div>
 
 
@@ -2939,7 +2939,7 @@
 
             
 
-            <td class="description last">layerize object filter</td>
+            <td class="description last"><p>layerize object filter</p></td>
         </tr>
 
     
@@ -2963,7 +2963,7 @@
 
         
 <div class="param-desc">
-    db sql where statement
+    <p>db sql where statement</p>
 </div>
 
 
@@ -3040,7 +3040,7 @@
 
 
 <div class="description">
-    A protected internal method for generating the elasticsearch body object.
+    <p>A protected internal method for generating the elasticsearch body object.</p>
 </div>
 
 
@@ -3094,7 +3094,7 @@
 
             
 
-            <td class="description last">layerize object filter</td>
+            <td class="description last"><p>layerize object filter</p></td>
         </tr>
 
     
@@ -3118,7 +3118,7 @@
 
         
 <div class="param-desc">
-    elasticsearch body object
+    <p>elasticsearch body object</p>
 </div>
 
 
@@ -3195,7 +3195,7 @@
 
 
 <div class="description">
-    A protected internal method for attaching other list of records and individual records into the current provide records.
+    <p>A protected internal method for attaching other list of records and individual records into the current provide records.</p>
 </div>
 
 
@@ -3261,7 +3261,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -3319,7 +3319,7 @@
                 </td>
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -3358,7 +3358,7 @@
                 </td>
             
 
-            <td class="description last">an array of data that is requesting to be extended</td>
+            <td class="description last"><p>an array of data that is requesting to be extended</p></td>
         </tr>
 
     
@@ -3400,7 +3400,7 @@
                 </td>
             
 
-            <td class="description last">an array or comma seperate string of includes</td>
+            <td class="description last"><p>an array or comma seperate string of includes</p></td>
         </tr>
 
     
@@ -3432,7 +3432,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        Unable to find include relationship between '{table}' and '{includeId}'.
+        <p>Unable to find include relationship between '{table}' and '{includeId}'.</p>
         </div>
     </dt>
     <dd></dd>
@@ -3460,7 +3460,7 @@
 
         
 <div class="param-desc">
-    the array of results
+    <p>the array of results</p>
 </div>
 
 
@@ -3537,7 +3537,7 @@
 
 
 <div class="description">
-    A protected internal method for narrow the schema to the requested properties so it can be validated.
+    <p>A protected internal method for narrow the schema to the requested properties so it can be validated.</p>
 </div>
 
 
@@ -3603,7 +3603,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -3661,7 +3661,7 @@
                 </td>
             
 
-            <td class="description last">schema definition</td>
+            <td class="description last"><p>schema definition</p></td>
         </tr>
 
     
@@ -3700,7 +3700,7 @@
                 </td>
             
 
-            <td class="description last">properties that should be included</td>
+            <td class="description last"><p>properties that should be included</p></td>
         </tr>
 
     
@@ -3731,7 +3731,7 @@
 
         
 <div class="param-desc">
-    a newly generated schema
+    <p>a newly generated schema</p>
 </div>
 
 
@@ -3808,7 +3808,7 @@
 
 
 <div class="description">
-    A protected internal method for attaching other list of records and individual records into the current provide records.
+    <p>A protected internal method for attaching other list of records and individual records into the current provide records.</p>
 </div>
 
 
@@ -3874,7 +3874,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -3932,7 +3932,7 @@
                 </td>
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -3977,7 +3977,7 @@
                 </td>
             
 
-            <td class="description last">layerize filter syntax</td>
+            <td class="description last"><p>layerize filter syntax</p></td>
         </tr>
 
     
@@ -4008,7 +4008,7 @@
 
         
 <div class="param-desc">
-    returns the layerizeFilter
+    <p>returns the layerizeFilter</p>
 </div>
 
 
@@ -4085,7 +4085,7 @@
 
 
 <div class="description">
-    A protected internal method for attaching other list of records and individual records into the current provide records.
+    <p>A protected internal method for attaching other list of records and individual records into the current provide records.</p>
 </div>
 
 
@@ -4151,7 +4151,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -4209,7 +4209,7 @@
                 </td>
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -4248,7 +4248,7 @@
                 </td>
             
 
-            <td class="description last">type of action, can be 'insert' or 'update'</td>
+            <td class="description last"><p>type of action, can be 'insert' or 'update'</p></td>
         </tr>
 
     
@@ -4287,7 +4287,7 @@
                 </td>
             
 
-            <td class="description last">data to be validated</td>
+            <td class="description last"><p>data to be validated</p></td>
         </tr>
 
     
@@ -4324,7 +4324,7 @@
                 </td>
             
 
-            <td class="description last">JSON schema defintion, if not passed it uses table default schema</td>
+            <td class="description last"><p>JSON schema defintion, if not passed it uses table default schema</p></td>
         </tr>
 
     
@@ -4369,7 +4369,7 @@
                 </td>
             
 
-            <td class="description last">layerize filter syntax</td>
+            <td class="description last"><p>layerize filter syntax</p></td>
         </tr>
 
     
@@ -4408,7 +4408,7 @@
                 </td>
             
 
-            <td class="description last">will ignore the readOnly restricting on those fields</td>
+            <td class="description last"><p>will ignore the readOnly restricting on those fields</p></td>
         </tr>
 
     
@@ -4439,7 +4439,7 @@
 
         
 <div class="param-desc">
-    returns an object containing the passed in data parameter
+    <p>returns an object containing the passed in data parameter</p>
 </div>
 
 
@@ -4516,7 +4516,7 @@
 
 
 <div class="description">
-    A protected internal method for validating the filter.
+    <p>A protected internal method for validating the filter.</p>
 </div>
 
 
@@ -4570,7 +4570,7 @@
 
             
 
-            <td class="description last">layerize object filter</td>
+            <td class="description last"><p>layerize object filter</p></td>
         </tr>
 
     
@@ -4594,7 +4594,7 @@
 
         
 <div class="param-desc">
-    returns success
+    <p>returns success</p>
 </div>
 
 
@@ -4671,7 +4671,7 @@
 
 
 <div class="description">
-    Clears all tables caches
+    <p>Clears all tables caches</p>
 </div>
 
 
@@ -4706,7 +4706,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        "clearAllTablesCache() can not be called inside a transaction"
+        <p>&quot;clearAllTablesCache() can not be called inside a transaction&quot;</p>
         </div>
     </dt>
     <dd></dd>
@@ -4734,7 +4734,7 @@
 
         
 <div class="param-desc">
-    { success: true }
+    <p>{ success: true }</p>
 </div>
 
 
@@ -4811,7 +4811,7 @@
 
 
 <div class="description">
-    Clears a single record cache
+    <p>Clears a single record cache</p>
 </div>
 
 
@@ -4870,7 +4870,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -4893,7 +4893,7 @@
 
             
 
-            <td class="description last">primary key of the record</td>
+            <td class="description last"><p>primary key of the record</p></td>
         </tr>
 
     
@@ -4918,7 +4918,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        "clearRecordCache() can not be called inside a transaction"
+        <p>&quot;clearRecordCache() can not be called inside a transaction&quot;</p>
         </div>
     </dt>
     <dd></dd>
@@ -4946,7 +4946,7 @@
 
         
 <div class="param-desc">
-    { success: true }
+    <p>{ success: true }</p>
 </div>
 
 
@@ -5023,7 +5023,7 @@
 
 
 <div class="description">
-    Clears a single tables cache
+    <p>Clears a single tables cache</p>
 </div>
 
 
@@ -5082,7 +5082,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -5107,7 +5107,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        "clearTableCache() can not be called inside a transaction"
+        <p>&quot;clearTableCache() can not be called inside a transaction&quot;</p>
         </div>
     </dt>
     <dd></dd>
@@ -5135,7 +5135,7 @@
 
         
 <div class="param-desc">
-    { success: true }
+    <p>{ success: true }</p>
 </div>
 
 
@@ -5212,7 +5212,7 @@
 
 
 <div class="description">
-    Combines the transactions of from two different layer instances
+    <p>Combines the transactions of from two different layer instances</p>
 </div>
 
 
@@ -5271,7 +5271,7 @@
 
             
 
-            <td class="description last">another layer instance that is being combined</td>
+            <td class="description last"><p>another layer instance that is being combined</p></td>
         </tr>
 
     
@@ -5296,7 +5296,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        "combine() can only be called inside a transaction"
+        <p>&quot;combine() can only be called inside a transaction&quot;</p>
         </div>
     </dt>
     <dd></dd>
@@ -5323,7 +5323,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        "combine() can only be used when 'realTimeTransactions' is set to 'false'"
+        <p>&quot;combine() can only be used when 'realTimeTransactions' is set to 'false'&quot;</p>
         </div>
     </dt>
     <dd></dd>
@@ -5351,7 +5351,7 @@
 
         
 <div class="param-desc">
-    [] - array of transactions
+    <p>[] - array of transactions</p>
 </div>
 
 
@@ -5428,7 +5428,7 @@
 
 
 <div class="description">
-    Commits the transactions that in the layer
+    <p>Commits the transactions that in the layer</p>
 </div>
 
 
@@ -5499,7 +5499,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -5561,7 +5561,7 @@
                 </td>
             
 
-            <td class="description last">array of transactions to be combined in</td>
+            <td class="description last"><p>array of transactions to be combined in</p></td>
         </tr>
 
     
@@ -5600,7 +5600,7 @@
                 </td>
             
 
-            <td class="description last">auto rollback if commit fails</td>
+            <td class="description last"><p>auto rollback if commit fails</p></td>
         </tr>
 
     
@@ -5632,7 +5632,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        "commit() can only be called inside a transaction"
+        <p>&quot;commit() can only be called inside a transaction&quot;</p>
         </div>
     </dt>
     <dd></dd>
@@ -5660,7 +5660,7 @@
 
         
 <div class="param-desc">
-    { success: true }
+    <p>{ success: true }</p>
 </div>
 
 
@@ -5737,7 +5737,7 @@
 
 
 <div class="description">
-    Gets the record count of a table from the data layer.
+    <p>Gets the record count of a table from the data layer.</p>
 </div>
 
 
@@ -5806,7 +5806,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -5839,7 +5839,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -5904,7 +5904,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -5949,7 +5949,7 @@
                 </td>
             
 
-            <td class="description last">layerize filter syntax</td>
+            <td class="description last"><p>layerize filter syntax</p></td>
         </tr>
 
     
@@ -5988,7 +5988,7 @@
                 </td>
             
 
-            <td class="description last">when false it uses reltuples::bigint</td>
+            <td class="description last"><p>when false it uses reltuples::bigint</p></td>
         </tr>
 
     
@@ -6019,7 +6019,7 @@
 
         
 <div class="param-desc">
-    A number representing the count. Example: 25
+    <p>A number representing the count. Example: 25</p>
 </div>
 
 
@@ -6096,7 +6096,7 @@
 
 
 <div class="description">
-    Deletes a single records from the data layer
+    <p>Deletes a single records from the data layer</p>
 </div>
 
 
@@ -6150,7 +6150,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -6173,7 +6173,7 @@
 
             
 
-            <td class="description last">primary key of the record</td>
+            <td class="description last"><p>primary key of the record</p></td>
         </tr>
 
     
@@ -6197,7 +6197,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If the instance of the layer IS a transaction, then it will return objSQL.
+    <p>If the instance of the layer IS a transaction, then it will return objSQL.</p>
 </div>
 
 
@@ -6217,7 +6217,7 @@
     
         <li>
 <div class="param-desc">
-    If the instance of the layer IS NOT a transaction, then it will return a success object.
+    <p>If the instance of the layer IS NOT a transaction, then it will return a success object.</p>
 </div>
 
 
@@ -6294,7 +6294,7 @@
 
 
 <div class="description">
-    Deletes a single or mulitple records from the data layer that is meets the filter restraint
+    <p>Deletes a single or mulitple records from the data layer that is meets the filter restraint</p>
 </div>
 
 
@@ -6348,7 +6348,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -6377,7 +6377,7 @@
 
             
 
-            <td class="description last">layerize filter syntax</td>
+            <td class="description last"><p>layerize filter syntax</p></td>
         </tr>
 
     
@@ -6401,7 +6401,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If the instance of the layer IS a transaction, then it will return objSQL.
+    <p>If the instance of the layer IS a transaction, then it will return objSQL.</p>
 </div>
 
 
@@ -6421,7 +6421,7 @@
     
         <li>
 <div class="param-desc">
-    If the instance of the layer IS NOT a transaction, then it will return a success object.
+    <p>If the instance of the layer IS NOT a transaction, then it will return a success object.</p>
 </div>
 
 
@@ -6498,7 +6498,7 @@
 
 
 <div class="description">
-    Deletes a many records by key from the data layer
+    <p>Deletes a many records by key from the data layer</p>
 </div>
 
 
@@ -6552,7 +6552,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -6575,7 +6575,7 @@
 
             
 
-            <td class="description last">primary key of the record</td>
+            <td class="description last"><p>primary key of the record</p></td>
         </tr>
 
     
@@ -6599,7 +6599,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If the instance of the layer IS a transaction, then it will return objSQL.
+    <p>If the instance of the layer IS a transaction, then it will return objSQL.</p>
 </div>
 
 
@@ -6619,7 +6619,7 @@
     
         <li>
 <div class="param-desc">
-    If the instance of the layer IS NOT a transaction, then it will return a success object.
+    <p>If the instance of the layer IS NOT a transaction, then it will return a success object.</p>
 </div>
 
 
@@ -6696,7 +6696,7 @@
 
 
 <div class="description">
-    Gets a single record from the data layer
+    <p>Gets a single record from the data layer</p>
 </div>
 
 
@@ -6760,7 +6760,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -6791,7 +6791,7 @@
 
             
 
-            <td class="description last">primary key of the record</td>
+            <td class="description last"><p>primary key of the record</p></td>
         </tr>
 
     
@@ -6824,7 +6824,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -6889,7 +6889,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -6931,7 +6931,7 @@
                 </td>
             
 
-            <td class="description last">adds other records into return object</td>
+            <td class="description last"><p>adds other records into return object</p></td>
         </tr>
 
     
@@ -6970,7 +6970,7 @@
                 </td>
             
 
-            <td class="description last">will lock record for updating</td>
+            <td class="description last"><p>will lock record for updating</p></td>
         </tr>
 
     
@@ -7001,7 +7001,7 @@
 
         
 <div class="param-desc">
-    return the record object
+    <p>return the record object</p>
 </div>
 
 
@@ -7078,7 +7078,7 @@
 
 
 <div class="description">
-    Gets a many records by key from the data layer
+    <p>Gets a many records by key from the data layer</p>
 </div>
 
 
@@ -7142,7 +7142,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -7173,7 +7173,7 @@
 
             
 
-            <td class="description last">primary keys of the records being requests</td>
+            <td class="description last"><p>primary keys of the records being requests</p></td>
         </tr>
 
     
@@ -7206,7 +7206,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -7271,7 +7271,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -7313,7 +7313,7 @@
                 </td>
             
 
-            <td class="description last">adds other records into return object</td>
+            <td class="description last"><p>adds other records into return object</p></td>
         </tr>
 
     
@@ -7352,7 +7352,7 @@
                 </td>
             
 
-            <td class="description last">will lock record for updating</td>
+            <td class="description last"><p>will lock record for updating</p></td>
         </tr>
 
     
@@ -7383,7 +7383,7 @@
 
         
 <div class="param-desc">
-    return an array of record objects
+    <p>return an array of record objects</p>
 </div>
 
 
@@ -7460,7 +7460,7 @@
 
 
 <div class="description">
-    Inserts a single or mulitple records into the data layer
+    <p>Inserts a single or mulitple records into the data layer</p>
 </div>
 
 
@@ -7524,7 +7524,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -7558,7 +7558,7 @@
 
             
 
-            <td class="description last">the data of the records being inserted</td>
+            <td class="description last"><p>the data of the records being inserted</p></td>
         </tr>
 
     
@@ -7591,7 +7591,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -7656,7 +7656,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -7695,7 +7695,7 @@
                 </td>
             
 
-            <td class="description last">will ignore the readOnly restricting on those fields</td>
+            <td class="description last"><p>will ignore the readOnly restricting on those fields</p></td>
         </tr>
 
     
@@ -7734,7 +7734,7 @@
                 </td>
             
 
-            <td class="description last">will return records after inserting</td>
+            <td class="description last"><p>will return records after inserting</p></td>
         </tr>
 
     
@@ -7766,7 +7766,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        The 'table' parameter is required when doing an insert() or insertMany().
+        <p>The 'table' parameter is required when doing an insert() or insertMany().</p>
         </div>
     </dt>
     <dd></dd>
@@ -7793,7 +7793,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        The 'data' parameter is required when doing an insert() or insertMany().
+        <p>The 'data' parameter is required when doing an insert() or insertMany().</p>
         </div>
     </dt>
     <dd></dd>
@@ -7821,7 +7821,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If the instance of the layer IS a transaction, then it will return objSQL.
+    <p>If the instance of the layer IS a transaction, then it will return objSQL.</p>
 </div>
 
 
@@ -7841,7 +7841,7 @@
     
         <li>
 <div class="param-desc">
-    If the instance of the layer IS NOT a transaction and returnRecord is 'true', then it will return the record object.
+    <p>If the instance of the layer IS NOT a transaction and returnRecord is 'true', then it will return the record object.</p>
 </div>
 
 
@@ -7861,7 +7861,7 @@
     
         <li>
 <div class="param-desc">
-    If the instance of the layer IS NOT a transaction and returnRecord is 'false', then it will return a success object.
+    <p>If the instance of the layer IS NOT a transaction and returnRecord is 'false', then it will return a success object.</p>
 </div>
 
 
@@ -7938,7 +7938,7 @@
 
 
 <div class="description">
-    Inserts a mulitple records into the data layer
+    <p>Inserts a mulitple records into the data layer</p>
 </div>
 
 
@@ -8002,7 +8002,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -8033,7 +8033,7 @@
 
             
 
-            <td class="description last">the data of the records being inserted</td>
+            <td class="description last"><p>the data of the records being inserted</p></td>
         </tr>
 
     
@@ -8066,7 +8066,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -8131,7 +8131,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -8170,7 +8170,7 @@
                 </td>
             
 
-            <td class="description last">will ignore the readOnly restricting on those fields</td>
+            <td class="description last"><p>will ignore the readOnly restricting on those fields</p></td>
         </tr>
 
     
@@ -8209,7 +8209,7 @@
                 </td>
             
 
-            <td class="description last">will return new record, if not a transaction</td>
+            <td class="description last"><p>will return new record, if not a transaction</p></td>
         </tr>
 
     
@@ -8241,7 +8241,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        The 'table' parameter is required when doing an insert() or insertMany().
+        <p>The 'table' parameter is required when doing an insert() or insertMany().</p>
         </div>
     </dt>
     <dd></dd>
@@ -8268,7 +8268,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        The 'data' parameter is required when doing an insert() or insertMany().
+        <p>The 'data' parameter is required when doing an insert() or insertMany().</p>
         </div>
     </dt>
     <dd></dd>
@@ -8296,7 +8296,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If layer IS a transaction, then it will return objSQL
+    <p>If layer IS a transaction, then it will return objSQL</p>
 </div>
 
 
@@ -8316,7 +8316,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
+    <p>If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object</p>
 </div>
 
 
@@ -8336,7 +8336,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
+    <p>If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object</p>
 </div>
 
 
@@ -8413,7 +8413,7 @@
 
 
 <div class="description">
-    Patches a single partial records into the data layer
+    <p>Patches a single partial records into the data layer</p>
 </div>
 
 
@@ -8477,7 +8477,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -8508,7 +8508,7 @@
 
             
 
-            <td class="description last">primary key of the record</td>
+            <td class="description last"><p>primary key of the record</p></td>
         </tr>
 
     
@@ -8539,7 +8539,7 @@
 
             
 
-            <td class="description last">the data of the record being patched</td>
+            <td class="description last"><p>the data of the record being patched</p></td>
         </tr>
 
     
@@ -8572,7 +8572,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -8637,7 +8637,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -8676,7 +8676,7 @@
                 </td>
             
 
-            <td class="description last">will ignore the readOnly restricting on those fields</td>
+            <td class="description last"><p>will ignore the readOnly restricting on those fields</p></td>
         </tr>
 
     
@@ -8715,7 +8715,7 @@
                 </td>
             
 
-            <td class="description last">will return new record, if not a transaction</td>
+            <td class="description last"><p>will return new record, if not a transaction</p></td>
         </tr>
 
     
@@ -8757,7 +8757,7 @@
                 </td>
             
 
-            <td class="description last">adds other records into return object</td>
+            <td class="description last"><p>adds other records into return object</p></td>
         </tr>
 
     
@@ -8789,7 +8789,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        The 'table' parameter is required when doing an patch().
+        <p>The 'table' parameter is required when doing an patch().</p>
         </div>
     </dt>
     <dd></dd>
@@ -8816,7 +8816,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        The 'key' parameter is required when doing an patch().
+        <p>The 'key' parameter is required when doing an patch().</p>
         </div>
     </dt>
     <dd></dd>
@@ -8843,7 +8843,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        The 'data' parameter is required when doing an patch().
+        <p>The 'data' parameter is required when doing an patch().</p>
         </div>
     </dt>
     <dd></dd>
@@ -8871,7 +8871,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If layer IS a transaction, then it will return objSQL
+    <p>If layer IS a transaction, then it will return objSQL</p>
 </div>
 
 
@@ -8891,7 +8891,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
+    <p>If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object</p>
 </div>
 
 
@@ -8911,7 +8911,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
+    <p>If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object</p>
 </div>
 
 
@@ -8988,7 +8988,7 @@
 
 
 <div class="description">
-    Patches a single or mulitple partial records from the data layer that is meets the filter restraint
+    <p>Patches a single or mulitple partial records from the data layer that is meets the filter restraint</p>
 </div>
 
 
@@ -9052,7 +9052,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -9089,7 +9089,7 @@
 
             
 
-            <td class="description last">layerize filter syntax</td>
+            <td class="description last"><p>layerize filter syntax</p></td>
         </tr>
 
     
@@ -9120,7 +9120,7 @@
 
             
 
-            <td class="description last">the data being patched</td>
+            <td class="description last"><p>the data being patched</p></td>
         </tr>
 
     
@@ -9153,7 +9153,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -9215,7 +9215,7 @@
                 </td>
             
 
-            <td class="description last">will ignore the readOnly restricting on those fields</td>
+            <td class="description last"><p>will ignore the readOnly restricting on those fields</p></td>
         </tr>
 
     
@@ -9246,7 +9246,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If layer IS a transaction, then it will return objSQL
+    <p>If layer IS a transaction, then it will return objSQL</p>
 </div>
 
 
@@ -9266,7 +9266,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction, then it will return a success object
+    <p>If layer IS NOT a transaction, then it will return a success object</p>
 </div>
 
 
@@ -9343,7 +9343,7 @@
 
 
 <div class="description">
-    Patches many partial records by key into the data layer
+    <p>Patches many partial records by key into the data layer</p>
 </div>
 
 
@@ -9407,7 +9407,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -9438,7 +9438,7 @@
 
             
 
-            <td class="description last">the data being patched</td>
+            <td class="description last"><p>the data being patched</p></td>
         </tr>
 
     
@@ -9471,7 +9471,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -9536,7 +9536,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -9575,7 +9575,7 @@
                 </td>
             
 
-            <td class="description last">will ignore the readOnly restricting on those fields</td>
+            <td class="description last"><p>will ignore the readOnly restricting on those fields</p></td>
         </tr>
 
     
@@ -9614,7 +9614,7 @@
                 </td>
             
 
-            <td class="description last">will return new record, if not a transaction</td>
+            <td class="description last"><p>will return new record, if not a transaction</p></td>
         </tr>
 
     
@@ -9656,7 +9656,7 @@
                 </td>
             
 
-            <td class="description last">adds other records into return object</td>
+            <td class="description last"><p>adds other records into return object</p></td>
         </tr>
 
     
@@ -9687,7 +9687,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If layer IS a transaction, then it will return objSQL
+    <p>If layer IS a transaction, then it will return objSQL</p>
 </div>
 
 
@@ -9707,7 +9707,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecords is 'true', then it will return an array of reocrd objects
+    <p>If layer IS NOT a transaction and returnRecords is 'true', then it will return an array of reocrd objects</p>
 </div>
 
 
@@ -9727,7 +9727,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecords is 'false', then it will return a success object
+    <p>If layer IS NOT a transaction and returnRecords is 'false', then it will return a success object</p>
 </div>
 
 
@@ -9804,7 +9804,7 @@
 
 
 <div class="description">
-    Access to the underlining cache service
+    <p>Access to the underlining cache service</p>
 </div>
 
 
@@ -9833,7 +9833,9 @@
 
         
 <div class="param-desc">
-    - resolves: { success: true } | rejects: Error
+    <ul>
+<li>resolves: { success: true } | rejects: Error</li>
+</ul>
 </div>
 
 
@@ -9910,7 +9912,7 @@
 
 
 <div class="description">
-    Access to the underlining database service
+    <p>Access to the underlining database service</p>
 </div>
 
 
@@ -9964,7 +9966,7 @@
 
             
 
-            <td class="description last">raw sql string</td>
+            <td class="description last"><p>raw sql string</p></td>
         </tr>
 
     
@@ -9988,7 +9990,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If layer IS a transaction, then it will return objSQL
+    <p>If layer IS a transaction, then it will return objSQL</p>
 </div>
 
 
@@ -10008,7 +10010,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecords is 'false', then it will return sql results object
+    <p>If layer IS NOT a transaction and returnRecords is 'false', then it will return sql results object</p>
 </div>
 
 
@@ -10085,7 +10087,7 @@
 
 
 <div class="description">
-    Access to the underlining search service
+    <p>Access to the underlining search service</p>
 </div>
 
 
@@ -10139,7 +10141,7 @@
 
             
 
-            <td class="description last">raw elasticsearch object</td>
+            <td class="description last"><p>raw elasticsearch object</p></td>
         </tr>
 
     
@@ -10163,7 +10165,9 @@
 
         
 <div class="param-desc">
-    - resolves: { success: true } | rejects: Error
+    <ul>
+<li>resolves: { success: true } | rejects: Error</li>
+</ul>
 </div>
 
 
@@ -10240,7 +10244,7 @@
 
 
 <div class="description">
-    Reindex a table in the search layer
+    <p>Reindex a table in the search layer</p>
 </div>
 
 
@@ -10294,7 +10298,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -10318,7 +10322,9 @@
 
         
 <div class="param-desc">
-    - resolves: { success: true } | rejects: Error
+    <ul>
+<li>resolves: { success: true } | rejects: Error</li>
+</ul>
 </div>
 
 
@@ -10395,7 +10401,7 @@
 
 
 <div class="description">
-    Rollbacks the current transaction
+    <p>Rollbacks the current transaction</p>
 </div>
 
 
@@ -10425,7 +10431,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        rollback() can not be called inside a transaction
+        <p>rollback() can not be called inside a transaction</p>
         </div>
     </dt>
     <dd></dd>
@@ -10453,7 +10459,7 @@
 
         
 <div class="param-desc">
-    return a success object
+    <p>return a success object</p>
 </div>
 
 
@@ -10530,7 +10536,7 @@
 
 
 <div class="description">
-    Search a table from the data layer
+    <p>Search a table from the data layer</p>
 </div>
 
 
@@ -10594,7 +10600,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -10627,7 +10633,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -10695,7 +10701,7 @@
                 </td>
             
 
-            <td class="description last">layerize filter syntax</td>
+            <td class="description last"><p>layerize filter syntax</p></td>
         </tr>
 
     
@@ -10737,7 +10743,7 @@
                 </td>
             
 
-            <td class="description last">raw sql join statement</td>
+            <td class="description last"><p>raw sql join statement</p></td>
         </tr>
 
     
@@ -10779,7 +10785,7 @@
                 </td>
             
 
-            <td class="description last">fields to order by</td>
+            <td class="description last"><p>fields to order by</p></td>
         </tr>
 
     
@@ -10821,7 +10827,7 @@
                 </td>
             
 
-            <td class="description last">fields to group by</td>
+            <td class="description last"><p>fields to group by</p></td>
         </tr>
 
     
@@ -10863,7 +10869,7 @@
                 </td>
             
 
-            <td class="description last">aggregates (requires group to be set)</td>
+            <td class="description last"><p>aggregates (requires group to be set)</p></td>
         </tr>
 
     
@@ -10905,7 +10911,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -10944,7 +10950,7 @@
                 </td>
             
 
-            <td class="description last">the amount of records to return</td>
+            <td class="description last"><p>the amount of records to return</p></td>
         </tr>
 
     
@@ -10983,7 +10989,7 @@
                 </td>
             
 
-            <td class="description last">the offset of cursor</td>
+            <td class="description last"><p>the offset of cursor</p></td>
         </tr>
 
     
@@ -11022,7 +11028,7 @@
                 </td>
             
 
-            <td class="description last">which datasource to use ['db','es','auto']</td>
+            <td class="description last"><p>which datasource to use ['db','es','auto']</p></td>
         </tr>
 
     
@@ -11064,7 +11070,7 @@
                 </td>
             
 
-            <td class="description last">adds other records into return object</td>
+            <td class="description last"><p>adds other records into return object</p></td>
         </tr>
 
     
@@ -11095,7 +11101,7 @@
 
         
 <div class="param-desc">
-    returns standard results object
+    <p>returns standard results object</p>
 </div>
 
 
@@ -11172,7 +11178,7 @@
 
 
 <div class="description">
-    Returns a transaction to do calls against
+    <p>Returns a transaction to do calls against</p>
 </div>
 
 
@@ -11238,7 +11244,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -11300,7 +11306,7 @@
                 </td>
             
 
-            <td class="description last">use a traditional transaction</td>
+            <td class="description last"><p>use a traditional transaction</p></td>
         </tr>
 
     
@@ -11332,7 +11338,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        transaction() can NOT be called inside a transaction
+        <p>transaction() can NOT be called inside a transaction</p>
         </div>
     </dt>
     <dd></dd>
@@ -11360,7 +11366,7 @@
 
         
 <div class="param-desc">
-    a new instance of a layer with transaction set to true
+    <p>a new instance of a layer with transaction set to true</p>
 </div>
 
 
@@ -11437,7 +11443,7 @@
 
 
 <div class="description">
-    Updates a single full records into the data layer
+    <p>Updates a single full records into the data layer</p>
 </div>
 
 
@@ -11501,7 +11507,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -11532,7 +11538,7 @@
 
             
 
-            <td class="description last">primary key of the record</td>
+            <td class="description last"><p>primary key of the record</p></td>
         </tr>
 
     
@@ -11563,7 +11569,7 @@
 
             
 
-            <td class="description last">the full data of the record being updated</td>
+            <td class="description last"><p>the full data of the record being updated</p></td>
         </tr>
 
     
@@ -11596,7 +11602,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -11661,7 +11667,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -11700,7 +11706,7 @@
                 </td>
             
 
-            <td class="description last">will ignore the readOnly restricting on those fields</td>
+            <td class="description last"><p>will ignore the readOnly restricting on those fields</p></td>
         </tr>
 
     
@@ -11739,7 +11745,7 @@
                 </td>
             
 
-            <td class="description last">will lock records for updating</td>
+            <td class="description last"><p>will lock records for updating</p></td>
         </tr>
 
     
@@ -11781,7 +11787,7 @@
                 </td>
             
 
-            <td class="description last">adds other records into return object</td>
+            <td class="description last"><p>adds other records into return object</p></td>
         </tr>
 
     
@@ -11812,7 +11818,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If layer IS a transaction, then it will return objSQL
+    <p>If layer IS a transaction, then it will return objSQL</p>
 </div>
 
 
@@ -11832,7 +11838,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object
+    <p>If layer IS NOT a transaction and returnRecord is 'true', then it will return the reocrd object</p>
 </div>
 
 
@@ -11852,7 +11858,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
+    <p>If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object</p>
 </div>
 
 
@@ -11929,7 +11935,7 @@
 
 
 <div class="description">
-    Update many full records by key into the data layer
+    <p>Update many full records by key into the data layer</p>
 </div>
 
 
@@ -11993,7 +11999,7 @@
 
             
 
-            <td class="description last">name of the table</td>
+            <td class="description last"><p>name of the table</p></td>
         </tr>
 
     
@@ -12024,7 +12030,7 @@
 
             
 
-            <td class="description last">the full data of the records being updated</td>
+            <td class="description last"><p>the full data of the records being updated</p></td>
         </tr>
 
     
@@ -12057,7 +12063,7 @@
 
             
 
-            <td class="description last">available options
+            <td class="description last"><p>available options</p>
                 <h6>Properties</h6>
                 
 
@@ -12122,7 +12128,7 @@
                 </td>
             
 
-            <td class="description last">fields to be returned</td>
+            <td class="description last"><p>fields to be returned</p></td>
         </tr>
 
     
@@ -12161,7 +12167,7 @@
                 </td>
             
 
-            <td class="description last">will ignore the readOnly restricting on those fields</td>
+            <td class="description last"><p>will ignore the readOnly restricting on those fields</p></td>
         </tr>
 
     
@@ -12200,7 +12206,7 @@
                 </td>
             
 
-            <td class="description last">will return new record, if not a transaction</td>
+            <td class="description last"><p>will return new record, if not a transaction</p></td>
         </tr>
 
     
@@ -12242,7 +12248,7 @@
                 </td>
             
 
-            <td class="description last">adds other records into return object</td>
+            <td class="description last"><p>adds other records into return object</p></td>
         </tr>
 
     
@@ -12273,7 +12279,7 @@
 <ul>
         <li>
 <div class="param-desc">
-    If layer IS a transaction, then it will return objSQL
+    <p>If layer IS a transaction, then it will return objSQL</p>
 </div>
 
 
@@ -12293,7 +12299,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecord is 'true', then it will return the array of reocrd objects
+    <p>If layer IS NOT a transaction and returnRecord is 'true', then it will return the array of reocrd objects</p>
 </div>
 
 
@@ -12313,7 +12319,7 @@
     
         <li>
 <div class="param-desc">
-    If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object
+    <p>If layer IS NOT a transaction and returnRecord is 'false', then it will return a success object</p>
 </div>
 
 
@@ -12353,7 +12359,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Dec 07 2018 15:14:50 GMT-0500 (EST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Dec 10 2018 13:53:47 GMT-0500 (EST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
