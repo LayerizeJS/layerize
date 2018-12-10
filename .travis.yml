@@ -19,17 +19,17 @@ before_deploy:
     if [ "$TRAVIS_TAG" != "" ];
     then
       npm version $TRAVIS_TAG
-      set NPM_TAG_NAME=
+      set NPM_TAG_NAME=latest
     fi
-    if [ "$TRAVIS_TAG" =~ "alpha" ];
+    if [ "$TRAVIS_TAG" =~ /alpha/ ];
     then
       set NPM_TAG_NAME=alpha
     fi
-    if [ "$TRAVIS_TAG" =~ "beta" ];
+    if [ "$TRAVIS_TAG" =~ /beta/ ];
     then
       set NPM_TAG_NAME=beta
     fi
-    if [ "$TRAVIS_TAG" =~ "rc" ];
+    if [ "$TRAVIS_TAG" =~ /rc/ ];
     then
       set NPM_TAG_NAME=rc
     fi
