@@ -14,24 +14,24 @@ before_script:
 script:
 - npm run lint
 - npm run test-travis
-before_install:
+before_deploy:
   - |
     if [ "$TRAVIS_TAG" != "" ];
     then
       npm version $TRAVIS_TAG
-      $NPM_TAG_NAME = ""
+      set NPM_TAG_NAME=
     fi
     if [ "$TRAVIS_TAG" =~ "alpha" ];
     then
-      $NPM_TAG_NAME = "alpha"
+      set NPM_TAG_NAME=alpha
     fi
     if [ "$TRAVIS_TAG" =~ "beta" ];
     then
-      $NPM_TAG_NAME = "beta"
+      set NPM_TAG_NAME=beta
     fi
     if [ "$TRAVIS_TAG" =~ "rc" ];
     then
-      $NPM_TAG_NAME = "rc"
+      set NPM_TAG_NAME=rc
     fi
 deploy:
 - provider: npm
