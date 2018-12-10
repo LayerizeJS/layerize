@@ -26,11 +26,11 @@ yarn add layerize
 
 ## Get Started
 
-Check out layerize's quick [**Get Started**][getting_started] guide and the [other guides][guides].
+Check out LayerizeJS's quick [**Get Started**][getting_started] guide and the [other guides][guides].
 
 ## Video Tutorials
 
-Check out layerize's [**video tutorials**][getting_started]!!
+Check out LayerizeJS's [**video tutorials**][getting_started]!!
 
 ## Changelog
 
