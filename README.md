@@ -34,7 +34,7 @@ Check out LayerizeJS's [**video tutorials**][getting_started]!!
 
 ## Documentation
 
-All our code is well documented, thanks to JSDocs! Feel free to dig in and check out our [code documentation][documentation]!
+Want a deep dive into the nuts and bolts of LayerizeJS! Feel free to check out our [code documentation][documentation]!
 
 ## Changelog
 
@@ -45,7 +45,7 @@ All our code is well documented, thanks to JSDocs! Feel free to dig in and check
 Want to file a bug, contribute some code, or improve documentation? Excellent! 
 
 [changelog]: https://github.com/LayerizeJS/layerize/blob/master/CHANGELOG.md
-[getting_started]: https://layerize.js.org/get-started/
-[video_tutorials]: https://layerize.js.org/tutorials/
-[guides]: https://layerize.js.org/guides/
+[getting_started]: https://layerizejs.github.io/get-started.html
+[video_tutorials]: https://layerizejs.github.io/videos.html
+[guides]: https://layerizejs.github.io/guides.html
 [documentation]: https://layerizejs.github.io/layerize/
