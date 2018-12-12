@@ -29,6 +29,20 @@ describe('inserts', () => {
 
     }).slow(500).timeout(15000);
 
+    it('should error on inserting a single record', async () => {
+
+        try {
+
+            await layers.insert('users', { user_role_id: 'd8988288-988a-412a-9127-e51a284e2b46', first_name: 'John', last_name: ' Doe ', username: 'johndoe10', password: 'Mypassword1', email: 'pickle@dsfsd.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } });
+
+        } catch (e) {
+
+            assert.equal(true, e[1].errors[0].message.indexOf('__nonTransactionProcessing') > -1);
+
+        }
+
+    }).slow(500).timeout(15000);
+
     it('should insert multiple records', async () => {
 
         let beforeCount = await layers.count('users');
