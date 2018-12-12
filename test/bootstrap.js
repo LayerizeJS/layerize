@@ -6,7 +6,7 @@ const Layerize = require('../lib');
 let layerizeSchemaName = 'layerize_test';
 let testSchemaName = 'layerize_test_schema';
 
-const layerize = new Layerize({ schemas: './test/data/schemas/**/*.json', layerizeSchemaName: global.layerizeSchemaName });
+const layerize = new Layerize({ schemas: './test/data/schemas/1.0.0/**/*.json', layerizeSchemaName: global.layerizeSchemaName });
 
 global.Layerize = Layerize;
 global.layerize = layerize;

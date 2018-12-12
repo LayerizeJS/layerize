@@ -132,6 +132,23 @@ describe('transactions', () => {
 
     }).slow(500).timeout(15000);
 
+    it('should records patch by filter', async () => {
+
+        let transaction = layers.transaction();
+
+        let user = {
+            last_name: 'PatchedByFilter'
+        };
+
+        await transaction.patchByFilter('users', 'id:a99f0cea-c3df-4619-b023-8c71fee3a9cd', user);
+        await transaction.commit();
+
+        let updatedUser = await transaction.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
+
+        assert.equal(user.last_name, updatedUser.last_name);
+
+    }).slow(500).timeout(15000);
+
     it('should update a single record', async () => {
 
         let transaction = layers.transaction();

@@ -79,15 +79,31 @@ describe('patches', () => {
 
     }).slow(500).timeout(15000);
 
-    it('should patch read-only property when ignoreReadOnly set', async () => {
+    it('should records patch by filter', async () => {
 
         let user = {
-            account_owner: true
+            last_name: 'PatchedByFilter'
         };
 
-        let updatedUser = await layers.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true, ignoreReadOnly: [ 'account_owner' ] });
+        await layers.patchByFilter('users', 'id:a99f0cea-c3df-4619-b023-8c71fee3a9cd', user);
 
-        assert.equal(user.account_owner, updatedUser.account_owner);
+        let updatedUser = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
+
+        assert.equal(user.last_name, updatedUser.last_name);
+
+    }).slow(500).timeout(15000);
+
+    it('should records patch by filter with elasticSearch disabled', async () => {
+
+        let userRole = {
+            name: 'PatchedByFilter'
+        };
+
+        await layers.patchByFilter('user_role', 'id:a8988288-988a-412a-9127-e51a284e2b46', userRole);
+
+        let updatedUserRole = await layers.get('user_role', 'a8988288-988a-412a-9127-e51a284e2b46');
+
+        assert.equal(userRole.name, updatedUserRole.name);
 
     }).slow(500).timeout(15000);
 
