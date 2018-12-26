@@ -1,0 +1,62 @@
+{
+    "$id": "address",
+    "type": "object",
+    "properties": {
+        "line1": {
+            "type": "string",
+            "transform": [
+                "trim"
+            ],
+            "maxLength": 100
+        },
+        "line2": {
+            "type": "string",
+            "transform": [
+                "trim"
+            ],
+            "maxLength": 100
+        },
+        "line3": {
+            "type": "string",
+            "transform": [
+                "trim"
+            ],
+            "maxLength": 100
+        },
+        "city": {
+            "type": "string",
+            "transform": [
+                "trim"
+            ],
+            "maxLength": 50
+        },
+        "state": {
+            "type": "string",
+            "transform": [
+                "trim"
+            ],
+            "maxLength": 50
+        },
+        "zip": {
+            "type": "string",
+            "transform": [
+                "trim"
+            ],
+            "maxLength": 20
+        },
+        "country": {
+            "type": "string",
+            "transform": [
+                "trim"
+            ],
+            "maxLength": 50
+        }
+    },
+    "required": [
+        "line1",
+        "city",
+        "state",
+        "zip",
+        "country"
+    ]
+}
