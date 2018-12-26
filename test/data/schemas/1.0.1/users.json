@@ -1,0 +1,139 @@
+{
+    "$id": "users",
+    "$root": true,
+    "indexes": [],
+    "type": "object",
+    "elasticSearch": {
+        "enabled": true
+    },
+    "allOf": [
+        {
+            "$ref": "core"
+        },
+        {
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "nullable": false,
+                    "enum": [
+                        "open",
+                        "closed"
+                    ],
+                    "default": "open",
+                    "readOnly": true
+                },
+                "state": {
+                    "type": "string",
+                    "nullable": false,
+                    "enum": [
+                        "active",
+                        "cancelled"
+                    ],
+                    "default": "active",
+                    "readOnly": true
+                },
+                "user_role_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": false,
+                    "foreign": {
+                        "source": {
+                            "includeId": "users"
+                        },
+                        "reference": {
+                            "table": "user_role",
+                            "column": "id",
+                            "relationship": "many-to-one",
+                            "includeId": "user_role"
+                        }
+                    }
+                },
+                "type": {
+                    "type": "string",
+                    "nullable": false,
+                    "enum": [
+                        "employee",
+                        "consultant",
+                        "supplier",
+                        "bot"
+                    ],
+                    "default": "employee"
+                },
+                "first_name": {
+                    "type": "string",
+                    "nullable": false,
+                    "transform": ["trim"],
+                    "maxLength": 50,
+                    "elasticSearch":{
+                        "normalizer": "case_insensitive_normalizer"
+                    }
+                },
+                "last_name": {
+                    "type": "string",
+                    "nullable": false,
+                    "transform": ["trim"],
+                    "maxLength": 50,
+                    "elasticSearch":{
+                        "normalizer": "case_insensitive_normalizer"
+                    }
+                },
+                "full_name": {
+                    "type": "string",
+                    "nullable": false,
+                    "transform": ["trim"],
+                    "maxLength": 50,
+                    "elasticSearch":{
+                        "normalizer": "case_insensitive_normalizer"
+                    }
+                },
+                "contact_methods": {
+                    "type": "array",
+                    "nullable": false
+                },
+                "addresses": {
+                    "$ref": "addresses"
+                },
+                "username": {
+                    "type": "string",
+                    "unique": true,
+                    "nullable": false,
+                    "transform": ["trim"],
+                    "maxLength": 30,
+                    "elasticSearch":{
+                        "normalizer": "case_insensitive_normalizer"
+                    }
+                },
+                "password": {
+                    "type": "string",
+                    "nullable": false,
+                    "transform": ["trim","toMD5"],
+                    "format": "password"
+                },
+                "email": {
+                    "type": "string",
+                    "format": "email",
+                    "nullable": false,
+                    "transform": ["trim"],
+                    "maxLength": 100
+                },
+                "supplier_id": {
+                    "format": "uuid",
+                    "nullable": true
+                },
+                "account_owner": {
+                    "type": "boolean",
+                    "nullable": false,
+                    "default": false,
+                    "readOnly": true
+                }
+            },
+            "required": [
+                "user_role_id",
+                "first_name",
+                "last_name",
+                "username",
+                "password"
+            ]
+        }
+    ]
+}

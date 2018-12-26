@@ -4,7 +4,7 @@
     "indexes": [],
     "type": "object",
     "elasticSearch": {
-        "enabled": true
+        "enabled": false
     },
     "allOf": [
         {

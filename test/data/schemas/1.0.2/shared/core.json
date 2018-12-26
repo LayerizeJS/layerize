@@ -1,0 +1,120 @@
+{
+    "$id": "core",
+    "type": "object",
+    "dynamicDefaults": {
+        "id": "uuid",
+        "ts_created": "datetime",
+        "ts_updated": "datetime"
+    },
+    "cache": {
+        "enabled": true,
+        "expiresInSeconds": 604800 
+    },
+    "elasticSearch":{
+        "enabled": false,
+        "numeric_detection": true,
+        "date_detection": true
+    },
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid",
+            "definableOnCreate": true,
+            "readOnly": true,
+            "primaryKey": true,
+            "elasticSearch": { 
+                "type": "keyword"
+            }
+        },
+        "sid": {
+            "type": "integer",
+            "serial": true,
+            "readOnly": true
+        },
+        "custom_fields": {
+            "type": "object"
+        },
+        "system_keys": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "format": "keyDash",
+                        "maxLength": 30
+                    },
+                    "value": {
+                        "type": "string",
+                        "transform": ["trim"],
+                        "maxLength": 255
+                    }
+                },
+                "required": ["key","value"]
+            }
+        },
+        "tags": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "text": {
+                        "type": "string",
+                        "transform": ["trim"],
+                        "maxLength": 50
+                    }
+                },
+                "required": ["text"]
+            }
+        },
+        "ts_created": {
+            "format": "date-time",
+            "readOnly": true,
+            "database": {
+                "default": "now()"
+            },
+            "elasticSearch": { 
+                "type": "date"
+            }
+        },
+        "ts_updated": {
+            "format": "date-time",
+            "timestamp": true,
+            "readOnly": true,
+            "database": {
+                "default": "now()"
+            },
+            "elasticSearch": { 
+                "type": "date"
+            }
+        },
+        "ts_archived": {
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "elasticSearch": { 
+                "type": "date"
+            }
+        },
+        "ts_deleted": {
+            "format": "date-time",
+            "nullable": true,
+            "readOnly": true,
+            "elasticSearch": { 
+                "type": "date"
+            }
+        },
+        "archived": {
+            "type": "boolean",
+            "default": false,
+            "readOnly": true
+        },
+        "deleted": {
+            "type": "boolean",
+            "default": false,
+            "readOnly": true
+        }
+    }
+}

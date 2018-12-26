@@ -1,0 +1,8 @@
+{
+    "$id": "addresses",
+    "type": "array",
+    "uniqueItems": true,
+    "items": {
+        "$ref": "address"
+    }
+}
