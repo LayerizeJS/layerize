@@ -41,7 +41,7 @@
                             "includeId": "users"
                         },
                         "reference": {
-                            "table": "user_role",
+                            "table": "user_roles",
                             "column": "id",
                             "relationship": "many-to-one",
                             "includeId": "user_role"

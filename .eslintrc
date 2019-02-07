@@ -2,6 +2,7 @@
 {
     "extends": "@enspire/enspire",
     "rules": {
+        "no-loop-func": "off",
         "no-throw-literal": "off",
         "camelcase": "off",
         "max-len": "off",

@@ -41,10 +41,26 @@
                             "includeId": "users"
                         },
                         "reference": {
-                            "table": "user_role",
+                            "table": "user_roles",
                             "column": "id",
                             "relationship": "many-to-one",
                             "includeId": "user_role"
+                        }
+                    }
+                },
+                "organization_id": {
+                    "type": "string",
+                    "format": "uuid",
+                    "nullable": false,
+                    "foreign": {
+                        "source": {
+                            "includeId": "users"
+                        },
+                        "reference": {
+                            "table": "organizations",
+                            "column": "id",
+                            "relationship": "many-to-one",
+                            "includeId": "organization"
                         }
                     }
                 },

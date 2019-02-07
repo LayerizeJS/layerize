@@ -1,0 +1,71 @@
+{
+    "section": "users",
+    "resource": "users",
+    "table": "users",
+    "actions": {
+        "create": {
+            "exposedResources": [],
+            "properties": [
+                {
+                    "ref": "*:create"
+                }
+            ],
+            "conditionals": [
+                {
+                    "property": "organization_id"
+                }
+            ],
+            "presets": [
+                {
+                    "property": "organization_id"
+                },
+                {
+                    "property": "super_user"
+                }
+            ]
+        }, 
+        "read": {
+            "properties": [
+                {
+                    "ref": "*"
+                }
+            ],
+            "conditionals": ["*"]
+        }, 
+        "update": {
+            "properties": [
+                {
+                    "ref": "*:update"
+                }
+            ],
+            "conditionals": ["*"],
+            "children": [
+                {
+                    "resource": "update",
+                    "actions": {
+                        "void": {
+                            "conditionals": [
+                                {
+                                    "property": "state",
+                                    "enum": ["draft", "active"]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }, 
+        "delete": {
+            "conditionals": ["*"]
+        }
+    },
+    "children": [],
+    "requires": [
+        {
+            "resource": "organization",
+            "action": "",
+            "properties": [],
+            "condition": {}
+        }
+    ]
+}
