@@ -6,9 +6,11 @@ const testSchemaName = global.testSchemaName;
 
 describe('updates', () => {
 
-    let layers = layerize.layers({ schemaName: testSchemaName });
+    let layers;
 
     before(async () => {
+
+        layers = layerize.layers({ schemaName: testSchemaName });
 
         // remove all records from table
         await layers.deleteByFilter('users');
@@ -87,7 +89,7 @@ describe('updates', () => {
     it('should update a single record with elasticSearch disabled', async () => {
 
         let userRole = await layers.get('user_roles', 'a8988288-988a-412a-9127-e51a284e2b46');
-        userRole.name = 'AdminUpdated';
+        userRole.name = 'AdminUpdated255';
 
         let response = await layers.update('user_roles', userRole);
 

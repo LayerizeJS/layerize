@@ -1,0 +1,47 @@
+{
+    "tableName": "audit-logs",
+    "hashKey": "record_id",
+    "rangeKey": "id",
+    "timestamps": true,
+    "schema": {
+        "id": {
+            "type": "string",
+            "required": true,
+            "constraints": {
+                "guid": []
+            }
+        },
+        "record_id": {
+            "type": "string",
+            "required": true,
+            "constraints": {
+                "guid": []
+            }
+        },
+        "type": {
+            "type": "string",
+            "constraints": {
+                "valid": ["create", "update", "patch", "delete", "archive"]
+            }
+        },
+        "table": {
+            "type": "string",
+            "required": true
+        },
+        "user_id": {
+            "type": "string"
+        },
+        "differences": {
+            "type": "array"
+        },
+        "ip": {
+            "type": "string",
+            "constraints": {
+                "ip": []
+            }
+        },
+        "useragent": {
+            "type": "object"
+        }
+    }
+}

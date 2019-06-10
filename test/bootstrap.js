@@ -45,6 +45,12 @@ prepare(async (done) => {
                 host: 'localhost',
                 port: 9200
             },
+            dynamo: {
+                accessKeyId: 'ABC123',
+                secretAccessKey: 'XXXXXX',
+                region: 'us-west-2',
+                endpoint: 'http://localhost:8000'
+            },
             permissions: {
                 definitionGlob: './test/data/permissions/**/*.json',
                 getRole: async (role, { layerize, schemaName }) => {
@@ -101,14 +107,42 @@ prepare(async (done) => {
             },
             watchers: [
                 {
-                    table: 'user_role',
+                    table: 'user_roles',
                     on: 'update',
                     action: async (keys, { layerize, schemaName }) => {
 
                         try {
 
-                            let layers = layerize.layers({ schemaName });
-                            return await layers.get('user_role', keys[0]);
+                            let permissions = new Layerize.Permissions({ layerize, schemaName });
+
+                            for (let i = 0; i < keys.length; i++) {
+
+                                await permissions.setRole(await layerize.permissions.getRole(keys[i], { layerize, schemaName }));
+
+                            }
+
+                        } catch (e) {
+
+                            throw e;
+
+                        }
+
+                    }
+                },
+                {
+                    table: 'user_roles',
+                    on: 'delete',
+                    action: async (keys, { layerize, schemaName }) => {
+
+                        try {
+
+                            let permissions = new Layerize.Permissions({ layerize, schemaName });
+
+                            for (let i = 0; i < keys.length; i++) {
+
+                                await permissions.removeRoles({ roles: keys });
+
+                            }
 
                         } catch (e) {
 

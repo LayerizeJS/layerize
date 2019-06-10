@@ -68,7 +68,6 @@
                         "normalizer": "case_insensitive_normalizer"
                     }
                 },
-
                 "last_name": {
                     "type": "string",
                     "nullable": false,

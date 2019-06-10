@@ -6,9 +6,11 @@ const testSchemaName = global.testSchemaName;
 
 describe('transactions', () => {
 
-    let layers = layerize.layers({ schemaName: testSchemaName });
+    let layers;
 
     before(async () => {
+
+        layers = layerize.layers({ schemaName: testSchemaName });
 
         // remove all records from table
         await layers.deleteByFilter('users');
@@ -62,7 +64,7 @@ describe('transactions', () => {
 
             user = await transaction.get('users', 'b55f0cea-c3df-4619-b023-8c71fee3a9cd', { forUpdate: true });
             user.first_name = 'Santa2';
-            await layers.update('users', user);
+            await transaction.update('users', user);
 
             await transaction.commit();
 

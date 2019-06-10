@@ -61,8 +61,11 @@
                     "type": "array",
                     "nullable": false
                 },
-                "addresses": {
-                    "$ref": "addresses"
+                "address": {
+                    "type": "object",
+                    "allOf": [
+                        { "$ref": "address" }
+                    ]
                 },
                 "email": {
                     "type": "string",

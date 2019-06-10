@@ -19,9 +19,67 @@ describe('Permissions', () => {
         await layers.deleteByFilter('organization_roles');
 
         // insert new records
-        await layers.insert('organization_roles', { id: '5e80d477-ebae-4263-86d0-4498ff13dd0e', name: 'Partner', permissions: [{ resource: 'users:user_roles', action: 'create', properties: [ '*' ] }, { resource: 'users:user_roles', action: 'update', properties: [ '*' ] }, { resource: 'users:user_roles', action: 'read', properties: ['*', { property: '!super_user', condition: { type: 'fact', property: 'name', operator: 'EQUALS', value: 'Admin' } }], condition: { type: 'all', children: [ { type: 'fact', property: 'name', operator: 'EQUALS', value: 'Admin' } ] } }] });
+        await layers.insert('organization_roles', {
+            id: '5e80d477-ebae-4263-86d0-4498ff13dd0e',
+            name: 'Partner',
+            permissions: [
+                {
+                    resource: 'users:user_roles',
+                    action: 'create',
+                    properties: [ '*' ]
+                },
+                {
+                    resource: 'users:user_roles',
+                    action: 'update',
+                    properties: [ '*' ]
+                },
+                {
+                    resource: 'users:user_roles',
+                    action: 'read',
+                    properties: [
+                        '*',
+                        {
+                            property: 'super_user',
+                            condition: {
+                                type: 'fact',
+                                property: 'name',
+                                operator: 'EQUALS',
+                                value: 'Admin'
+                            }
+                        }
+                    ],
+                    condition: {
+                        type: 'all',
+                        children: [
+                            {
+                                type: 'fact',
+                                property: 'name',
+                                operator: 'EQUALS',
+                                value: 'Admin'
+                            }
+                        ]
+                    }
+                }
+            ]
+        });
         await layers.insert('organizations', { id: '49f89fe4-9b8b-45aa-b3da-4f11711c8c1c', organization_role_id: '5e80d477-ebae-4263-86d0-4498ff13dd0e', name: 'My Organization', email: 'admin@organization.com', permissions: [] });
-        await layers.insert('user_roles', { id: 'a8988288-988a-412a-9127-e51a284e2b46', organization_id: '49f89fe4-9b8b-45aa-b3da-4f11711c8c1c', name: 'Admin', permissions: [{ resource: 'users:user_roles', action: 'create', properties: [ '*' ] }, { resource: 'users:user_roles', action: 'read', properties: [ '*' ] }] });
+        await layers.insert('user_roles', {
+            id: 'a8988288-988a-412a-9127-e51a284e2b46',
+            organization_id: '49f89fe4-9b8b-45aa-b3da-4f11711c8c1c',
+            name: 'Admin',
+            permissions: [
+                {
+                    resource: 'users:user_roles',
+                    action: 'create',
+                    properties: [ '*' ]
+                },
+                {
+                    resource: 'users:user_roles',
+                    action: 'read',
+                    properties: [ '*' ]
+                }
+            ]
+        });
         await layers.insert('user_roles', { id: 'b7877288-788a-312a-8128-f41a284e2b34', organization_id: '49f89fe4-9b8b-45aa-b3da-4f11711c8c1c', name: 'Manger', permissions: [ { resource: 'users:user_roles', action: 'create', properties: [ '*' ] } ] });
         await layers.insertMany('users', [
             { id: 'b99f0cea-c3df-4619-b023-8c71fee3a9dc', user_role_id: 'a8988288-988a-412a-9127-e51a284e2b46', organization_id: '49f89fe4-9b8b-45aa-b3da-4f11711c8c1c', first_name: 'Mary', last_name: ' Doe ', username: 'marydoe', password: 'Mypassword1', email: 'mary@doe.com', system_keys: [ { key: '1', value: '2' } ], custom_fields: { pickle: true } },
@@ -158,7 +216,7 @@ describe('Permissions', () => {
 
         let userRole = await layers.search('user_roles', { permission });
 
-        assert.equal(true, (userRole.items.length === 1));
+        assert.equal(1, userRole.items.length);
 
     }).slow(500).timeout(15000);
 
@@ -174,7 +232,7 @@ describe('Permissions', () => {
 
         let userRole = await layers.search('user_roles', { permission });
 
-        assert.equal(true, (userRole.items.length === 2));
+        assert.equal(2, userRole.items.length);
 
     }).slow(500).timeout(15000);
 
@@ -225,8 +283,6 @@ describe('Permissions', () => {
         await layers.deleteByFilter('user_roles');
         await layers.deleteByFilter('organizations');
         await layers.deleteByFilter('organization_roles');
-
-        await layerize.cache.deleteByPattern('LAYERIZE:PERMISSIONS:*');
 
     });
 

@@ -11,11 +11,6 @@
                     "ref": "*:create"
                 }
             ],
-            "conditionals": [
-                {
-                    "property": "organization_id"
-                }
-            ],
             "presets": [
                 {
                     "property": "organization_id"
@@ -32,7 +27,11 @@
                     "ref": "*"
                 }
             ],
-            "conditionals": ["*"]
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ]
         }, 
         "update": {
             "description": "Update User Role",
@@ -41,7 +40,11 @@
                     "ref": "*:update"
                 }
             ],
-            "conditionals": ["*"],
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ],
             "children": [
                 {
                     "resource": "update",
@@ -61,7 +64,11 @@
         }, 
         "delete": {
             "description": "Delete User Role",
-            "conditionals": ["*"]
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ]
         }
     },
     "children": [],

@@ -30,7 +30,11 @@
                     "ref": "*"
                 }
             ],
-            "conditionals": ["*"]
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ]
         }, 
         "update": {
             "properties": [
@@ -38,7 +42,11 @@
                     "ref": "*:update"
                 }
             ],
-            "conditionals": ["*"],
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ],
             "children": [
                 {
                     "resource": "update",
@@ -56,7 +64,11 @@
             ]
         }, 
         "delete": {
-            "conditionals": ["*"]
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ]
         }
     },
     "children": [],

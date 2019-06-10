@@ -6,9 +6,11 @@ const testSchemaName = global.testSchemaName;
 
 describe('inserts', () => {
 
-    let layers = layerize.layers({ schemaName: testSchemaName });
+    let layers;
 
     before(async () => {
+
+        layers = layerize.layers({ schemaName: testSchemaName });
 
         // remove all records from table
         await layers.deleteByFilter('users');
@@ -43,7 +45,13 @@ describe('inserts', () => {
 
         } catch (e) {
 
-            assert.equal(true, e[1].errors[0].message.indexOf('__nonTransactionProcessing') > -1);
+            assert.equal('commit', e.caller);
+
+            // verify it is giving correct message
+            assert.equal('Key (username)=(johndoe10) already exists.', e.message);
+
+            // verify it is giving correct error status
+            assert.equal(400, e.statusCode);
 
         }
 

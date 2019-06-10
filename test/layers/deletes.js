@@ -6,9 +6,11 @@ const testSchemaName = global.testSchemaName;
 
 describe('deletes', () => {
 
-    let layers = layerize.layers({ schemaName: testSchemaName });
+    let layers;
 
     before(async () => {
+
+        layers = layerize.layers({ schemaName: testSchemaName });
 
         // remove all records from table
         await layers.deleteByFilter('users');
