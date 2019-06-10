@@ -37,6 +37,12 @@ describe('layerize', () => {
                 host: 'localhost',
                 port: 9200
             },
+            dynamo: {
+                accessKeyId: 'ABC123',
+                secretAccessKey: 'XXXXX',
+                region: 'us-west-2',
+                endpoint: 'http://localhost:8000'
+            },
             install: true,
             schemaName: testSchemaName
         });
@@ -71,12 +77,18 @@ describe('layerize', () => {
                 host: 'localhost',
                 port: 9200
             },
+            dynamo: {
+                accessKeyId: 'ABC123',
+                secretAccessKey: 'XXXXX',
+                region: 'us-west-2',
+                endpoint: 'http://localhost:8000'
+            },
             updateAll: true
         });
 
     }).slow(500).timeout(15000);
 
-    it('should initiate v1.0.2 updates but do not install schemas', async () => {
+    it('should initiate v1.0.2 updates but do not install schemas. ^^ console warning should show above this line ^^', async () => {
 
         layerize = new Layerize({ schemas: './test/data/schemas/1.0.2/**/*.json', layerizeSchemaName });
 
@@ -103,6 +115,12 @@ describe('layerize', () => {
                 protocol: 'http',
                 host: 'localhost',
                 port: 9200
+            },
+            dynamo: {
+                accessKeyId: 'ABC123',
+                secretAccessKey: 'XXXXXX',
+                region: 'us-west-2',
+                endpoint: 'http://localhost:8000'
             }
         });
 

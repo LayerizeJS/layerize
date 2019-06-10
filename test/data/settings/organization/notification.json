@@ -1,0 +1,15 @@
+{
+    "$id": "notification",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "enum": [
+                "open",
+                "closed"
+            ],
+            "default": "open"
+        }
+    },
+    "required": []
+}

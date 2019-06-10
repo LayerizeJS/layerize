@@ -39,7 +39,40 @@
                     "maxLength": 50
                 },
                 "permissions": {
-                    "type": "object",
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "resource": {
+                                "type": "string",
+                                "transform": [
+                                    "trim"
+                                ],
+                                "maxLength": 100
+                            },
+                            "action": {
+                                "type": "string",
+                                "transform": [
+                                    "trim"
+                                ],
+                                "maxLength": 100
+                            },
+                            "attributes": {
+                                "type": "array",
+                                "items": {}
+                            },
+                            "condition": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        },
+                        "required": [
+                            "resource",
+                            "action",
+                            "attributes"
+                        ]
+                    },
                     "nullable": false
                 },
                 "super_user": {
