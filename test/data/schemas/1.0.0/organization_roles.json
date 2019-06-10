@@ -1,0 +1,95 @@
+{
+    "$id": "organization_roles",
+    "$root": true,
+    "indexes": [],
+    "type": "object",
+    "elasticSearch": {
+        "enabled": false
+    },
+    "allOf": [
+        {
+            "$ref": "core"
+        },
+        {
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "nullable": false,
+                    "enum": [
+                        "open",
+                        "closed"
+                    ],
+                    "default": "open",
+                    "readOnly": true
+                },
+                "state": {
+                    "type": "string",
+                    "nullable": false,
+                    "enum": [
+                        "active",
+                        "cancelled"
+                    ],
+                    "default": "active",
+                    "readOnly": true
+                },
+                "name": {
+                    "type": "string",
+                    "nullable": false,
+                    "transform": ["trim"],
+                    "maxLength": 50
+                },
+                "permissions": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "resource": {
+                                "type": "string",
+                                "default": "",
+                                "transform": [
+                                    "trim"
+                                ],
+                                "maxLength": 100
+                            },
+                            "action": {
+                                "type": "string",
+                                "default": "",
+                                "transform": [
+                                    "trim"
+                                ],
+                                "maxLength": 100
+                            },
+                            "properties": {
+                                "type": "array",
+                                "default": [],
+                                "items": {}
+                            },
+                            "condition": {
+                                "type": "object",
+                                "default": {},
+                                "properties": {}
+                            }
+                        },
+                        "required": [
+                            "resource",
+                            "action",
+                            "properties"
+                        ]
+                    },
+                    "nullable": false
+                },
+                "super_organization": {
+                    "type": "boolean",
+                    "nullable": false,
+                    "default": false,
+                    "readOnly": true
+                }
+            },
+            "required": [
+                "name",
+                "permissions"
+            ]
+        }
+    ]
+}

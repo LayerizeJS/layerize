@@ -2,6 +2,7 @@
 {
     "extends": "@enspire/enspire",
     "rules": {
+        "no-loop-func": "off",
         "no-throw-literal": "off",
         "camelcase": "off",
         "max-len": "off",
@@ -15,6 +16,7 @@
                 "FunctionExpression": true
             }
         }],
-        "valid-jsdoc": "error"
+        "valid-jsdoc": "error",
+        "no-warning-comments": 1
     }
 }

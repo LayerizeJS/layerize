@@ -41,7 +41,7 @@
                             "includeId": "users"
                         },
                         "reference": {
-                            "table": "user_role",
+                            "table": "user_roles",
                             "column": "id",
                             "relationship": "many-to-one",
                             "includeId": "user_role"
@@ -69,15 +69,6 @@
                     }
                 },
                 "last_name": {
-                    "type": "string",
-                    "nullable": false,
-                    "transform": ["trim"],
-                    "maxLength": 50,
-                    "elasticSearch":{
-                        "normalizer": "case_insensitive_normalizer"
-                    }
-                },
-                "full_name": {
                     "type": "string",
                     "nullable": false,
                     "transform": ["trim"],

@@ -1,0 +1,83 @@
+{
+    "section": "users",
+    "resource": "user_roles",
+    "table": "user_roles",
+    "actions": {
+        "create": {
+            "exposedResources": [],
+            "description": "Create User Role",
+            "properties": [
+                {
+                    "ref": "*:create"
+                }
+            ],
+            "presets": [
+                {
+                    "property": "organization_id"
+                },
+                {
+                    "property": "super_user"
+                }
+            ]
+        }, 
+        "read": {
+            "description": "View User Role",
+            "properties": [
+                {
+                    "ref": "*"
+                }
+            ],
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ]
+        }, 
+        "update": {
+            "description": "Update User Role",
+            "properties": [
+                {
+                    "ref": "*:update"
+                }
+            ],
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ],
+            "children": [
+                {
+                    "resource": "update",
+                    "actions": {
+                        "void": {
+                            "description": "Void Order Line",
+                            "conditionals": [
+                                {
+                                    "property": "state",
+                                    "enum": ["draft", "active"]
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }, 
+        "delete": {
+            "description": "Delete User Role",
+            "conditionals": [
+                {
+                    "ref": "*"
+                }
+            ]
+        }
+    },
+    "children": [],
+    "requires": [
+        {
+            "resource": "",
+            "action": "",
+            "properties": [],
+            "condition": {}
+        }
+    ]
+}
