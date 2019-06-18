@@ -144,13 +144,13 @@ describe('Permissions', () => {
 
         let permissions = new Permissions({ layerize, schemaName: testSchemaName });
 
-        let permission = await permissions.allowed({
+        let readPermission = await permissions.allowed({
             role: [ '5e80d477-ebae-4263-86d0-4498ff13dd0e' ],
             resource: 'users:user_roles',
             action: 'read'
         });
 
-        let userRole = await layers.get('user_roles', 'a8988288-988a-412a-9127-e51a284e2b46', { permission });
+        let userRole = await layers.get('user_roles', 'a8988288-988a-412a-9127-e51a284e2b46', { readPermission });
 
         assert.equal(undefined, userRole.super_user);
 
@@ -160,13 +160,13 @@ describe('Permissions', () => {
 
         let permissions = new Permissions({ layerize, schemaName: testSchemaName });
 
-        let permission = await permissions.allowed({
+        let readPermission = await permissions.allowed({
             role: [ '5e80d477-ebae-4263-86d0-4498ff13dd0e' ],
             resource: 'users:user_roles',
             action: 'read'
         });
 
-        let userRole = await layers.get('user_roles', 'a8988288-988a-412a-9127-e51a284e2b46', { fields: ['name', 'super_user'], permission });
+        let userRole = await layers.get('user_roles', 'a8988288-988a-412a-9127-e51a284e2b46', { fields: ['name', 'super_user'], readPermission });
 
         assert.equal(undefined, userRole.super_user);
 
@@ -176,13 +176,13 @@ describe('Permissions', () => {
 
         let permissions = new Permissions({ layerize, schemaName: testSchemaName });
 
-        let permission = await permissions.allowed({
+        let readPermission = await permissions.allowed({
             role: [ '5e80d477-ebae-4263-86d0-4498ff13dd0e' ],
             resource: 'users:user_roles',
             action: 'read'
         });
 
-        let userRole = await layers.search('user_roles', { filter: { native: true, where: 'name != \'Manager2\'' }, permission });
+        let userRole = await layers.search('user_roles', { filter: { native: true, where: 'name != \'Manager2\'' }, readPermission });
 
         assert.equal(true, (userRole.items.length === 1));
 
@@ -192,13 +192,13 @@ describe('Permissions', () => {
 
         let permissions = new Permissions({ layerize, schemaName: testSchemaName });
 
-        let permission = await permissions.allowed({
+        let readPermission = await permissions.allowed({
             role: [ '5e80d477-ebae-4263-86d0-4498ff13dd0e' ],
             resource: 'users:user_roles',
             action: 'read'
         });
 
-        let userRole = await layers.search('user_roles', { permission });
+        let userRole = await layers.search('user_roles', { readPermission });
 
         assert.equal(true, (userRole.items.length === 1));
 
@@ -208,13 +208,13 @@ describe('Permissions', () => {
 
         let permissions = new Permissions({ layerize, schemaName: testSchemaName });
 
-        let permission = await permissions.allowed({
+        let readPermission = await permissions.allowed({
             role: ['5e80d477-ebae-4263-86d0-4498ff13dd0e', 'a8988288-988a-412a-9127-e51a284e2b46'],
             resource: 'users:user_roles',
             action: 'read'
         });
 
-        let userRole = await layers.search('user_roles', { permission });
+        let userRole = await layers.search('user_roles', { readPermission });
 
         assert.equal(1, userRole.items.length);
 
@@ -224,13 +224,13 @@ describe('Permissions', () => {
 
         let permissions = new Permissions({ layerize, schemaName: testSchemaName });
 
-        let permission = await permissions.allowed({
+        let readPermission = await permissions.allowed({
             role: [ 'a8988288-988a-412a-9127-e51a284e2b46' ],
             resource: 'users:user_roles',
             action: 'read'
         });
 
-        let userRole = await layers.search('user_roles', { permission });
+        let userRole = await layers.search('user_roles', { readPermission });
 
         assert.equal(2, userRole.items.length);
 
