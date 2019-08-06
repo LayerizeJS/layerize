@@ -1,0 +1,31 @@
+{
+    "name": "Customer Sync",
+    "tags": ["customer"],
+    "version": 1,
+    "type": "verification",
+    "qualifiers": {
+        "verification": {
+            "scope": "customer",
+            "methods": ["create", "update", "delete"],
+            "properties": [
+                {
+                    "property": "name",
+                    "conditional": {}
+                }
+            ]
+        },
+        "event": {},
+        "cron": {}
+    },
+    "tasks": [
+        {
+
+            "id": "",
+            "name": "A Task",
+            "timeout": 30000,
+            "retry": 2,
+            "script": "",
+            "nextTask":""
+        }
+    ]
+}
