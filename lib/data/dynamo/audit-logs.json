@@ -3,6 +3,7 @@
     "hashKey": "record_id",
     "rangeKey": "id",
     "timestamps": true,
+    "createdAt": "created_at",
     "schema": {
         "id": {
             "type": "string",
@@ -43,5 +44,13 @@
         "useragent": {
             "type": "object"
         }
-    }
+    },
+    "indexes" : [
+        {
+            "hashKey" : "record_id", 
+            "rangeKey" : "created_at", 
+            "type" : "local", 
+            "name" : "createdAtIndex"
+        }
+    ]
 }

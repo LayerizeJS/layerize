@@ -11,7 +11,7 @@
 # LayerizeJS
 A framework to mange stacked data layers like postgresql, redis and elasticsearch.
 
-## Install
+## Install in your project
 Install with npm:
 
 ```bash
@@ -22,6 +22,12 @@ Install with yarn:
 
 ```bash
 yarn add layerize
+```
+
+## Working directly with Layerize code base
+If you are running OSX, be sure to run npm with no optional to dynamodb dtrace-provider dependency version issue
+```bash
+npm i --no-optional
 ```
 
 ## Get Started
