@@ -1,0 +1,52 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x]
+        
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        
+      redis:
+        image: redis:latest
+        ports:
+        - 6379:6379
+        
+      elasticsearch:
+        image: nshou/elasticsearch-kibana:kibana6
+        ports:
+        - 5601:5601
+        - 9200:9200
+    
+      dynamodb:
+        image: dwmkerr/dynamodb:latest
+        ports:
+        - 8000:8000
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: npm install and test
+      run: |
+        npm install
+        npm test
+      env:
+        CI: true
