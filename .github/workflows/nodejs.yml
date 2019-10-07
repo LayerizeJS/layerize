@@ -34,7 +34,7 @@ jobs:
         - 9200:9200
     
       dynamodb:
-        image: dynamodb:latest
+        image: dwmkerr/dynamodb:latest
         ports:
         - 8000:8000
 
