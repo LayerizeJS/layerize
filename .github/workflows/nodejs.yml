@@ -28,7 +28,7 @@ jobs:
         - 6379:6379
         
       elasticsearch:
-        image: nshou/elasticsearch-kibana:latest
+        image: nshou/elasticsearch-kibana:kibana6
         ports:
         - 5601:5601
         - 9200:9200
