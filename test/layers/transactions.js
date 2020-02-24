@@ -90,8 +90,10 @@ describe('transactions', () => {
         await transaction.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
         await transaction.commit();
 
+        let searchUser = await layers.search('users', { filter: [ 'id:a99f0cea-c3df-4619-b023-8c71fee3a9cd' ] });
         let updatedUser = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
 
+        assert.equal(user.last_name, searchUser.items[0].last_name);
         assert.equal(user.last_name, updatedUser.last_name);
 
     }).slow(500).timeout(15000);
@@ -107,8 +109,10 @@ describe('transactions', () => {
         await transaction.patch('user_roles', 'a8988288-988a-412a-9127-e51a284e2b46', userRole, { returnRecord: true });
         await transaction.commit();
 
+        let searchUserRole = await layers.search('user_roles', { filter: [ 'id:a8988288-988a-412a-9127-e51a284e2b46' ] });
         let patchedUserRole = await layers.get('user_roles', 'a8988288-988a-412a-9127-e51a284e2b46');
 
+        assert.equal(userRole.name, searchUserRole.items[0].name);
         assert.equal(userRole.name, patchedUserRole.name);
 
     }).slow(500).timeout(15000);
@@ -125,16 +129,21 @@ describe('transactions', () => {
             {
                 id: 'd44f0cea-c3df-4619-b023-8c71fee3a9dc',
                 last_name: 'NickMany'
+            },
+            {
+                id: 'a99f0cea-c3df-4619-b023-8c71fee3a9cd',
+                last_name: 'PatchMany'
             }
         ];
 
         await transaction.patchMany('users', users);
         await transaction.commit();
 
-        let updatedUsers = await layers.getMany('users', ['b55f0cea-c3df-4619-b023-8c71fee3a9cd', 'd44f0cea-c3df-4619-b023-8c71fee3a9dc']);
+        let updatedUsers = await layers.getMany('users', ['b55f0cea-c3df-4619-b023-8c71fee3a9cd', 'd44f0cea-c3df-4619-b023-8c71fee3a9dc', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd']);
 
         assert.equal(users[0].first_name, updatedUsers[0].first_name);
         assert.equal(users[1].last_name, updatedUsers[1].last_name);
+        assert.equal(users[2].last_name, updatedUsers[2].last_name);
 
     }).slow(500).timeout(15000);
 
@@ -165,8 +174,10 @@ describe('transactions', () => {
         await transaction.update('users', user);
         await transaction.commit();
 
+        let searchUser = await layers.search('users', { filter: [ 'id:a99f0cea-c3df-4619-b023-8c71fee3a9cd' ] });
         let updatedUser = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
 
+        assert.equal(user.last_name, searchUser.items[0].last_name);
         assert.equal(user.last_name, updatedUser.last_name);
 
     }).slow(500).timeout(15000);

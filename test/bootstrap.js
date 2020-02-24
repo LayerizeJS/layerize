@@ -28,7 +28,8 @@ prepare(async (done) => {
                     host: 'localhost',
                     user: 'postgres',
                     password: '',
-                    database: 'postgres'
+                    database: 'postgres',
+                    port: 5432
                 },
                 pool: {
                     min: 2,

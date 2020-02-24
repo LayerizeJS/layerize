@@ -36,7 +36,11 @@ describe('patches', () => {
         };
 
         let updatedUser = await layers.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
+        let searchUser = await layers.search('users', { filter: [ 'id:a99f0cea-c3df-4619-b023-8c71fee3a9cd' ] });
+        let getUser = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
 
+        assert.equal(user.last_name, getUser.last_name);
+        assert.equal(user.last_name, searchUser.items[0].last_name);
         assert.equal(user.last_name, updatedUser.last_name);
 
     }).slow(500).timeout(15000);
