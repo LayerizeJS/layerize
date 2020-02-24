@@ -18,12 +18,6 @@ Install with npm:
 npm install layerize
 ```
 
-Install with yarn:
-
-```bash
-yarn add layerize
-```
-
 ## Working directly with Layerize code base
 If you are running OSX, be sure to run npm with no optional to dynamodb dtrace-provider dependency version issue
 ```bash
