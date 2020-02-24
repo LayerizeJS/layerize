@@ -3,7 +3,6 @@
 const assert = require('assert');
 const layerize = global.layerize;
 const testSchemaName = global.testSchemaName;
-const timeout = require('await-timeout');
 
 describe('transactions', () => {
 
