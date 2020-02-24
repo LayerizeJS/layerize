@@ -276,6 +276,18 @@ describe('Permissions', () => {
 
     }).slow(500).timeout(15000);
 
+    it('should return the resource name of permission object for a given table', async () => {
+
+        let permissions = new Permissions({ layerize, schemaName: testSchemaName });
+
+        let userResource = permissions.tableToResourceLookup.users;
+        let userRolesResource = permissions.tableToResourceLookup.user_roles;
+
+        assert.equal('users:users', userResource);
+        assert.equal('users:user_roles', userRolesResource);
+
+    }).slow(500).timeout(15000);
+
     after(async () => {
 
         // remove all records from table
