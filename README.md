@@ -1,6 +1,6 @@
-<div align="center">
-<img src="./logo.png?raw=true" alt="drawing" width="400"/>
-<br><br>
+# LayerizeJS
+
+A framework to mange stacked data layers like postgresql, redis and elasticsearch.
 
 [![Build Status](https://travis-ci.org/LayerizeJS/layerize.svg?branch=develop)](https://travis-ci.org/LayerizeJS/layerize) 
 [![Coverage Status](https://coveralls.io/repos/github/LayerizeJS/layerize/badge.svg?branch=master)](https://coveralls.io/github/LayerizeJS/layerize?branch=master)
@@ -8,10 +8,8 @@
 [![npm version](https://badge.fury.io/js/layerize.svg)](https://badge.fury.io/js/layerize)
 </div>
 
-# LayerizeJS
-A framework to mange stacked data layers like postgresql, redis and elasticsearch.
-
 ## Install in your project
+
 Install with npm:
 
 ```bash
@@ -19,7 +17,9 @@ npm install layerize
 ```
 
 ## Working directly with Layerize code base
+
 If you are running OSX, be sure to run npm with no optional to dynamodb dtrace-provider dependency version issue
+
 ```bash
 npm i --no-optional
 ```
@@ -38,11 +38,11 @@ All our code is well documented, thanks to JSDocs! Feel free to dig in and check
 
 ## Changelog
 
-[Learn about the latest improvements][changelog]. 
+[Learn about the latest improvements][changelog].
 
-## Want to help?
+## Want to help
 
-Want to file a bug, contribute some code, or improve documentation? Excellent! 
+Want to file a bug, contribute some code, or improve documentation? Excellent!
 
 [changelog]: https://github.com/LayerizeJS/layerize/blob/master/CHANGELOG.md
 [getting_started]: https://layerize.js.org/get-started/
