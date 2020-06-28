@@ -41,7 +41,7 @@ describe('layerize', () => {
                 accessKeyId: 'ABC123',
                 secretAccessKey: 'XXXXX',
                 region: 'us-west-2',
-                endpoint: 'http://localhost:8000'
+                endpoint: 'http://localhost:4566'
             },
             install: true,
             schemaName: testSchemaName
@@ -81,7 +81,7 @@ describe('layerize', () => {
                 accessKeyId: 'ABC123',
                 secretAccessKey: 'XXXXX',
                 region: 'us-west-2',
-                endpoint: 'http://localhost:8000'
+                endpoint: 'http://localhost:4566'
             },
             updateAll: true
         });
@@ -120,7 +120,7 @@ describe('layerize', () => {
                 accessKeyId: 'ABC123',
                 secretAccessKey: 'XXXXXX',
                 region: 'us-west-2',
-                endpoint: 'http://localhost:8000'
+                endpoint: 'http://localhost:4566'
             }
         });
 

@@ -88,7 +88,7 @@ describe('Permissions', () => {
 
     });
 
-    it('should create a instance of the Permissions class', async () => {
+    it('should create a instance of the Permissions class', () => {
 
         let permissions = new Permissions({ layerize, schemaName: testSchemaName });
 
@@ -96,7 +96,7 @@ describe('Permissions', () => {
 
     }).slow(500).timeout(15000);
 
-    it('should error creating an instance of the Permissions class', async () => {
+    it('should error creating an instance of the Permissions class', () => {
 
         try {
 
@@ -276,7 +276,7 @@ describe('Permissions', () => {
 
     }).slow(500).timeout(15000);
 
-    it('should return the resource name of permission object for a given table', async () => {
+    it('should return the resource name of permission object for a given table', () => {
 
         let permissions = new Permissions({ layerize, schemaName: testSchemaName });
 

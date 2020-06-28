@@ -26,7 +26,7 @@
                 "name": {
                     "type": "string",
                     "nullable": false,
-                    "maxLength": 30,
+                    "maxLength": 50,
                     "minLength": 1
                 },
                 "db_enabled": {

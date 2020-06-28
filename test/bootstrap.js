@@ -50,7 +50,7 @@ prepare(async (done) => {
                 accessKeyId: 'ABC123',
                 secretAccessKey: 'XXXXXX',
                 region: 'us-west-2',
-                endpoint: 'http://localhost:8000'
+                endpoint: 'http://localhost:4566'
             },
             permissions: {
                 definitionGlob: './test/data/permissions/**/*.json',
