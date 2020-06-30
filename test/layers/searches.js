@@ -39,7 +39,15 @@ describe('searches', () => {
 
     it('should search records with joins defined', async () => {
 
-        let results = await layers.search('users', { fields: 'users.id, user_roles.name', sort: 'users.username', filter: ['users.archived:false', 'users.first_name:John'], joins: [ 'LEFT JOIN layerize_test_schema.user_roles ON user_roles.id = users.user_role_id' ] });
+        let results = await layers.search('users', { fields: 'users.id, user_roles.name', sort: 'users.username', filter: ['users.archived:false', 'users.first_name:John'], joins: [ 'user_role' ] });
+
+        assert.equal(true, (results.items.length > 0));
+
+    }).slow(500).timeout(15000);
+
+    it('should search records with native joins defined', async () => {
+
+        let results = await layers.search('users', { fields: 'users.id, user_roles.name', sort: 'users.username', filter: ['users.archived:false', 'users.first_name:John'], joins: [ { native: true, statement: 'LEFT JOIN layerize_test_schema.user_roles ON user_roles.id = users.user_role_id' } ] });
 
         assert.equal(true, (results.items.length > 0));
 

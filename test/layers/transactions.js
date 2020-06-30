@@ -81,7 +81,7 @@ describe('transactions', () => {
 
     it('should patch a single record', async () => {
 
-        let transaction = layers.transaction();
+        let transaction = layers.transaction({ esWaitFor: true });
 
         let user = {
             last_name: 'Patched34'
@@ -166,7 +166,7 @@ describe('transactions', () => {
 
     it('should update a single record', async () => {
 
-        let transaction = layers.transaction();
+        let transaction = layers.transaction({ esWaitFor: true });
 
         let user = await transaction.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
         user.last_name = 'UpdatedTransaction';
