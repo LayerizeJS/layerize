@@ -8,7 +8,7 @@ const layerizeSchemaName = global.layerizeSchemaName;
 
 describe('Crud', () => {
 
-    it('should create a instance of the Base class', async () => {
+    it('should create a instance of the Base class', () => {
 
         let crud = new Crud({ layerize, schemaName: layerizeSchemaName });
 
@@ -16,7 +16,7 @@ describe('Crud', () => {
 
     }).slow(500).timeout(15000);
 
-    it('should error create a instance of the Base class', async () => {
+    it('should error create a instance of the Base class', () => {
 
         try {
 
