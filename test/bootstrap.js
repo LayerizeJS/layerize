@@ -52,6 +52,9 @@ prepare(async (done) => {
                 region: 'us-west-2',
                 endpoint: 'http://localhost:4566'
             },
+            events: {
+
+            },
             permissions: {
                 definitionGlob: './test/data/permissions/**/*.json',
                 getRole: async (role, { layerize, schemaName }) => {

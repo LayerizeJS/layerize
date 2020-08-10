@@ -35,7 +35,44 @@ describe('patches', () => {
             last_name: 'Patched'
         };
 
-        let updatedUser = await layers.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true });
+        const events = [
+            {
+                events: [
+                    'app:users:updated:email-validated'
+                ],
+                system_job: true,
+                job_id: '',
+                workflow_id: '',
+                key: '',
+                point_in_time: true,
+                old_data: false,
+                difference_comparison: false,
+                scope: 'users',
+                service: 'Users',
+                data_method: 'get',
+                data_method_args: [],
+                delay: 0,
+                priority: 0,
+                queue_name: '',
+                condition: [],
+                output: {
+                    job_id: '',
+                    workflow_id: '',
+                    events: [
+                        'app:users:updated:email-validated'
+                    ],
+                    scope: 'users',
+                    service: 'Users',
+                    key: '',
+                    point_in_time: true,
+                    new_data: null,
+                    old_data: null,
+                    differences: []
+                }
+            }
+        ];
+
+        let updatedUser = await layers.patch('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd', user, { returnRecord: true, events });
         let searchUser = await layers.search('users', { filter: [ 'id:a99f0cea-c3df-4619-b023-8c71fee3a9cd' ] });
         let getUser = await layers.get('users', 'a99f0cea-c3df-4619-b023-8c71fee3a9cd');
 
