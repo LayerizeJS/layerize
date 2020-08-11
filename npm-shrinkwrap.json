@@ -3768,9 +3768,9 @@
       }
     },
     "lodash": {
-      "version": "4.17.15",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz",
-      "integrity": "sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A=="
+      "version": "4.17.19",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.19.tgz",
+      "integrity": "sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ=="
     },
     "lodash.defaults": {
       "version": "4.2.0",
@@ -4376,8 +4376,7 @@
     },
     "notation": {
       "version": "1.3.6",
-      "resolved": "https://registry.npmjs.org/notation/-/notation-1.3.6.tgz",
-      "integrity": "sha512-DIuJmrP/Gg1DcXKaApsqcjsJD6jEccqKSfmU3BUx/f1GHsMiTJh70cERwYc64tOmTRTARCeMwkqNNzjh3AHhiw=="
+      "resolved": "git+https://git@github.com/jasonfutch/notation.git#0553a6f0e83d864269551e7053cacdf1cd2573fe"
     },
     "npm-path": {
       "version": "2.0.4",
