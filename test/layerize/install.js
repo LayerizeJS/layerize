@@ -47,7 +47,7 @@ describe('layerize', () => {
             schemaName: testSchemaName
         });
 
-    }).slow(500).timeout(15000);
+    }).slow(500).timeout(30000);
 
     it('should initiate and install v1.0.1 updates to all schemas', async () => {
 
@@ -86,7 +86,7 @@ describe('layerize', () => {
             updateAll: true
         });
 
-    }).slow(500).timeout(15000);
+    }).slow(500).timeout(30000);
 
     it('should initiate v1.0.2 updates but do not install schemas. ^^ console warning should show above this line ^^', async () => {
 
@@ -124,19 +124,19 @@ describe('layerize', () => {
             }
         });
 
-    }).slow(500).timeout(15000);
+    }).slow(500).timeout(30000);
 
     it('should install v1.0.2 updates on test schema', async () => {
 
         await layerize.install({ schemaName: testSchemaName });
 
-    }).slow(500).timeout(15000);
+    }).slow(500).timeout(30000);
 
     it('should uninstall test schemas and core', async () => {
 
         await layerize.uninstall({ schemaName: testSchemaName });
         await layerize.uninstall({ layerizeCore: true });
 
-    }).slow(500).timeout(15000);
+    }).slow(500).timeout(30000);
 
 });
