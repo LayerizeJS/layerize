@@ -1,6 +1,6 @@
 {
   "name": "layerize",
-  "version": "0.9.7",
+  "version": "1.0.1",
   "description": "A framework to mange stacked data layers like postgresql, redis and elasticsearch.",
   "main": "lib/index.js",
   "scripts": {
@@ -73,6 +73,7 @@
     "knex": "^0.20.10",
     "lodash": "^4.17.19",
     "nested-property": "0.0.7",
+    "node-cache": "^5.1.2",
     "node-object-hash": "^1.4.2",
     "notation": "^1.3.6",
     "nyc": "^14.0.0",
