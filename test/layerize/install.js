@@ -1,5 +1,9 @@
 'use strict';
 
+const { layerizeTestConfigSchemas1_0_0 } = require('../data/schemas/1.0.0');
+const { layerizeTestConfigSchemas1_0_1 } = require('../data/schemas/1.0.1');
+const { layerizeTestConfigSchemas1_0_2 } = require('../data/schemas/1.0.2');
+
 // const assert = require('assert');
 const Layerize = global.Layerize;
 const layerizeSchemaName = 'layerize_test_2';
@@ -11,7 +15,7 @@ describe('layerize', () => {
 
     it('should initiate layerize and install test schema', async () => {
 
-        layerize = new Layerize({ schemas: './test/data/schemas/1.0.0/**/*.json', layerizeSchemaName });
+        layerize = new Layerize({ schemas: layerizeTestConfigSchemas1_0_0, layerizeSchemaName });
 
         await layerize.initiate({
             db: {
@@ -51,7 +55,7 @@ describe('layerize', () => {
 
     it('should initiate and install v1.0.1 updates to all schemas', async () => {
 
-        layerize = new Layerize({ schemas: './test/data/schemas/1.0.1/**/*.json', layerizeSchemaName });
+        layerize = new Layerize({ schemas: layerizeTestConfigSchemas1_0_1, layerizeSchemaName });
 
         await layerize.initiate({
             db: {
@@ -90,7 +94,7 @@ describe('layerize', () => {
 
     it('should initiate v1.0.2 updates but do not install schemas. ^^ console warning should show above this line ^^', async () => {
 
-        layerize = new Layerize({ schemas: './test/data/schemas/1.0.2/**/*.json', layerizeSchemaName });
+        layerize = new Layerize({ schemas: layerizeTestConfigSchemas1_0_2, layerizeSchemaName });
 
         await layerize.initiate({
             db: {

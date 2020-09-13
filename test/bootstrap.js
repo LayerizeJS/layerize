@@ -3,12 +3,14 @@
 const prepare = require('mocha-prepare');
 const Layerize = require('../lib');
 const services = require('../lib/services');
+const { layerizeTestConfigSchemas1_0_0 } = require('./data/schemas/1.0.0');
+const { layerizeTestConfigPermissions } = require('./data/permissions');
 const { error } = console;
 
 let layerizeSchemaName = 'layerize_test';
 let testSchemaName = 'layerize_test_schema';
 
-const layerize = new Layerize({ schemas: './test/data/schemas/1.0.0/**/*.json', layerizeSchemaName: layerizeSchemaName });
+const layerize = new Layerize({ schemas: layerizeTestConfigSchemas1_0_0, layerizeSchemaName: layerizeSchemaName });
 
 global.services = services;
 global.Layerize = Layerize;
@@ -56,7 +58,7 @@ prepare(async (done) => {
 
             },
             permissions: {
-                definitionGlob: './test/data/permissions/**/*.json',
+                files: layerizeTestConfigPermissions,
                 getRole: async (role, { layerize, schemaName }) => {
 
                     try {
