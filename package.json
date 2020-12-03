@@ -1,6 +1,6 @@
 {
   "name": "layerize",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A framework to mange stacked data layers like postgresql, redis and elasticsearch.",
   "main": "lib/index.js",
   "scripts": {
